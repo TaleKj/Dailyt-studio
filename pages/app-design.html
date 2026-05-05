@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="color-scheme" content="light only"/>
+  <meta name="description" content="App design by Daily T Studio — logo, icons and visual identity for Konka, a sports tracking app available on the App Store."/>
+  <title>App Design — Daily T Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* Hero */
+    .page-hero {
+      padding-top: 64px;
+      background: linear-gradient(135deg, var(--blush-s) 0%, var(--sky-s) 50%, var(--yellow) 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 120px 48px 80px;
+      min-height: 70vh;
+    }
+    @media(max-width: 760px) {
+      .page-hero { grid-template-columns: 1fr; padding: 120px 24px 60px; text-align: center; min-height: auto; }
+    }
+    .breadcrumb {
+      font-size: 0.78rem; color: var(--ink-muted);
+      margin-bottom: 24px; display: flex; align-items: center; gap: 8px;
+    }
+    @media(max-width: 760px) { .breadcrumb { justify-content: center; } }
+    .breadcrumb a { color: var(--ink-muted); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { opacity: 0.4; }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 400; line-height: 1.1; margin-bottom: 20px; color: var(--ink);
+    }
+    .hero-text h1 em { font-style: italic; color: var(--lilac); }
+    .hero-text p {
+      font-size: 1rem; line-height: 1.8; color: var(--ink-soft);
+      max-width: 420px; margin-bottom: 32px;
+    }
+    @media(max-width: 760px) { .hero-text p { max-width: 100%; } }
+
+    .appstore-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #1C1C1E; color: #fff;
+      padding: 12px 22px; border-radius: 12px;
+      text-decoration: none; transition: opacity .2s, transform .2s;
+    }
+    .appstore-btn:hover { opacity: .85; transform: translateY(-1px); }
+    .appstore-btn svg { flex-shrink: 0; }
+    .appstore-btn-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .appstore-btn-text .small { font-size: 0.68rem; opacity: 0.7; letter-spacing: 0.03em; }
+    .appstore-btn-text .big { font-size: 0.95rem; font-weight: 500; }
+
+    .hero-screens {
+      display: flex; gap: 12px;
+      align-items: flex-end; justify-content: center;
+    }
+    .screen-wrap { border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(28,28,30,0.18); flex-shrink: 0; }
+    .screen-wrap img { display: block; width: 100%; height: auto; }
+    .screen-main { width: min(180px, 40vw); }
+    .screen-side { width: min(144px, 32vw); margin-bottom: 20px; opacity: 0.85; }
+    @media(max-width: 760px) { .screen-side { display: none; } .screen-main { width: min(220px, 60vw); } }
+
+    /* About */
+    .about-section { padding: 80px 24px; background: #ffffff; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center; max-width: 960px; margin: 0 auto;
+    }
+    @media(max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 400; line-height: 1.2; margin-bottom: 24px;
+    }
+    .about-text h2 em { font-style: italic; color: var(--lilac); }
+    .about-text p { font-size: 0.97rem; line-height: 1.85; color: var(--ink-soft); margin-bottom: 18px; }
+    .logo-card {
+      background: linear-gradient(135deg, var(--blush-s) 0%, var(--sky-s) 60%, var(--yellow) 100%);
+      border-radius: 20px; padding: 48px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
+    }
+    .logo-card img { width: 100%; max-width: 240px; height: auto; object-fit: contain; }
+
+    /* Gallery */
+    .gallery-section {
+      padding: 80px 24px; background: var(--off-white);
+      border-top: 1px solid var(--rule);
+    }
+    .gallery-section .sec-title { margin-bottom: 12px; }
+    .gallery-section .sec-title em { color: var(--lilac); }
+    .gallery-intro { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.8; max-width: 480px; margin-bottom: 48px; }
+    .screens-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    }
+    @media(max-width: 900px) { .screens-grid { grid-template-columns: repeat(2, 1fr); } }
+    .screen-card { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: box-shadow .3s, transform .3s; }
+    .screen-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .screen-card img { display: block; width: 100%; height: auto; }
+    .screen-label { padding: 12px 16px; background: #ffffff; font-size: 0.82rem; font-weight: 500; color: var(--ink-soft); }
+
+    /* Scope */
+    .scope-section { padding: 80px 24px; background: #ffffff; border-top: 1px solid var(--rule); }
+    .scope-section .sec-title { margin-bottom: 48px; }
+    .scope-section .sec-title em { color: var(--lilac); }
+    .scope-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media(max-width: 640px) { .scope-grid { grid-template-columns: 1fr; } }
+    .scope-item { background: var(--off-white); border-radius: 16px; padding: 28px 24px; }
+    .scope-icon { font-size: 1.5rem; margin-bottom: 14px; display: block; }
+    .scope-title { font-size: 0.95rem; font-weight: 500; margin-bottom: 8px; }
+    .scope-desc { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.65; }
+
+    /* CTA */
+    .cta-section { background: var(--off-white); border-top: 1px solid var(--rule); text-align: center; padding: 80px 24px; }
+    .cta-section .sec-title { max-width: 480px; margin: 0 auto 16px; }
+    .cta-section .sec-title em { color: var(--peach); }
+    .cta-section p { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.8; max-width: 360px; margin: 0 auto 36px; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../images/logo.png" alt="Daily T Studio"/>
+    <span class="nav-wordmark">Daily T Studio</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="art-prints.html">Art Prints</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="nav-btn">
+      Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-text">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <span>App Design</span>
+    </div>
+    <h1>Konka —<br/><em>App Design</em></h1>
+    <p>Visual identity, logo and icon design for Konka — a sports tracking app available now on the App Store. Built together with my partner, currently on version 1 with version 2 in development.</p>
+    <a href="https://apps.apple.com/no/app/konka/id6444194922?l=nb" target="_blank" class="appstore-btn">
+      <svg width="20" height="24" viewBox="0 0 22 26" fill="none"><path d="M18.07 13.77c-.03-3.14 2.57-4.66 2.69-4.74-1.47-2.15-3.75-2.44-4.56-2.47-1.93-.2-3.78 1.15-4.76 1.15-.99 0-2.5-1.13-4.12-1.1-2.1.03-4.05 1.24-5.13 3.12-2.2 3.82-.56 9.46 1.56 12.56 1.05 1.51 2.29 3.2 3.91 3.14 1.58-.07 2.17-1.01 4.08-1.01 1.89 0 2.44 1.01 4.09.98 1.69-.03 2.76-1.53 3.8-3.05 1.2-1.74 1.69-3.43 1.72-3.51-.04-.02-3.24-1.24-3.28-4.92zM14.95 4.43C15.82 3.37 16.4 1.9 16.24.4c-1.28.06-2.84.86-3.76 1.9-.82.93-1.55 2.42-1.36 3.85 1.43.11 2.89-.73 3.83-1.72z" fill="white"/></svg>
+      <div class="appstore-btn-text">
+        <span class="small">Download on the</span>
+        <span class="big">App Store</span>
+      </div>
+    </a>
+  </div>
+  <div class="hero-screens reveal d1">
+    <div class="screen-wrap screen-side">
+      <img src="../images/konka-screen-stats.jpg" alt="Konka stats"/>
+    </div>
+    <div class="screen-wrap screen-main">
+      <img src="../images/konka-screen-home.jpg" alt="Konka home"/>
+    </div>
+    <div class="screen-wrap screen-side">
+      <img src="../images/konka-screen-map.jpg" alt="Konka map"/>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <span class="kicker">The project</span>
+      <h2>A side project<br/><em>built from scratch</em></h2>
+      <p>Konka started as a simple idea — a sports tracking app that we actually wanted to use ourselves. What began as a hobby project grew into a fully launched product on the App Store.</p>
+      <p>My role covers the entire visual identity: the logo and character, icon set, colour palette and the overall look and feel of the interface. The playful, hand-drawn aesthetic was a deliberate choice — sport should feel joyful, not clinical.</p>
+      <p>Version 2 is currently in development, bringing new features and a refined experience.</p>
+    </div>
+    <div class="reveal d1">
+      <div class="logo-card">
+        <img src="../images/konka-logo.jpg" alt="Konka logo"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="gallery-section">
+  <span class="kicker">Screens</span>
+  <h2 class="sec-title">Inside the<br/><em>app</em></h2>
+  <p class="gallery-intro reveal">The app tracks training sessions, visualises progress over time and shows routes on a map. The visual language is consistent throughout — soft colours, hand-drawn icons and a friendly, approachable tone.</p>
+  <div class="screens-grid">
+    <div class="screen-card reveal">
+      <img src="../images/konka-screen-home.jpg" alt="Home screen"/>
+      <div class="screen-label">Home — weekly overview</div>
+    </div>
+    <div class="screen-card reveal d1">
+      <img src="../images/konka-screen-stats.jpg" alt="Stats screen"/>
+      <div class="screen-label">Stats — year &amp; history</div>
+    </div>
+    <div class="screen-card reveal d2">
+      <img src="../images/konka-screen-history.jpg" alt="History screen"/>
+      <div class="screen-label">Stats — detailed history</div>
+    </div>
+    <div class="screen-card reveal d3">
+      <img src="../images/konka-screen-map.jpg" alt="Map screen"/>
+      <div class="screen-label">Map — route view</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE -->
+<section class="scope-section">
+  <span class="kicker">Scope of work</span>
+  <h2 class="sec-title">What was<br/><em>designed</em></h2>
+  <div class="scope-grid">
+    <div class="scope-item reveal">
+      <span class="scope-icon">✏️</span>
+      <div class="scope-title">Logo &amp; character</div>
+      <p class="scope-desc">A distinctive character-based logo — hand-drawn, full of personality and designed to work at any size from app icon to marketing material.</p>
+    </div>
+    <div class="scope-item reveal d1">
+      <span class="scope-icon">🎨</span>
+      <div class="scope-title">Visual identity</div>
+      <p class="scope-desc">Colour palette, typography and a consistent visual language that runs through every screen — playful but coherent.</p>
+    </div>
+    <div class="scope-item reveal d2">
+      <span class="scope-icon">🖼️</span>
+      <div class="scope-title">Icons &amp; illustrations</div>
+      <p class="scope-desc">A full set of hand-drawn icons and illustrated elements — sport icons, UI icons and decorative characters used throughout the interface.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="kicker" style="display:block; margin-bottom:14px;">Try it yourself</span>
+  <h2 class="sec-title">Konka is live<br/>on <em>the App Store</em></h2>
+  <p>Version 1 is available now — free to download. Version 2 is in development with new features coming soon.</p>
+  <div class="cta-buttons">
+    <a href="https://apps.apple.com/no/app/konka/id6444194922?l=nb" target="_blank" class="appstore-btn reveal">
+      <svg width="20" height="24" viewBox="0 0 22 26" fill="none"><path d="M18.07 13.77c-.03-3.14 2.57-4.66 2.69-4.74-1.47-2.15-3.75-2.44-4.56-2.47-1.93-.2-3.78 1.15-4.76 1.15-.99 0-2.5-1.13-4.12-1.1-2.1.03-4.05 1.24-5.13 3.12-2.2 3.82-.56 9.46 1.56 12.56 1.05 1.51 2.29 3.2 3.91 3.14 1.58-.07 2.17-1.01 4.08-1.01 1.89 0 2.44 1.01 4.09.98 1.69-.03 2.76-1.53 3.8-3.05 1.2-1.74 1.69-3.43 1.72-3.51-.04-.02-3.24-1.24-3.28-4.92zM14.95 4.43C15.82 3.37 16.4 1.9 16.24.4c-1.28.06-2.84.86-3.76 1.9-.82.93-1.55 2.42-1.36 3.85 1.43.11 2.89-.73 3.83-1.72z" fill="white"/></svg>
+      <div class="appstore-btn-text">
+        <span class="small">Download on the</span>
+        <span class="big">App Store</span>
+      </div>
+    </a>
+    <a href="about.html" class="btn-outline reveal d1">
+      About the studio <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="../images/logo.png" alt="Daily T Studio"/>
+      <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="../index.html#work">Portfolio</a>
+      <a href="art-prints.html">Art Prints</a>
+      <a href="kids-design.html">Kids Design</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank">Etsy: DailyTstudio</a>
+      <a href="mailto:hei@dailyt.no">hei@dailyt.no</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Daily T Studio</span>
+    <span>Made with warmth and coffee</span>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, {threshold: 0.08});
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
