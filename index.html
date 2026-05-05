@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="description" content="Daily T Studio — Art prints, digital templates and playful kids design. Scandinavian-inspired, made with warmth."/>
+  <title>Daily T Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── Page-specific styles ── */
+
+    /* HERO */
+    .hero {
+      position:relative; width:100%; height:100svh; min-height:500px;
+      overflow:hidden; background:#b8d4e8;
+    }
+    .hero-bg {
+      position:absolute; inset:0; width:100%; height:100%; display:block;
+      object-fit:cover; object-position:center 30%;
+      transform:scale(1.12); transform-origin:center 30%;
+    }
+    .hero-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to bottom,
+        rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%,
+        rgba(0,0,0,0.32) 68%, rgba(0,0,0,0.58) 100%);
+    }
+    .hero-content {
+      position:absolute; bottom:0; left:0; right:0;
+      padding:0 28px 52px; color:#fff;
+    }
+    .hero-kicker {
+      font-size:0.72rem; font-weight:400; letter-spacing:.16em;
+      text-transform:uppercase; color:rgba(255,255,255,0.7);
+      margin-bottom:14px; display:block;
+    }
+    .hero-title {
+      font-family:'Playfair Display', serif;
+      font-size:clamp(2.4rem,7vw,4rem); font-weight:400; line-height:1.1;
+      color:#fff; margin-bottom:20px; text-shadow:0 2px 24px rgba(0,0,0,0.15);
+    }
+    .hero-title em { font-style:italic; color:rgba(255,230,230,0.95); }
+    .hero-desc {
+      font-size:0.97rem; line-height:1.75;
+      color:rgba(255,255,255,0.8); max-width:400px; margin-bottom:32px;
+    }
+    .hero-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+    .btn-white {
+      display:inline-flex; align-items:center; gap:8px;
+      background:#fff; color:#1C1C1E; font-size:0.88rem; font-weight:500;
+      padding:13px 24px; border-radius:50px; text-decoration:none; white-space:nowrap;
+      transition:opacity .2s, transform .2s;
+    }
+    .btn-white:hover { opacity:.88; transform:translateY(-1px); }
+    .btn-etsy-hero {
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--etsy); color:#fff; font-size:0.88rem; font-weight:500;
+      padding:13px 24px; border-radius:50px; text-decoration:none; white-space:nowrap;
+      transition:opacity .2s, transform .2s;
+    }
+    .btn-etsy-hero:hover { opacity:.88; transform:translateY(-1px); }
+    .hero-scroll-hint {
+      position:absolute; bottom:20px; right:28px;
+      font-size:0.68rem; letter-spacing:.12em; text-transform:uppercase;
+      color:rgba(255,255,255,0.45); animation:bounce 2.4s ease-in-out infinite;
+      display:flex; align-items:center; gap:5px;
+    }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+
+    /* STATS BAR */
+    .stats-bar {
+      display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr;
+      padding:32px 24px; border-bottom:1px solid var(--rule); background:#ffffff;
+    }
+    .stat-div { background:var(--rule); height:32px; align-self:center; }
+    .stat { text-align:center; padding:0 8px; }
+    .stat-num { font-family:'Playfair Display', serif; font-size:1.5rem; font-weight:400; }
+    .stat-lbl { font-size:0.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-muted); margin-top:2px; }
+
+    /* CAROUSEL */
+    #work { overflow:visible; }
+    .sec-header { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:40px; flex-wrap:wrap; }
+
+    .carousel-track {
+      display:flex; gap:16px;
+      overflow-x:auto; scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch; scrollbar-width:none;
+      padding:44px 20px;
+      scroll-padding-left:20px;
+      width:100vw;
+      margin-left:-24px;
+      box-sizing:border-box;
+    }
+    .carousel-track::-webkit-scrollbar { display:none; }
+
+    .card {
+      flex:0 0 calc(100vw - 40px); scroll-snap-align:start;
+      background:#ffffff; border-radius:20px; overflow:hidden;
+      box-shadow:var(--shadow); text-decoration:none; color:inherit;
+      display:flex; flex-direction:column;
+      transition:box-shadow .3s, transform .3s;
+    }
+    .card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+    .card-img { aspect-ratio:3/4; overflow:hidden; background:var(--off-white); }
+    .card-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.25,.46,.45,.94); }
+    .card:hover .card-img img { transform:scale(1.03); }
+    .card-img-app {
+      aspect-ratio:3/4; overflow:hidden;
+      background:linear-gradient(135deg, var(--blush-s) 0%, var(--sky-s) 60%, var(--yellow) 100%);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .card-img-app img { width:65%; height:auto; object-fit:contain; }
+    .card-body { padding:20px 22px 26px; flex:1; }
+    .card-name { font-family:'Playfair Display', serif; font-size:1.1rem; font-weight:400; margin-bottom:6px; }
+    .card-meta { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; }
+    .card.card-placeholder { background:var(--off-white); align-items:stretch; }
+    .ph-visual { flex:1; display:flex; align-items:center; justify-content:center; font-size:2.8rem; min-height:200px; }
+
+    .carousel-dots { display:flex; justify-content:center; gap:8px; padding:4px 0 8px; }
+    .dot { width:6px; height:6px; border-radius:50%; background:rgba(28,28,30,0.15); border:none; padding:0; cursor:pointer; transition:background .25s, transform .25s; }
+    .dot.active { background:#1C1C1E; transform:scale(1.4); }
+
+    @media(min-width:900px) {
+      .carousel-track {
+        display:grid; grid-template-columns:repeat(3,1fr);
+        overflow:visible; scroll-snap-type:none;
+        width:auto; margin-left:0; padding:44px 0; gap:24px;
+      }
+      .card { flex:none; max-width:none; scroll-snap-align:none; }
+      .carousel-dots { display:none; }
+    }
+
+    /* SPLIT */
+    .split { display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
+    .split-img { overflow:hidden; }
+    .split-img img { width:100%; height:100%; object-fit:cover; display:block; }
+    .split-text { display:flex; flex-direction:column; justify-content:center; padding:72px 48px; background:#ffffff; }
+    .split.flip .split-text { order:-1; background:var(--off-white); }
+    .split-text .sec-title { margin-bottom:18px; }
+    .split-text .sec-desc  { margin-bottom:32px; }
+    @media(max-width:760px) {
+      .split { grid-template-columns:1fr; min-height:auto; }
+      .split-img { height:260px; }
+      .split-text { padding:44px 20px; order:1 !important; }
+    }
+
+    /* ABOUT */
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    .about-text .sec-title { margin-bottom:20px; }
+    .about-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
+    .about-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
+    .about-tag {
+      font-size:0.78rem; font-weight:500; letter-spacing:0.07em;
+      text-transform:uppercase; padding:6px 14px; border-radius:50px;
+    }
+    .logo-circle {
+      width:min(320px,80vw); aspect-ratio:1; border-radius:50%;
+      background:linear-gradient(135deg,var(--blush-s) 0%,var(--sky-s) 50%,var(--yellow) 100%);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 20px 60px rgba(28,28,30,.08); margin:0 auto;
+    }
+    .logo-circle img { width:72%; height:72%; object-fit:contain; }
+    @media(max-width:760px) { .about-grid { grid-template-columns:1fr; } .logo-circle { display:none; } }
+
+    /* ETSY CTA */
+    .etsy-section { background:#ffffff; text-align:center; padding:100px 24px; }
+    .etsy-section .sec-title { max-width:520px; margin:0 auto 16px; }
+    .etsy-section .sec-title em { color:var(--peach); }
+    .etsy-section p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:380px; margin:0 auto 40px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" class="transparent">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Daily T Studio"/>
+    <span class="nav-wordmark">Daily T Studio</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#work" class="active">Work</a></li>
+      <li><a href="pages/art-prints.html">Art Prints</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="nav-btn">
+      Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg" src="images/silken-currents.jpg" alt="Silken Currents — Daily T Studio"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-kicker">Daily T Studio &nbsp;·&nbsp; Design &amp; Art Prints</span>
+    <h1 class="hero-title">Design that<br/><em>brightens</em><br/>every day.</h1>
+    <p class="hero-desc">Art prints, digital templates and playful activity posters for children — made with warmth, humour and a Scandinavian eye.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-white">Explore the work <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy-hero">Etsy shop <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">Scroll <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><line x1="5" y1="0" x2="5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="1,7 5,11 9,7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">POD</div><div class="stat-lbl">via Gelato</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-num">Etsy</div><div class="stat-lbl">DailyTstudio</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-num">Digital</div><div class="stat-lbl">Downloads</div></div>
+</div>
+
+<!-- PORTFOLIO CAROUSEL -->
+<section class="pad" id="work" style="background:#ffffff; overflow:visible;">
+  <div class="sec-header">
+    <div class="reveal">
+      <span class="kicker">Portfolio</span>
+      <h2 class="sec-title">Explore the<br/><em>designs</em></h2>
+    </div>
+    <p class="sec-desc reveal d1">Swipe to browse — or visit Etsy for the full collection.</p>
+  </div>
+
+  <div class="carousel-track" id="track">
+
+    <a href="pages/art-prints.html" class="card">
+      <div class="card-img"><img src="images/silken-currents.jpg" alt="Silken Currents"/></div>
+      <div class="card-body">
+        <span class="tag tag-a">Art Print</span>
+        <div class="card-name">Silken Currents</div>
+        <p class="card-meta">Abstract wall print with flowing forms in a dreamy pastel palette.</p>
+      </div>
+    </a>
+
+    <a href="pages/art-prints.html" class="card">
+      <div class="card-img"><img src="images/duo-loops.jpg" alt="Duo Loops"/></div>
+      <div class="card-body">
+        <span class="tag tag-b">Art Print · Duo</span>
+        <div class="card-name">Duo Loops</div>
+        <p class="card-meta">Two abstract faces in line art — a poetic pair for any wall.</p>
+      </div>
+    </a>
+
+    <a href="#" class="card">
+      <div class="card-img"><img src="images/ada.jpg" alt="Ada"/></div>
+      <div class="card-body">
+        <span class="tag tag-d">Kids</span>
+        <div class="card-name">Ada — A World Full of Life</div>
+        <p class="card-meta">A richly detailed activity poster for the bedroom. Spot the animals, follow the stories!</p>
+      </div>
+    </a>
+
+    <a href="#" class="card">
+      <div class="card-img"><img src="images/santa-total.jpg" alt="Santa DIY"/></div>
+      <div class="card-body">
+        <span class="tag tag-c">DIY · Christmas</span>
+        <div class="card-name">Santa — DIY Advent Calendar</div>
+        <p class="card-meta">Cut out, laminate and attach with velcro — endlessly reusable holiday fun!</p>
+      </div>
+    </a>
+
+    <div class="card card-placeholder">
+      <div class="ph-visual">✉</div>
+      <div class="card-body" style="border-top:1px solid var(--rule);">
+        <span class="tag tag-f">Digital Download</span>
+        <div class="card-name">Invitation Templates</div>
+        <p class="card-meta">Editable templates for birthdays, christenings and celebrations.</p>
+      </div>
+    </div>
+
+    <a href="#" class="card">
+      <div class="card-img-app"><img src="images/konka-logo.jpg" alt="Konka"/></div>
+      <div class="card-body">
+        <span class="tag tag-e">App · Coming Soon</span>
+        <div class="card-name">Konka</div>
+        <p class="card-meta">Logo and icon design for Konka — a hobby app currently in development.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="carousel-dots" id="dots">
+    <button class="dot active" data-i="0"></button>
+    <button class="dot" data-i="1"></button>
+    <button class="dot" data-i="2"></button>
+    <button class="dot" data-i="3"></button>
+    <button class="dot" data-i="4"></button>
+    <button class="dot" data-i="5"></button>
+  </div>
+</section>
+
+<!-- SPLIT: Silken in room -->
+<div class="split" id="prints">
+  <div class="split-img"><img src="images/silken-stue.jpg" alt="Silken Currents in living room"/></div>
+  <div class="split-text">
+    <span class="kicker">Art Prints · POD</span>
+    <h2 class="sec-title" style="margin-bottom:18px;">Prints that<br/><em>lift a room</em></h2>
+    <p class="sec-desc" style="margin-bottom:32px;">Order on Etsy — produced and delivered via Gelato in high quality, straight to your door.</p>
+    <a href="pages/art-prints.html" class="btn-dark" style="align-self:flex-start;">See all art prints <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</div>
+
+<!-- SPLIT: Ada in kids room -->
+<div class="split flip">
+  <div class="split-img"><img src="images/ada-barnerom.jpg" alt="Ada activity poster in kids room"/></div>
+  <div class="split-text">
+    <span class="kicker">Kids Design · DIY</span>
+    <h2 class="sec-title" style="margin-bottom:18px;">Play that<br/><em>lasts</em></h2>
+    <p class="sec-desc" style="margin-bottom:32px;">Activity posters packed with detail. Figures are cut out, laminated and attached with velcro — reusable again and again.</p>
+    <a href="#" class="btn-dark" style="align-self:flex-start;">See kids design <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="pad" id="about" style="background:#ffffff;">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <span class="kicker">About Daily T Studio</span>
+      <h2 class="sec-title" style="margin-bottom:20px;">Designed with<br/><em>heart and humour</em></h2>
+      <p>Daily T Studio is a small creative studio run by a designer with a love of colour, detail and things that make everyday life a little more joyful.</p>
+      <p>Here you'll find art prints you'll want to hang up again and again, digital templates that make party planning easier, and playful products kids will love — all with Scandinavian simplicity as the foundation.</p>
+      <p>Colourful and playful, but never cluttered.</p>
+      <div class="about-tags">
+        <span class="about-tag tag-a">Art Prints</span>
+        <span class="about-tag tag-b">Digital Templates</span>
+        <span class="about-tag tag-c">DIY Products</span>
+        <span class="about-tag tag-d">Kids Design</span>
+        <span class="about-tag tag-e">Logo &amp; Icons</span>
+        <span class="about-tag tag-f">Print on Demand</span>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div class="logo-circle"><img src="images/logo.png" alt="Daily T Studio logo"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- ETSY CTA -->
+<section class="etsy-section">
+  <span class="kicker" style="display:block;margin-bottom:14px;">Ready to shop?</span>
+  <h2 class="sec-title reveal">Find all designs<br/>on <em>Etsy</em></h2>
+  <p class="reveal d1">Digital downloads and art prints delivered via Gelato — order directly from my shop.</p>
+  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy reveal d2">
+    Visit DailyTstudio on Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Daily T Studio"/>
+      <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#work">Portfolio</a>
+      <a href="pages/art-prints.html">Art Prints</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank">Etsy: DailyTstudio</a>
+      <a href="mailto:hei@dailyt.no">hei@dailyt.no</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Daily T Studio</span>
+    <span>Made with warmth and coffee</span>
+  </div>
+</footer>
+
+<script>
+  // Transparent nav becomes solid on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive:true});
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, {threshold:0.1});
+  reveals.forEach(el => io.observe(el));
+
+  // Carousel dots
+  const track = document.getElementById('track');
+  const dots  = document.querySelectorAll('.dot');
+  function updateDots(){
+    if(!track) return;
+    const cards = Array.from(track.children);
+    const cx = track.scrollLeft + track.clientWidth / 2;
+    let closest = 0, min = Infinity;
+    cards.forEach((c,i) => {
+      const d = Math.abs(c.offsetLeft + c.offsetWidth/2 - cx);
+      if(d < min){ min=d; closest=i; }
+    });
+    dots.forEach((d,i) => d.classList.toggle('active', i===closest));
+  }
+  if(track){
+    track.addEventListener('scroll', updateDots, {passive:true});
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const c = Array.from(track.children)[+dot.dataset.i];
+        if(c) track.scrollTo({left: c.offsetLeft - 20, behavior:'smooth'});
+      });
+    });
+  }
+</script>
+</body>
+</html>
