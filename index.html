@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -43,13 +44,13 @@
     .card { flex:0 0 calc(100vw - 40px); scroll-snap-align:start; background:#fff; border-radius:20px; overflow:hidden; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:box-shadow .3s,transform .3s; }
     .card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
 
-    /* Standard image area — works for photo cards */
+    /* Standard image area — works for all cards including Konka */
     .card-img { width:100%; aspect-ratio:3/4; overflow:hidden; background:var(--off-white); display:block; }
     .card-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s; }
     .card:hover .card-img img { transform:scale(1.03); }
 
-    /* Gradient image area — for Konka and invitation */
-    .card-img-gradient { width:100%; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; }
+    /* Konka: contain instead of cover so logo doesn't get cropped */
+    .card-img.konka-img img { object-fit:contain; }
 
     .card-body { padding:20px 22px 26px; flex:1; }
     .card-name { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; margin-bottom:6px; }
@@ -120,7 +121,7 @@
   </div>
 </nav>
 
-<!-- HERO: silken-currents.jpeg (with frame on wall) -->
+<!-- HERO -->
 <section class="hero">
   <img class="hero-bg" src="images/silken-currents.jpeg" alt="Silken Currents"/>
   <div class="hero-overlay"></div>
@@ -156,7 +157,7 @@
 
   <div class="carousel-track" id="track">
 
-    <!-- 1. Silken Currents: silken.jpeg (no frame) -->
+    <!-- 1. Silken Currents -->
     <a href="pages/art-prints.html" class="card">
       <div class="card-img"><img src="images/silken.jpeg" alt="Silken Currents"/></div>
       <div class="card-body">
@@ -206,10 +207,10 @@
       </div>
     </a>
 
-    <!-- 6. Konka -->
+    <!-- 6. Konka — FIX: bruker card-img (med aspect-ratio:3/4) i stedet for card-img-gradient -->
     <a href="pages/app-design.html" class="card">
-      <div class="card-img" style="background:linear-gradient(135deg,#FFE8E3 0%,#CEE8FF 55%,#FFF5AD 100%);display:flex;align-items:center;justify-content:center;padding:32px;">
-        <img src="images/konka-logo-transparent.png" alt="Konka" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+      <div class="card-img konka-img" style="background:linear-gradient(135deg,#FFE8E3 0%,#CEE8FF 55%,#FFF5AD 100%); padding:32px;">
+        <img src="images/konka-logo-transparent.png" alt="Konka"/>
       </div>
       <div class="card-body">
         <span class="tag tag-e">App Design</span>
@@ -228,7 +229,7 @@
       </div>
     </a>
 
-    </div>
+  </div>
 
   <div class="carousel-dots" id="dots">
     <button class="dot active" data-i="0"></button>
@@ -352,5 +353,6 @@
     });
   }
 </script>
+
 </body>
 </html>
