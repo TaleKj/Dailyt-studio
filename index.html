@@ -28,78 +28,81 @@
     .hero-scroll-hint { position:absolute; bottom:20px; right:28px; font-size:0.68rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); animation:bounce 2.4s ease-in-out infinite; display:flex; align-items:center; gap:5px; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
 
-    /* STATS */
-    .stats-bar { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; }
-    .stat-div { background:var(--rule); height:32px; align-self:center; }
-    .stat { text-align:center; padding:0 8px; }
-    .stat-num { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:400; }
-    .stat-lbl { font-size:0.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-muted); margin-top:2px; }
+```
+/* STATS */
+.stats-bar { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; }
+.stat-div { background:var(--rule); height:32px; align-self:center; }
+.stat { text-align:center; padding:0 8px; }
+.stat-num { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:400; }
+.stat-lbl { font-size:0.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-muted); margin-top:2px; }
 
-    /* CAROUSEL */
-    #work { overflow:visible; }
-    .sec-header { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:40px; flex-wrap:wrap; }
-    .carousel-track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding:44px 20px; scroll-padding-left:20px; width:100vw; margin-left:-24px; box-sizing:border-box; }
-    .carousel-track::-webkit-scrollbar { display:none; }
+/* CAROUSEL */
+#work { overflow:visible; }
+.sec-header { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:40px; flex-wrap:wrap; }
+.carousel-track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding:44px 20px; scroll-padding-left:20px; width:100vw; margin-left:-24px; box-sizing:border-box; }
+.carousel-track::-webkit-scrollbar { display:none; }
 
-    .card { flex:0 0 calc(100vw - 40px); scroll-snap-align:start; background:#fff; border-radius:20px; overflow:hidden; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:box-shadow .3s,transform .3s; }
-    .card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+.card { flex:0 0 calc(100vw - 40px); scroll-snap-align:start; background:#fff; border-radius:20px; overflow:hidden; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:box-shadow .3s,transform .3s; }
+.card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
 
-    /* Standard image area — works for all cards including Konka */
-    .card-img { width:100%; aspect-ratio:3/4; overflow:hidden; background:var(--off-white); display:block; }
-    .card-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s; }
-    .card:hover .card-img img { transform:scale(1.03); }
+/* Standard image area — works for all cards including Konka */
+.card-img { width:100%; aspect-ratio:3/4; overflow:hidden; background:var(--off-white); display:block; }
+.card-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s; }
+.card:hover .card-img img { transform:scale(1.03); }
 
-    /* Konka: contain instead of cover so logo doesn't get cropped */
-    .card-img.konka-img img { object-fit:contain; }
+/* Konka: contain instead of cover so logo doesn't get cropped */
+.card-img.konka-img img { object-fit:contain; }
 
-    .card-body { padding:20px 22px 26px; flex:1; }
-    .card-name { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; margin-bottom:6px; }
-    .card-meta { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; margin-bottom:0; }
+.card-body { padding:20px 22px 26px; flex:1; }
+.card-name { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; margin-bottom:6px; }
+.card-meta { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; margin-bottom:0; }
 
-    /* App Store button */
-    .appstore-btn { display:inline-flex; align-items:center; gap:7px; background:#1C1C1E; color:#fff; font-size:0.7rem; font-weight:500; padding:8px 13px; border-radius:8px; text-decoration:none; white-space:nowrap; margin-top:12px; }
-    .appstore-btn-text { display:flex; flex-direction:column; line-height:1.25; }
-    .appstore-btn-text .sm { font-size:0.56rem; opacity:.7; }
-    .appstore-btn-text .lg { font-size:0.79rem; font-weight:600; }
+/* App Store button */
+.appstore-btn { display:inline-flex; align-items:center; gap:7px; background:#1C1C1E; color:#fff; font-size:0.7rem; font-weight:500; padding:8px 13px; border-radius:8px; text-decoration:none; white-space:nowrap; margin-top:12px; }
+.appstore-btn-text { display:flex; flex-direction:column; line-height:1.25; }
+.appstore-btn-text .sm { font-size:0.56rem; opacity:.7; }
+.appstore-btn-text .lg { font-size:0.79rem; font-weight:600; }
 
-    .carousel-dots { display:flex; justify-content:center; gap:8px; padding:4px 0 8px; }
-    .dot { width:6px; height:6px; border-radius:50%; background:rgba(28,28,30,0.15); border:none; padding:0; cursor:pointer; transition:background .25s,transform .25s; }
-    .dot.active { background:#1C1C1E; transform:scale(1.4); }
+.carousel-dots { display:flex; justify-content:center; gap:8px; padding:4px 0 8px; }
+.dot { width:6px; height:6px; border-radius:50%; background:rgba(28,28,30,0.15); border:none; padding:0; cursor:pointer; transition:background .25s,transform .25s; }
+.dot.active { background:#1C1C1E; transform:scale(1.4); }
 
-    @media(min-width:900px) {
-      .carousel-track { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; scroll-snap-type:none; width:auto; margin-left:0; padding:44px 0; gap:24px; }
-      .card { flex:none; max-width:none; scroll-snap-align:none; }
-      .carousel-dots { display:none; }
-    }
+@media(min-width:900px) {
+  .carousel-track { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; scroll-snap-type:none; width:auto; margin-left:0; padding:44px 0; gap:24px; }
+  .card { flex:none; max-width:none; scroll-snap-align:none; }
+  .carousel-dots { display:none; }
+}
 
-    /* SPLIT */
-    .split { display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
-    .split-img { overflow:hidden; }
-    .split-img img { width:100%; height:100%; object-fit:cover; display:block; }
-    .split-text { display:flex; flex-direction:column; justify-content:center; padding:72px 48px; background:#fff; }
-    .split.flip .split-text { order:-1; background:var(--off-white); }
-    .split-text .sec-title { margin-bottom:18px; }
-    .sec-desc { margin-bottom:32px; font-size:0.97rem; line-height:1.8; color:var(--ink-soft); max-width:480px; }
-    @media(max-width:760px) {
-      .split { grid-template-columns:1fr; min-height:auto; }
-      .split-img { height:280px; }
-      .split-text { padding:44px 20px; order:1!important; }
-    }
+/* SPLIT */
+.split { display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
+.split-img { overflow:hidden; }
+.split-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.split-text { display:flex; flex-direction:column; justify-content:center; padding:72px 48px; background:#fff; }
+.split.flip .split-text { order:-1; background:var(--off-white); }
+.split-text .sec-title { margin-bottom:18px; }
+.sec-desc { margin-bottom:32px; font-size:0.97rem; line-height:1.8; color:var(--ink-soft); max-width:480px; }
+@media(max-width:760px) {
+  .split { grid-template-columns:1fr; min-height:auto; }
+  .split-img { height:280px; }
+  .split-text { padding:44px 20px; order:1!important; }
+}
 
-    /* ABOUT */
-    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
-    .about-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
-    .about-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
-    .about-tag { font-size:0.78rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; padding:6px 14px; border-radius:50px; }
-    .logo-circle { width:min(320px,80vw); aspect-ratio:1; border-radius:50%; background:linear-gradient(135deg,var(--blush-s) 0%,var(--sky-s) 50%,var(--yellow) 100%); display:flex; align-items:center; justify-content:center; box-shadow:0 20px 60px rgba(28,28,30,.08); margin:0 auto; }
-    .logo-circle img { width:72%; height:72%; object-fit:contain; }
-    @media(max-width:760px) { .about-grid { grid-template-columns:1fr; } .logo-circle { display:none; } }
+/* ABOUT */
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.about-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
+.about-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
+.about-tag { font-size:0.78rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; padding:6px 14px; border-radius:50px; }
+.logo-circle { width:min(320px,80vw); aspect-ratio:1; border-radius:50%; background:linear-gradient(135deg,var(--blush-s) 0%,var(--sky-s) 50%,var(--yellow) 100%); display:flex; align-items:center; justify-content:center; box-shadow:0 20px 60px rgba(28,28,30,.08); margin:0 auto; }
+.logo-circle img { width:72%; height:72%; object-fit:contain; }
+@media(max-width:760px) { .about-grid { grid-template-columns:1fr; } .logo-circle { display:none; } }
 
-    /* ETSY CTA */
-    .etsy-section { background:#fff; text-align:center; padding:100px 24px; }
-    .etsy-section .sec-title { max-width:520px; margin:0 auto 16px; }
-    .etsy-section .sec-title em { color:var(--peach); }
-    .etsy-section p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:380px; margin:0 auto 40px; }
+/* ETSY CTA */
+.etsy-section { background:#fff; text-align:center; padding:100px 24px; }
+.etsy-section .sec-title { max-width:520px; margin:0 auto 16px; }
+.etsy-section .sec-title em { color:var(--peach); }
+.etsy-section p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:380px; margin:0 auto 40px; }
+```
+
   </style>
 </head>
 <body>
@@ -122,6 +125,7 @@
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
   <img class="hero-bg" src="images/silken-currents.jpeg" alt="Silken Currents"/>
   <div class="hero-overlay"></div>
@@ -146,6 +150,7 @@
 </div>
 
 <!-- CAROUSEL -->
+
 <section class="pad" id="work" style="background:#fff; overflow:visible;">
   <div class="sec-header">
     <div class="reveal">
@@ -157,77 +162,79 @@
 
   <div class="carousel-track" id="track">
 
-    <!-- 1. Silken Currents -->
-    <a href="pages/art-prints.html" class="card">
-      <div class="card-img"><img src="images/silken.jpeg" alt="Silken Currents"/></div>
-      <div class="card-body">
-        <span class="tag tag-a">Art Print</span>
-        <div class="card-name">Silken Currents</div>
-        <p class="card-meta">Abstract wall print with flowing forms in a dreamy pastel palette.</p>
-      </div>
-    </a>
+```
+<!-- 1. Silken Currents -->
+<a href="pages/art-prints.html" class="card">
+  <div class="card-img"><img src="images/silken.jpeg" alt="Silken Currents"/></div>
+  <div class="card-body">
+    <span class="tag tag-a">Art Print</span>
+    <div class="card-name">Silken Currents</div>
+    <p class="card-meta">Abstract wall print with flowing forms in a dreamy pastel palette.</p>
+  </div>
+</a>
 
-    <!-- 2. Duo Loops -->
-    <a href="pages/art-prints.html" class="card">
-      <div class="card-img"><img src="images/duo-duo.jpeg" alt="Duo Loops"/></div>
-      <div class="card-body">
-        <span class="tag tag-b">Art Print · Duo</span>
-        <div class="card-name">Duo Loops</div>
-        <p class="card-meta">Two abstract faces in line art — a poetic pair for any wall.</p>
-      </div>
-    </a>
+<!-- 2. Duo Loops -->
+<a href="pages/art-prints.html" class="card">
+  <div class="card-img"><img src="images/duo-duo.jpeg" alt="Duo Loops"/></div>
+  <div class="card-body">
+    <span class="tag tag-b">Art Print · Duo</span>
+    <div class="card-name">Duo Loops</div>
+    <p class="card-meta">Two abstract faces in line art — a poetic pair for any wall.</p>
+  </div>
+</a>
 
-    <!-- 3. Ada -->
-    <a href="pages/kids-design.html" class="card">
-      <div class="card-img"><img src="images/ada.jpeg" alt="Ada"/></div>
-      <div class="card-body">
-        <span class="tag tag-d">Kids</span>
-        <div class="card-name">Ada — A World Full of Life</div>
-        <p class="card-meta">A richly detailed activity poster for the bedroom.</p>
-      </div>
-    </a>
+<!-- 3. Ada -->
+<a href="pages/kids-design.html" class="card">
+  <div class="card-img"><img src="images/ada.jpeg" alt="Ada"/></div>
+  <div class="card-body">
+    <span class="tag tag-d">Kids</span>
+    <div class="card-name">Ada — A World Full of Life</div>
+    <p class="card-meta">A richly detailed activity poster for the bedroom.</p>
+  </div>
+</a>
 
-    <!-- 4. Santa -->
-    <a href="pages/kids-design.html" class="card">
-      <div class="card-img"><img src="images/santa-total-barnerom.jpeg" alt="Santa DIY"/></div>
-      <div class="card-body">
-        <span class="tag tag-c">DIY · Christmas</span>
-        <div class="card-name">Santa — DIY Activity Set</div>
-        <p class="card-meta">Cut out, laminate and attach with velcro — endlessly reusable!</p>
-      </div>
-    </a>
+<!-- 4. Santa -->
+<a href="pages/kids-design.html" class="card">
+  <div class="card-img"><img src="images/santa-total-barnerom.jpeg" alt="Santa DIY"/></div>
+  <div class="card-body">
+    <span class="tag tag-c">DIY · Christmas</span>
+    <div class="card-name">Santa — DIY Activity Set</div>
+    <p class="card-meta">Cut out, laminate and attach with velcro — endlessly reusable!</p>
+  </div>
+</a>
 
-    <!-- 5. Invitation Templates -->
-    <a href="pages/digital-templates.html" class="card">
-      <div class="card-img"><img src="images/bday-card.jpg" alt="Birthday invitation"/></div>
-      <div class="card-body">
-        <span class="tag tag-f">Digital Download</span>
-        <div class="card-name">Invitation Templates</div>
-        <p class="card-meta">Editable templates for birthdays, christenings and celebrations.</p>
-      </div>
-    </a>
+<!-- 5. Invitation Templates -->
+<a href="pages/digital-templates.html" class="card">
+  <div class="card-img"><img src="images/bday-card.jpg" alt="Birthday invitation"/></div>
+  <div class="card-body">
+    <span class="tag tag-f">Digital Download</span>
+    <div class="card-name">Invitation Templates</div>
+    <p class="card-meta">Editable templates for birthdays, christenings and celebrations.</p>
+  </div>
+</a>
 
-    <!-- 6. Konka — FIX: bruker card-img (med aspect-ratio:3/4) i stedet for card-img-gradient -->
-    <a href="pages/app-design.html" class="card">
-      <div class="card-img konka-img" style="background:linear-gradient(135deg,#FFE8E3 0%,#CEE8FF 55%,#FFF5AD 100%); padding:32px;">
-        <img src="images/konka-logo-transparent.png" alt="Konka"/>
-      </div>
-      <div class="card-body">
-        <span class="tag tag-e">App Design</span>
-        <div class="card-name">Konka</div>
-        <p class="card-meta">Logo and icon design for Konka — live on the App Store.</p>
-        <a href="https://apps.apple.com/no/app/konka/id6444194922?l=nb"
-           target="_blank"
-           onclick="event.stopPropagation();"
-           class="appstore-btn">
-          <svg width="13" height="16" viewBox="0 0 22 26" fill="none"><path d="M18.07 13.77c-.03-3.14 2.57-4.66 2.69-4.74-1.47-2.15-3.75-2.44-4.56-2.47-1.93-.2-3.78 1.15-4.76 1.15-.99 0-2.5-1.13-4.12-1.1-2.1.03-4.05 1.24-5.13 3.12-2.2 3.82-.56 9.46 1.56 12.56 1.05 1.51 2.29 3.2 3.91 3.14 1.58-.07 2.17-1.01 4.08-1.01 1.89 0 2.44 1.01 4.09.98 1.69-.03 2.76-1.53 3.8-3.05 1.2-1.74 1.69-3.43 1.72-3.51-.04-.02-3.24-1.24-3.28-4.92zM14.95 4.43C15.82 3.37 16.4 1.9 16.24.4c-1.28.06-2.84.86-3.76 1.9-.82.93-1.55 2.42-1.36 3.85 1.43.11 2.89-.73 3.83-1.72z" fill="white"/></svg>
-          <div class="appstore-btn-text">
-            <span class="sm">Download on the</span>
-            <span class="lg">App Store</span>
-          </div>
-        </a>
+<!-- 6. Konka — FIX: bruker card-img (med aspect-ratio:3/4) i stedet for card-img-gradient -->
+<a href="pages/app-design.html" class="card">
+  <div class="card-img konka-img" style="background:linear-gradient(135deg,#FFE8E3 0%,#CEE8FF 55%,#FFF5AD 100%); padding:32px;">
+    <img src="images/konka-logo-transparent.png" alt="Konka"/>
+  </div>
+  <div class="card-body">
+    <span class="tag tag-e">App Design</span>
+    <div class="card-name">Konka</div>
+    <p class="card-meta">Logo and icon design for Konka — live on the App Store.</p>
+    <a href="https://apps.apple.com/no/app/konka/id6444194922?l=nb"
+       target="_blank"
+       onclick="event.stopPropagation();"
+       class="appstore-btn">
+      <svg width="13" height="16" viewBox="0 0 22 26" fill="none"><path d="M18.07 13.77c-.03-3.14 2.57-4.66 2.69-4.74-1.47-2.15-3.75-2.44-4.56-2.47-1.93-.2-3.78 1.15-4.76 1.15-.99 0-2.5-1.13-4.12-1.1-2.1.03-4.05 1.24-5.13 3.12-2.2 3.82-.56 9.46 1.56 12.56 1.05 1.51 2.29 3.2 3.91 3.14 1.58-.07 2.17-1.01 4.08-1.01 1.89 0 2.44 1.01 4.09.98 1.69-.03 2.76-1.53 3.8-3.05 1.2-1.74 1.69-3.43 1.72-3.51-.04-.02-3.24-1.24-3.28-4.92zM14.95 4.43C15.82 3.37 16.4 1.9 16.24.4c-1.28.06-2.84.86-3.76 1.9-.82.93-1.55 2.42-1.36 3.85 1.43.11 2.89-.73 3.83-1.72z" fill="white"/></svg>
+      <div class="appstore-btn-text">
+        <span class="sm">Download on the</span>
+        <span class="lg">App Store</span>
       </div>
     </a>
+  </div>
+</a>
+```
 
   </div>
 
@@ -242,6 +249,7 @@
 </section>
 
 <!-- SPLIT 1: Silken in living room -->
+
 <div class="split" id="prints">
   <div class="split-img"><img src="images/silken-stue.jpeg" alt="Silken Currents in living room"/></div>
   <div class="split-text">
@@ -253,6 +261,7 @@
 </div>
 
 <!-- SPLIT 2: Santa on desk -->
+
 <div class="split flip">
   <div class="split-img"><img src="images/santa-barnepult.jpeg" alt="Santa DIY activity set on desk"/></div>
   <div class="split-text">
@@ -264,6 +273,7 @@
 </div>
 
 <!-- ABOUT -->
+
 <section class="pad" id="about" style="background:#fff;">
   <div class="about-grid">
     <div class="about-text reveal">
