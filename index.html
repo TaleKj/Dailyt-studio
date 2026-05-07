@@ -28,6 +28,7 @@
     .hero-scroll-hint { position:absolute; bottom:20px; right:28px; font-size:0.68rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); animation:bounce 2.4s ease-in-out infinite; display:flex; align-items:center; gap:5px; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
 
+```
 /* STATS */
 .stats-bar { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; }
 .stat-div { background:var(--rule); height:32px; align-self:center; }
@@ -90,6 +91,7 @@
 .etsy-section .sec-title { max-width:520px; margin:0 auto 16px; }
 .etsy-section .sec-title em { color:var(--peach); }
 .etsy-section p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:380px; margin:0 auto 40px; }
+```
 
   </style>
 </head>
@@ -148,6 +150,7 @@
 
   <div class="carousel-track" id="track">
 
+```
 <!-- 1. Silken Currents -->
 <a href="pages/art-prints.html" class="card">
   <div class="card-img"><img src="images/silken.jpeg" alt="Silken Currents"/></div>
@@ -162,7 +165,7 @@
 <a href="pages/art-prints.html" class="card">
   <div class="card-img"><img src="images/duo-duo.jpeg" alt="Duo Loops"/></div>
   <div class="card-body">
-    <span class="tag tag-b">Art Print · Duo</span>
+    <span class="tag tag-a">Art Print</span>
     <div class="card-name">Duo Loops</div>
     <p class="card-meta">Two abstract faces in line art — a poetic pair for any wall.</p>
   </div>
@@ -172,7 +175,7 @@
 <a href="pages/kids-design.html" class="card">
   <div class="card-img"><img src="images/ada.jpeg" alt="Ada"/></div>
   <div class="card-body">
-    <span class="tag tag-d">Kids</span>
+    <span class="tag tag-a">Art Print · Kids</span>
     <div class="card-name">Ada — A World Full of Life</div>
     <p class="card-meta">A richly detailed activity poster for the bedroom.</p>
   </div>
@@ -182,7 +185,7 @@
 <a href="pages/kids-design.html" class="card">
   <div class="card-img"><img src="images/santa-total-barnerom.jpeg" alt="Santa DIY"/></div>
   <div class="card-body">
-    <span class="tag tag-c">DIY · Christmas</span>
+    <span class="tag tag-c">DIY · Kids</span>
     <div class="card-name">Santa — DIY Activity Set</div>
     <p class="card-meta">Cut out, laminate and attach with velcro — endlessly reusable!</p>
   </div>
@@ -192,11 +195,24 @@
 <a href="pages/digital-templates.html" class="card">
   <div class="card-img"><img src="images/bday-card.jpg" alt="Birthday invitation"/></div>
   <div class="card-body">
-    <span class="tag tag-f">Digital Download</span>
+    <span class="tag tag-b">Template · Kids</span>
     <div class="card-name">Invitation Templates</div>
     <p class="card-meta">Editable templates for birthdays, christenings and celebrations.</p>
   </div>
 </a>
+
+<!-- 6. Konka -->
+<a href="pages/app-design.html" class="card">
+  <div class="card-img" style="background:#f7f4f9;">
+    <img src="images/konka-logo.jpg" alt="Konka"/>
+  </div>
+  <div class="card-body">
+    <span class="tag tag-e">Illustration · Logo</span>
+    <div class="card-name">Konka</div>
+    <p class="card-meta">Character illustrations and logo design for Konka — live on the App Store.</p>
+  </div>
+</a>
+```
 
   </div>
 
@@ -206,6 +222,7 @@
     <button class="dot" data-i="2"></button>
     <button class="dot" data-i="3"></button>
     <button class="dot" data-i="4"></button>
+    <button class="dot" data-i="5"></button>
   </div>
 </section>
 
@@ -245,10 +262,10 @@
       <p>Colourful and playful, but never cluttered.</p>
       <div class="about-tags">
         <span class="about-tag tag-a">Art Prints</span>
-        <span class="about-tag tag-b">Digital Templates</span>
+        <span class="about-tag tag-b">Templates</span>
         <span class="about-tag tag-c">DIY Products</span>
         <span class="about-tag tag-d">Kids Design</span>
-        <span class="about-tag tag-e">Logo &amp; Icons</span>
+        <span class="about-tag tag-e">Illustration · Logo</span>
         <span class="about-tag tag-f">Print on Demand</span>
       </div>
     </div>
@@ -291,20 +308,17 @@
 </footer>
 
 <script>
-  // Nav transparency
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, {passive:true});
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
   }, {threshold:0.1});
   reveals.forEach(el => io.observe(el));
 
-  // Carousel dots
   const track = document.getElementById('track');
   const dots  = document.querySelectorAll('.dot');
   function updateDots() {
