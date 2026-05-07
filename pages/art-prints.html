@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="color-scheme" content="light only"/>
   <meta name="description" content="Art prints by Daily T Studio — abstract and colourful wall prints, available via Gelato on Etsy."/>
   <title>Art Prints — Daily T Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,100 +32,97 @@
     .page-header h1 em { font-style:italic; color:var(--lilac); }
     .page-header p { font-size:1rem; line-height:1.75; color:var(--ink-soft); max-width:480px; }
 
-    /* ── Filter bar ── */
-    .filter-bar {
-      padding:24px;
-      display:flex; gap:10px; flex-wrap:wrap;
-      border-bottom:1px solid var(--rule);
-      background:#ffffff;
-      position:sticky; top:64px; z-index:100;
-    }
-    .filter-btn {
-      font-size:0.78rem; font-weight:500; letter-spacing:0.07em;
-      text-transform:uppercase; padding:8px 18px; border-radius:50px;
-      border:1.5px solid var(--rule); background:transparent; color:var(--ink-soft);
-      cursor:pointer; transition:all .2s; white-space:nowrap;
-    }
-    .filter-btn:hover { border-color:var(--ink); color:var(--ink); }
-    .filter-btn.active { background:#1C1C1E; border-color:#1C1C1E; color:#fff; }
+```
+/* ── Filter bar ── */
+.filter-bar {
+  padding:24px;
+  display:flex; gap:10px; flex-wrap:wrap;
+  border-bottom:1px solid var(--rule);
+  background:#ffffff;
+  position:sticky; top:64px; z-index:100;
+}
+.filter-btn {
+  font-size:0.78rem; font-weight:500; letter-spacing:0.07em;
+  text-transform:uppercase; padding:8px 18px; border-radius:50px;
+  border:1.5px solid var(--rule); background:transparent; color:var(--ink-soft);
+  cursor:pointer; transition:all .2s; white-space:nowrap;
+}
+.filter-btn:hover { border-color:var(--ink); color:var(--ink); }
+.filter-btn.active { background:#1C1C1E; border-color:#1C1C1E; color:#fff; }
 
-    /* ── Product grid ── */
-    .product-section { padding:48px 24px 80px; background:#ffffff; }
+/* ── Product grid ── */
+.product-section { padding:48px 24px 80px; background:#ffffff; }
 
-    .product-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-    @media(min-width:900px) {
-      .product-grid { grid-template-columns:repeat(3,1fr); gap:24px; }
-    }
+.product-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+@media(min-width:900px) {
+  .product-grid { grid-template-columns:repeat(3,1fr); gap:24px; }
+}
 
-    .product-card {
-      background:#ffffff; border-radius:16px; overflow:hidden;
-      box-shadow:var(--shadow); text-decoration:none; color:inherit;
-      display:flex; flex-direction:column;
-      transition:box-shadow .3s, transform .3s;
-    }
-    .product-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
-    .product-card[data-hidden="true"] { display:none; }
+.product-card {
+  background:#ffffff; border-radius:16px; overflow:hidden;
+  box-shadow:var(--shadow); text-decoration:none; color:inherit;
+  display:flex; flex-direction:column;
+  transition:box-shadow .3s, transform .3s;
+}
+.product-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+.product-card[data-hidden="true"] { display:none; }
 
-    .product-img {
-      aspect-ratio:3/4; overflow:hidden; background:var(--off-white);
-    }
-    .product-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.25,.46,.45,.94); }
-    .product-card:hover .product-img img { transform:scale(1.04); }
+.product-img {
+  aspect-ratio:3/4; overflow:hidden; background:var(--off-white);
+}
+.product-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.25,.46,.45,.94); }
+.product-card:hover .product-img img { transform:scale(1.04); }
 
-    
-    @media(hover:hover) {
-      .product-card:hover .product-img .etsy-overlay { opacity:1; }
-    }
-    @media(hover:none) {
-      .product-img .etsy-overlay { opacity:1; }
-    }
+@media(hover:hover) {
+  .product-card:hover .product-img .etsy-overlay { opacity:1; }
+}
+@media(hover:none) {
+  .product-img .etsy-overlay { opacity:1; }
+}
 
-    .product-body { padding:16px 18px 20px; flex:1; }
-    .product-name { font-family:'Playfair Display', serif; font-size:1rem; font-weight:400; margin-bottom:4px; line-height:1.3; }
-    .product-sub  { font-size:0.8rem; color:var(--ink-soft); line-height:1.5; margin-bottom:10px; }
+.product-body { padding:16px 18px 20px; flex:1; }
+.product-name { font-family:'Playfair Display', serif; font-size:1rem; font-weight:400; margin-bottom:4px; line-height:1.3; }
+.product-sub  { font-size:0.8rem; color:var(--ink-soft); line-height:1.5; margin-bottom:10px; }
 
-    /* Mobile: show Etsy link in body */
-    
-    @media(hover:none) {  }
+/* ── How it works ── */
+.how-section {
+  background:var(--off-white);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:64px 24px;
+  text-align:center;
+}
+.how-steps {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:32px; margin-top:48px; max-width:720px; margin-left:auto; margin-right:auto;
+}
+@media(max-width:600px) { .how-steps { grid-template-columns:1fr; gap:24px; } }
+.how-step { display:flex; flex-direction:column; align-items:center; gap:14px; }
+.how-num {
+  width:44px; height:44px; border-radius:50%;
+  background:#1C1C1E; color:#fff;
+  font-family:'Playfair Display', serif; font-size:1.1rem;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.how-title { font-family:'Playfair Display', serif; font-size:1rem; font-weight:400; }
+.how-desc  { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; }
 
-    /* ── How it works ── */
-    .how-section {
-      background:var(--off-white);
-      border-top:1px solid var(--rule);
-      border-bottom:1px solid var(--rule);
-      padding:64px 24px;
-      text-align:center;
-    }
-    .how-steps {
-      display:grid; grid-template-columns:repeat(3,1fr);
-      gap:32px; margin-top:48px; max-width:720px; margin-left:auto; margin-right:auto;
-    }
-    @media(max-width:600px) { .how-steps { grid-template-columns:1fr; gap:24px; } }
-    .how-step { display:flex; flex-direction:column; align-items:center; gap:14px; }
-    .how-num {
-      width:44px; height:44px; border-radius:50%;
-      background:#1C1C1E; color:#fff;
-      font-family:'Playfair Display', serif; font-size:1.1rem;
-      display:flex; align-items:center; justify-content:center;
-      flex-shrink:0;
-    }
-    .how-title { font-family:'Playfair Display', serif; font-size:1rem; font-weight:400; }
-    .how-desc  { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; }
+/* ── CTA ── */
+.cta-section { background:#ffffff; text-align:center; padding:80px 24px; }
+.cta-section .sec-title { max-width:480px; margin:0 auto 16px; }
+.cta-section .sec-title em { color:var(--peach); }
+.cta-section p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:360px; margin:0 auto 36px; }
+```
 
-    /* ── CTA ── */
-    .cta-section { background:#ffffff; text-align:center; padding:80px 24px; }
-    .cta-section .sec-title { max-width:480px; margin:0 auto 16px; }
-    .cta-section .sec-title em { color:var(--peach); }
-    .cta-section p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:360px; margin:0 auto 36px; }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
   <a href="../index.html" class="nav-logo">
     <img src="../images/logo.png" alt="Daily T Studio"/>
@@ -141,7 +140,6 @@
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
 <div class="page-header">
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
@@ -152,164 +150,163 @@
   <p>Abstract and colourful wall prints — available as high-quality prints on demand via Gelato, or as digital downloads on Etsy.</p>
 </div>
 
-<!-- FILTER BAR -->
 <div class="filter-bar">
   <button class="filter-btn active" data-filter="all">All</button>
   <button class="filter-btn" data-filter="silken">Silken Currents</button>
   <button class="filter-btn" data-filter="duo">Duo Loops</button>
 </div>
 
-<!-- PRODUCT GRID -->
 <section class="product-section">
   <div class="product-grid" id="grid">
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal" data-category="silken">
-      <div class="product-img">
-        <img src="../images/silken-currents.jpeg" alt="Silken Currents"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-a">Abstract</span>
-        <div class="product-name">Silken Currents</div>
-        <p class="product-sub">Flowing pastel forms — calm and dreamy</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+```
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal" data-category="silken">
+  <div class="product-img">
+    <img src="../images/silken-currents.jpeg" alt="Silken Currents"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-a">Abstract</span>
+    <div class="product-name">Silken Currents</div>
+    <p class="product-sub">Flowing pastel forms — calm and dreamy</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal d1" data-category="silken">
-      <div class="product-img">
-        <img src="../images/silken-stue.jpeg" alt="Silken Currents in living room"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-a">Abstract</span>
-        <div class="product-name">Silken Currents</div>
-        <p class="product-sub">Shown in a living room setting</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal d1" data-category="silken">
+  <div class="product-img">
+    <img src="../images/silken-stue.jpeg" alt="Silken Currents in living room"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-a">Abstract</span>
+    <div class="product-name">Silken Currents</div>
+    <p class="product-sub">Shown in a living room setting</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal d2" data-category="duo">
-      <div class="product-img">
-        <img src="../images/loops.jpeg" alt="Duo Loops — Loop II"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-b">Duo</span>
-        <div class="product-name">Duo Loops</div>
-        <p class="product-sub">Two abstract faces — a set of two prints</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal d2" data-category="duo">
+  <div class="product-img">
+    <img src="../images/loops.jpeg" alt="Duo Loops — Loop II"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-b">Duo</span>
+    <div class="product-name">Duo Loops</div>
+    <p class="product-sub">Two abstract faces — a set of two prints</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal" data-category="silken">
-      <div class="product-img">
-        <img src="../images/silken-kontor.jpeg" alt="Silken Currents in office"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-a">Abstract</span>
-        <div class="product-name">Silken Currents</div>
-        <p class="product-sub">Shown in an office setting</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal" data-category="silken">
+  <div class="product-img">
+    <img src="../images/silken-kontor.jpeg" alt="Silken Currents in office"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-a">Abstract</span>
+    <div class="product-name">Silken Currents</div>
+    <p class="product-sub">Shown in an office setting</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal d1" data-category="silken">
-      <div class="product-img">
-        <img src="../images/silken-soverom.jpeg" alt="Silken Currents in bedroom"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-a">Abstract</span>
-        <div class="product-name">Silken Currents</div>
-        <p class="product-sub">Shown in a bedroom setting</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal d1" data-category="silken">
+  <div class="product-img">
+    <img src="../images/silken-soverom.jpeg" alt="Silken Currents in bedroom"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-a">Abstract</span>
+    <div class="product-name">Silken Currents</div>
+    <p class="product-sub">Shown in a bedroom setting</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal d2" data-category="silken">
-      <div class="product-img">
-        <img src="../images/silken-spisestue.jpeg" alt="Silken Currents in dining room"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-a">Abstract</span>
-        <div class="product-name">Silken Currents</div>
-        <p class="product-sub">Shown in a dining room</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal d2" data-category="silken">
+  <div class="product-img">
+    <img src="../images/silken-spisestue.jpeg" alt="Silken Currents in dining room"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-a">Abstract</span>
+    <div class="product-name">Silken Currents</div>
+    <p class="product-sub">Shown in a dining room</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal" data-category="duo">
-      <div class="product-img">
-        <img src="../images/duo-loops.jpeg" alt="Duo Loops — Loop I"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-b">Duo</span>
-        <div class="product-name">Duo Loops — Loop I</div>
-        <p class="product-sub">Purple face — part of the Duo Loops set</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal" data-category="duo">
+  <div class="product-img">
+    <img src="../images/duo-loops.jpeg" alt="Duo Loops — Loop I"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-b">Duo</span>
+    <div class="product-name">Duo Loops — Loop I</div>
+    <p class="product-sub">Purple face — part of the Duo Loops set</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal d1" data-category="duo">
-      <div class="product-img">
-        <img src="../images/loops.jpeg" alt="Duo Loops — Loop II"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-b">Duo</span>
-        <div class="product-name">Duo Loops — Loop II</div>
-        <p class="product-sub">Yellow face — part of the Duo Loops set</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal d1" data-category="duo">
+  <div class="product-img">
+    <img src="../images/loops.jpeg" alt="Duo Loops — Loop II"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-b">Duo</span>
+    <div class="product-name">Duo Loops — Loop II</div>
+    <p class="product-sub">Yellow face — part of the Duo Loops set</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal d2" data-category="duo">
-      <div class="product-img">
-        <img src="../images/duo-duo.jpeg" alt="Duo Loops together"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-b">Duo</span>
-        <div class="product-name">Duo Loops — Set of Two</div>
-        <p class="product-sub">Both prints together</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal d2" data-category="duo">
+  <div class="product-img">
+    <img src="../images/duo-duo.jpeg" alt="Duo Loops together"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-b">Duo</span>
+    <div class="product-name">Duo Loops — Set of Two</div>
+    <p class="product-sub">Both prints together</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal" data-category="duo">
-      <div class="product-img">
-        <img src="../images/duo-stue.jpeg" alt="Duo Loops in living room"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-b">Duo</span>
-        <div class="product-name">Duo Loops</div>
-        <p class="product-sub">Shown in a living room</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal" data-category="duo">
+  <div class="product-img">
+    <img src="../images/duo-stue.jpeg" alt="Duo Loops in living room"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-b">Duo</span>
+    <div class="product-name">Duo Loops</div>
+    <p class="product-sub">Shown in a living room</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
 
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
-       class="product-card reveal d1" data-category="duo">
-      <div class="product-img">
-        <img src="../images/duo-loops-stue.jpeg" alt="Duo Loops Scandinavian living room"/>
-      </div>
-      <div class="product-body">
-        <span class="tag tag-b">Duo</span>
-        <div class="product-name">Duo Loops</div>
-        <p class="product-sub">Shown in a Scandinavian living room</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
+<a href="https://www.etsy.com/shop/DailyTstudio" target="_blank"
+   class="product-card reveal d1" data-category="duo">
+  <div class="product-img">
+    <img src="../images/duo-loops-stue.jpeg" alt="Duo Loops Scandinavian living room"/>
+  </div>
+  <div class="product-body">
+    <span class="tag tag-b">Duo</span>
+    <div class="product-name">Duo Loops</div>
+    <p class="product-sub">Shown in a Scandinavian living room</p>
+    <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:500;color:var(--etsy);margin-top:8px;">Shop on Etsy <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</a>
+```
 
-    </div>
+  </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="how-section">
   <span class="kicker" style="display:block;margin-bottom:12px;">How it works</span>
   <h2 class="sec-title">From screen<br/><em>to your wall</em></h2>
@@ -332,7 +329,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
   <span class="kicker" style="display:block;margin-bottom:14px;">Ready to order?</span>
   <h2 class="sec-title">Shop all prints<br/>on <em>Etsy</em></h2>
@@ -342,7 +338,6 @@
   </span>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -391,5 +386,6 @@
     });
   });
 </script>
+
 </body>
 </html>
