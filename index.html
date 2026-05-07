@@ -28,8 +28,8 @@
     .hero-scroll-hint { position:absolute; bottom:20px; right:28px; font-size:0.68rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); animation:bounce 2.4s ease-in-out infinite; display:flex; align-items:center; gap:5px; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
 
-/* STATS */
-.stats-bar { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; }
+/* STATS — 4 columns */
+.stats-bar { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr 1px 1fr; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; }
 .stat-div { background:var(--rule); height:32px; align-self:center; }
 .stat { text-align:center; padding:0 8px; }
 .stat-num { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:400; }
@@ -49,6 +49,7 @@
 .card:hover .card-img img { transform:scale(1.03); }
 
 .card-body { padding:20px 22px 26px; flex:1; }
+.card-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:2px; }
 .card-name { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; margin-bottom:6px; }
 .card-meta { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; margin-bottom:0; }
 
@@ -133,6 +134,13 @@
   <div class="stat"><div class="stat-num">Etsy</div><div class="stat-lbl">DailyTstudio</div></div>
   <div class="stat-div"></div>
   <div class="stat"><div class="stat-num">Digital</div><div class="stat-lbl">Downloads</div></div>
+  <div class="stat-div"></div>
+  <div class="stat">
+    <a href="pages/app-design.html" style="text-decoration:none;color:inherit;">
+      <div class="stat-num">Oppdrag</div>
+      <div class="stat-lbl">Illustrasjoner</div>
+    </a>
+  </div>
 </div>
 
 <!-- CAROUSEL -->
@@ -152,7 +160,9 @@
 <a href="pages/art-prints.html" class="card">
   <div class="card-img"><img src="images/silken.jpeg" alt="Silken Currents"/></div>
   <div class="card-body">
-    <span class="tag tag-a">Art Print</span>
+    <div class="card-tags">
+      <span class="tag tag-a">Art Print</span>
+    </div>
     <div class="card-name">Silken Currents</div>
     <p class="card-meta">Abstract wall print with flowing forms in a dreamy pastel palette.</p>
   </div>
@@ -162,7 +172,9 @@
 <a href="pages/art-prints.html" class="card">
   <div class="card-img"><img src="images/duo-duo.jpeg" alt="Duo Loops"/></div>
   <div class="card-body">
-    <span class="tag tag-a">Art Print</span>
+    <div class="card-tags">
+      <span class="tag tag-a">Art Print</span>
+    </div>
     <div class="card-name">Duo Loops</div>
     <p class="card-meta">Two abstract faces in line art — a poetic pair for any wall.</p>
   </div>
@@ -172,7 +184,10 @@
 <a href="pages/kids-design.html" class="card">
   <div class="card-img"><img src="images/ada.jpeg" alt="Ada"/></div>
   <div class="card-body">
-    <span class="tag tag-a">Art Print · Kids</span>
+    <div class="card-tags">
+      <span class="tag tag-a">Art Print</span>
+      <span class="tag tag-d">Kids</span>
+    </div>
     <div class="card-name">Ada — A World Full of Life</div>
     <p class="card-meta">A richly detailed activity poster for the bedroom.</p>
   </div>
@@ -182,7 +197,10 @@
 <a href="pages/kids-design.html" class="card">
   <div class="card-img"><img src="images/santa-total-barnerom.jpeg" alt="Santa DIY"/></div>
   <div class="card-body">
-    <span class="tag tag-c">DIY · Kids</span>
+    <div class="card-tags">
+      <span class="tag tag-c">DIY</span>
+      <span class="tag tag-d">Kids</span>
+    </div>
     <div class="card-name">Santa — DIY Activity Set</div>
     <p class="card-meta">Cut out, laminate and attach with velcro — endlessly reusable!</p>
   </div>
@@ -192,7 +210,10 @@
 <a href="pages/digital-templates.html" class="card">
   <div class="card-img"><img src="images/bday-card.jpg" alt="Birthday invitation"/></div>
   <div class="card-body">
-    <span class="tag tag-b">Template · Kids</span>
+    <div class="card-tags">
+      <span class="tag tag-b">Template</span>
+      <span class="tag tag-d">Kids</span>
+    </div>
     <div class="card-name">Invitation Templates</div>
     <p class="card-meta">Editable templates for birthdays, christenings and celebrations.</p>
   </div>
@@ -204,7 +225,10 @@
     <img src="images/konka-logo.jpg" alt="Konka"/>
   </div>
   <div class="card-body">
-    <span class="tag tag-e">Illustration · Logo</span>
+    <div class="card-tags">
+      <span class="tag tag-e">Illustration</span>
+      <span class="tag tag-e">Logo</span>
+    </div>
     <div class="card-name">Konka</div>
     <p class="card-meta">Character illustrations and logo design for Konka — live on the App Store.</p>
   </div>
@@ -262,7 +286,6 @@
         <span class="about-tag tag-c">DIY Products</span>
         <span class="about-tag tag-d">Kids Design</span>
         <span class="about-tag tag-e">Illustration · Logo</span>
-        <span class="about-tag tag-f">Print on Demand</span>
       </div>
     </div>
     <div class="reveal d1">
