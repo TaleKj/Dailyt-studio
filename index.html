@@ -30,28 +30,28 @@
 
 ```
 /* STATS */
-.stats-bar { display:grid !important; grid-template-columns:1fr 1px 1fr 1px 1fr !important; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; }
+.stats-bar { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; }
 .stat-div { background:var(--rule); height:32px; align-self:center; }
 .stat { text-align:center; padding:0 8px; }
 .stat-num { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:400; }
 .stat-lbl { font-size:0.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-muted); margin-top:2px; }
 
-/* Remove top padding on carousel section so cards start flush */
-section#work.pad { padding-top:60px; }
-
 /* CAROUSEL */
 #work { overflow:visible; }
 .sec-header { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:40px; flex-wrap:wrap; }
-.carousel-track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding:4px 20px 44px; scroll-padding-left:20px; width:100vw; margin-left:-24px; box-sizing:border-box; }
+.carousel-track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding:44px 20px; scroll-padding-left:20px; width:100vw; margin-left:-24px; box-sizing:border-box; }
 .carousel-track::-webkit-scrollbar { display:none; }
 
 .card { flex:0 0 calc(100vw - 40px); scroll-snap-align:start; background:#fff; border-radius:20px; overflow:hidden; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:box-shadow .3s,transform .3s; }
 .card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
 
-/* Standard image area — works for all cards including Konka */
+/* Standard image area — works for photo cards */
 .card-img { width:100%; aspect-ratio:3/4; overflow:hidden; background:var(--off-white); display:block; }
 .card-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s; }
 .card:hover .card-img img { transform:scale(1.03); }
+
+/* Gradient image area — for Konka and invitation */
+.card-img-gradient { width:100%; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; }
 
 .card-body { padding:20px 22px 26px; flex:1; }
 .card-name { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; margin-bottom:6px; }
@@ -68,7 +68,7 @@ section#work.pad { padding-top:60px; }
 .dot.active { background:#1C1C1E; transform:scale(1.4); }
 
 @media(min-width:900px) {
-  .carousel-track { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; scroll-snap-type:none; width:auto; margin-left:0; padding:4px 0 44px; gap:24px; }
+  .carousel-track { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; scroll-snap-type:none; width:auto; margin-left:0; padding:44px 0; gap:24px; }
   .card { flex:none; max-width:none; scroll-snap-align:none; }
   .carousel-dots { display:none; }
 }
@@ -124,7 +124,7 @@ section#work.pad { padding-top:60px; }
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO: silken-currents.jpeg (with frame on wall) -->
 
 <section class="hero">
   <img class="hero-bg" src="images/silken-currents.jpeg" alt="Silken Currents"/>
@@ -163,7 +163,7 @@ section#work.pad { padding-top:60px; }
   <div class="carousel-track" id="track">
 
 ```
-<!-- 1. Silken Currents -->
+<!-- 1. Silken Currents: silken.jpeg (no frame) -->
 <a href="pages/art-prints.html" class="card">
   <div class="card-img"><img src="images/silken.jpeg" alt="Silken Currents"/></div>
   <div class="card-body">
@@ -212,9 +212,31 @@ section#work.pad { padding-top:60px; }
     <p class="card-meta">Editable templates for birthdays, christenings and celebrations.</p>
   </div>
 </a>
-```
 
+<!-- 6. Konka -->
+<a href="pages/app-design.html" class="card">
+  <div class="card-img" style="background:linear-gradient(135deg,#FFE8E3 0%,#CEE8FF 55%,#FFF5AD 100%);display:flex;align-items:center;justify-content:center;padding:32px;">
+    <img src="images/konka-logo-transparent.png" alt="Konka" style="width:100%;height:100%;object-fit:contain;display:block;"/>
   </div>
+  <div class="card-body">
+    <span class="tag tag-e">App Design</span>
+    <div class="card-name">Konka</div>
+    <p class="card-meta">Logo and icon design for Konka — live on the App Store.</p>
+    <a href="https://apps.apple.com/no/app/konka/id6444194922?l=nb"
+       target="_blank"
+       onclick="event.stopPropagation();"
+       class="appstore-btn">
+      <svg width="13" height="16" viewBox="0 0 22 26" fill="none"><path d="M18.07 13.77c-.03-3.14 2.57-4.66 2.69-4.74-1.47-2.15-3.75-2.44-4.56-2.47-1.93-.2-3.78 1.15-4.76 1.15-.99 0-2.5-1.13-4.12-1.1-2.1.03-4.05 1.24-5.13 3.12-2.2 3.82-.56 9.46 1.56 12.56 1.05 1.51 2.29 3.2 3.91 3.14 1.58-.07 2.17-1.01 4.08-1.01 1.89 0 2.44 1.01 4.09.98 1.69-.03 2.76-1.53 3.8-3.05 1.2-1.74 1.69-3.43 1.72-3.51-.04-.02-3.24-1.24-3.28-4.92zM14.95 4.43C15.82 3.37 16.4 1.9 16.24.4c-1.28.06-2.84.86-3.76 1.9-.82.93-1.55 2.42-1.36 3.85 1.43.11 2.89-.73 3.83-1.72z" fill="white"/></svg>
+      <div class="appstore-btn-text">
+        <span class="sm">Download on the</span>
+        <span class="lg">App Store</span>
+      </div>
+    </a>
+  </div>
+</a>
+
+</div>
+```
 
   <div class="carousel-dots" id="dots">
     <button class="dot active" data-i="0"></button>
@@ -222,6 +244,7 @@ section#work.pad { padding-top:60px; }
     <button class="dot" data-i="2"></button>
     <button class="dot" data-i="3"></button>
     <button class="dot" data-i="4"></button>
+    <button class="dot" data-i="5"></button>
   </div>
 </section>
 
