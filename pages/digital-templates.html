@@ -98,8 +98,46 @@
 .how-desc { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; }
 
 /* ── CTA ── */
-.cta-section { background:#fff; text-align:center; padding:80px 24px; }
-.cta-section .sec-title { max-width:480px; margin:0 auto 16px; }
+/* ── DIY tip section ── */
+.diy-tip-section {
+  background:#fff; border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule); padding:80px 24px;
+}
+.diy-tip-inner {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:72px; align-items:center; max-width:1060px; margin:0 auto;
+}
+@media(max-width:800px) { .diy-tip-inner { grid-template-columns:1fr; gap:40px; } }
+.diy-tip-intro { font-size:0.97rem; line-height:1.8; color:var(--ink-soft); margin-bottom:32px; max-width:440px; }
+.diy-tip-section .sec-title em { color:#e8829e; }
+.diy-steps { display:flex; flex-direction:column; gap:20px; }
+.diy-step {
+  display:flex; gap:16px; align-items:flex-start;
+}
+.diy-step-icon {
+  font-size:1.4rem; flex-shrink:0;
+  width:44px; height:44px; border-radius:50%;
+  background:var(--off-white);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:var(--shadow);
+}
+.diy-step-title { font-size:0.92rem; font-weight:500; color:#1C1C1E; margin-bottom:3px; }
+.diy-step-desc { font-size:0.83rem; color:var(--ink-soft); line-height:1.6; }
+
+/* Garland image / placeholder */
+.diy-tip-img { width:100%; }
+.diy-img-placeholder {
+  width:100%; aspect-ratio:4/5; border-radius:20px;
+  background:linear-gradient(135deg, #fdf0f4 0%, #fde8d4 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:14px; color:rgba(28,28,30,0.4); text-align:center; padding:32px;
+  box-shadow:var(--shadow);
+}
+.diy-img-placeholder span { font-size:2.4rem; opacity:.6; }
+.diy-img-placeholder p { font-size:0.82rem; line-height:1.6; }
+.diy-tip-img img { width:100%; aspect-ratio:4/5; border-radius:20px; object-fit:cover; box-shadow:var(--shadow-lg); display:block; }
+
+.cta-section { background:#fff; text-align:center; padding:80px 24px; }    .cta-section .sec-title { max-width:480px; margin:0 auto 16px; }
 .cta-section .sec-title em { color:#e8829e; }
 .cta-section > p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:360px; margin:0 auto 36px; }
 
@@ -192,6 +230,55 @@
 </section>
 
 <!-- CTA -->
+
+<!-- DIY TIP SECTION -->
+
+<section class="diy-tip-section">
+  <div class="diy-tip-inner">
+    <div class="diy-tip-text reveal">
+      <span class="kicker">DIY tip</span>
+      <h2 class="sec-title">Turn it into a<br/><em>birthday garland</em></h2>
+      <p class="diy-tip-intro">Print several copies of the invitation, swap in a different photo for each one, and you have the makings of a totally personal homemade decoration. Here's how:</p>
+      <div class="diy-steps">
+        <div class="diy-step">
+          <span class="diy-step-icon">🖨️</span>
+          <div>
+            <div class="diy-step-title">Print multiple copies</div>
+            <p class="diy-step-desc">Use different photos in each — different expressions make it more fun.</p>
+          </div>
+        </div>
+        <div class="diy-step">
+          <span class="diy-step-icon">✂️</span>
+          <div>
+            <div class="diy-step-title">Cut away the background</div>
+            <p class="diy-step-desc">Cut around the hat shape, leaving a small border if you like.</p>
+          </div>
+        </div>
+        <div class="diy-step">
+          <span class="diy-step-icon">⭕</span>
+          <div>
+            <div class="diy-step-title">Punch a hole in the hat</div>
+            <p class="diy-step-desc">Use a hole punch at the top of the birthday hat.</p>
+          </div>
+        </div>
+        <div class="diy-step">
+          <span class="diy-step-icon">🧵</span>
+          <div>
+            <div class="diy-step-title">Thread onto a string</div>
+            <p class="diy-step-desc">Thread all the cards onto a piece of string or twine — instant garland!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="diy-tip-img reveal d1">
+      <!-- Replace with: <img src="../images/garland.jpg" alt="Finished birthday garland"/> -->
+      <div class="diy-img-placeholder">
+        <span>🎉</span>
+        <p>Photo of finished garland<br/>coming soon</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="cta-section">
   <span class="kicker" style="display:block;margin-bottom:14px;">Stay in the loop</span>
