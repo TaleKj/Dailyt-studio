@@ -81,7 +81,8 @@
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
 .about-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
 .about-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
-.about-tag { font-size:0.78rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; padding:6px 14px; border-radius:50px; }
+.about-tag { font-size:0.78rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; padding:6px 14px; border-radius:50px; text-decoration:none; transition:opacity .2s, transform .2s; display:inline-block; }
+.about-tag:hover { opacity:.78; transform:translateY(-1px); }
 .logo-circle { width:min(320px,80vw); aspect-ratio:1; border-radius:50%; background:linear-gradient(135deg,var(--blush-s) 0%,var(--sky-s) 50%,var(--yellow) 100%); display:flex; align-items:center; justify-content:center; box-shadow:0 20px 60px rgba(28,28,30,.08); margin:0 auto; }
 .logo-circle img { width:72%; height:72%; object-fit:contain; }
 @media(max-width:760px) { .about-grid { grid-template-columns:1fr; } .logo-circle { display:none; } }
@@ -280,11 +281,11 @@
       <p>Here you'll find art prints you'll want to hang up again and again, digital templates that make party planning easier, and playful products kids will love — all with Scandinavian simplicity as the foundation.</p>
       <p>Colourful and playful, but never cluttered.</p>
       <div class="about-tags">
-        <span class="about-tag tag-a">Art Prints</span>
-        <span class="about-tag tag-b">Templates</span>
-        <span class="about-tag tag-c">DIY Products</span>
-        <span class="about-tag tag-d">Kids Design</span>
-        <span class="about-tag tag-e">Illustration · Logo</span>
+        <a href="pages/art-prints.html" class="about-tag tag-a">Art Prints</a>
+        <a href="pages/digital-templates.html" class="about-tag tag-b">Templates</a>
+        <a href="pages/kids-design.html" class="about-tag tag-c">DIY Products</a>
+        <a href="pages/kids-design.html" class="about-tag tag-d">Kids Design</a>
+        <a href="pages/app-design.html" class="about-tag tag-e">Illustration · Logo</a>
       </div>
     </div>
     <div class="reveal d1">
