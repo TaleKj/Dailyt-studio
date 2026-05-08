@@ -28,7 +28,7 @@
 .breadcrumb a { color:var(--ink-muted); text-decoration:none; transition:color .2s; }
 .breadcrumb a:hover { color:var(--ink); }
 .page-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,3.5rem); font-weight:400; line-height:1.1; margin-bottom:16px; }
-.page-header h1 em { font-style:italic; color:#d97b2a; }
+.page-header h1 em { font-style:italic; color:#f5a050; }
 .page-header p { font-size:1rem; line-height:1.75; color:var(--ink-soft); max-width:520px; }
 
 /* ── Filter bar ── */
@@ -108,26 +108,68 @@
   font-size:clamp(1.7rem,2.6vw,2.4rem); font-weight:400; line-height:1.13;
   margin-bottom:20px; color:#1C1C1E;
 }
-.print-title em { font-style:italic; color:#d97b2a; }
+.print-title em { font-style:italic; color:#f5a050; }
 .print-desc { font-size:0.96rem; line-height:1.84; color:var(--ink-soft); margin-bottom:20px; max-width:420px; }
 .print-meta { font-size:0.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:28px; line-height:1.7; }
 
-/* ── DIY tip box ── */
-.diy-tip {
-  background:#f5f0fb; border-left:3px solid #9b6bad;
-  border-radius:0 10px 10px 0;
-  padding:14px 18px; margin-bottom:28px; max-width:420px;
+/* ── DIY Tips section ── */
+.diy-tips-section {
+  background:var(--off-white);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:80px 24px;
 }
-.diy-tip-title {
-  font-size:0.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
-  color:#9b6bad; margin-bottom:6px;
+.diy-tips-inner { max-width:1060px; margin:0 auto; }
+.diy-tips-header { margin-bottom:64px; }
+.diy-tips-header .sec-title em { color:#f5a050; }
+.diy-tips-intro { font-size:0.97rem; line-height:1.8; color:var(--ink-soft); max-width:480px; margin-top:12px; }
+
+.diy-tip-row {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:72px; align-items:center;
+  padding:64px 0; border-top:1px solid var(--rule);
 }
-.diy-tip p { font-size:0.84rem; line-height:1.7; color:rgba(28,28,30,0.65); }
+.diy-tip-row:first-of-type { border-top:none; padding-top:0; }
+.diy-tip-row.flip .diy-tip-text { order:2; }
+.diy-tip-row.flip .diy-tip-img  { order:1; }
+@media(max-width:800px) {
+  .diy-tip-row { grid-template-columns:1fr; gap:36px; padding:48px 0; }
+  .diy-tip-row.flip .diy-tip-text { order:2; }
+  .diy-tip-row.flip .diy-tip-img  { order:1; }
+}
+.diy-tip-heading {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.4rem,2vw,1.9rem); font-weight:400; line-height:1.2;
+  margin-bottom:14px; color:#1C1C1E;
+}
+.diy-tip-heading em { font-style:italic; color:#f5a050; }
+.diy-tip-desc { font-size:0.96rem; line-height:1.8; color:var(--ink-soft); margin-bottom:28px; max-width:420px; }
+.diy-steps { display:flex; flex-direction:column; gap:18px; }
+.diy-step { display:flex; gap:14px; align-items:flex-start; }
+.diy-step-icon {
+  font-size:1.2rem; flex-shrink:0;
+  width:40px; height:40px; border-radius:50%;
+  background:#ffffff; display:flex; align-items:center; justify-content:center;
+  box-shadow:var(--shadow);
+}
+.diy-step-title { font-size:0.88rem; font-weight:500; color:#1C1C1E; margin-bottom:2px; }
+.diy-step-desc { font-size:0.81rem; color:var(--ink-soft); line-height:1.55; }
+.diy-tip-img { width:100%; }
+.diy-tip-img img { width:100%; aspect-ratio:4/5; border-radius:20px; object-fit:cover; box-shadow:var(--shadow-lg); display:block; }
+.diy-img-placeholder {
+  width:100%; aspect-ratio:4/5; border-radius:20px;
+  background:linear-gradient(135deg, #fde8d4 0%, #fff5ad 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:14px; color:rgba(28,28,30,0.4); text-align:center; padding:32px;
+  box-shadow:var(--shadow);
+}
+.diy-img-placeholder span { font-size:2.4rem; opacity:.6; }
+.diy-img-placeholder p { font-size:0.82rem; line-height:1.6; }
 
 /* ── CTA ── */
 .cta-section { background:#fff; text-align:center; padding:80px 24px; }
 .cta-section .sec-title { max-width:480px; margin:0 auto 16px; }
-.cta-section .sec-title em { color:#d97b2a; }
+.cta-section .sec-title em { color:#f5a050; }
 .cta-section > p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:360px; margin:0 auto 36px; }
 
   </style>
@@ -184,7 +226,7 @@
     </div>
     <div class="print-text">
       <div class="tag-row">
-        <span style="display:inline-flex;align-items:center;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;padding:5px 12px;border-radius:50px;border:1.5px solid #d97b2a;color:#d97b2a;background:transparent;white-space:nowrap;line-height:1;">Wall Art</span>
+        <span style="display:inline-flex;align-items:center;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;padding:5px 12px;border-radius:50px;border:1.5px solid #f5a050;color:#f5a050;background:transparent;white-space:nowrap;line-height:1;">Wall Art</span>
         <span class="format-pill pill-physical">Physical print</span>
       </div>
       <h2 class="print-title">Ada — <em>A World Full of Life</em></h2>
@@ -214,10 +256,6 @@
       </div>
       <h2 class="print-title">Santa — <em>DIY Activity Design</em></h2>
       <p class="print-desc">A Christmas scene designed for play and creativity. You get a background poster and a sheet of characters — what you do with them is entirely up to you. Print them out, hang the poster on the wall, and let your child decide how to bring the scene to life.</p>
-      <div class="diy-tip">
-        <div class="diy-tip-title">💡 A tip from me</div>
-        <p>Cut out the characters, laminate them and attach with velcro — and you've got a reusable activity wall your child can rearrange again and again. No mess, no waste, endlessly fun.</p>
-      </div>
       <p class="print-meta">Digital download · PDF files · Print at home or at a print shop</p>
       <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy">Download on Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
@@ -241,16 +279,117 @@
       </div>
       <h2 class="print-title">Birthday <em>Invitation Template</em></h2>
       <p class="print-desc">A Canva template featuring a cheerful birthday hat with a built-in photo frame — drop in a photo of your child and the invite is almost done. Edit the text, download and send, or print and hand out. The template is fully editable and reusable for every birthday to come.</p>
-      <div class="diy-tip">
-        <div class="diy-tip-title">💡 A tip from me</div>
-        <p>Print several copies — swap in different photos to give each one a unique expression — then cut away the background, punch a hole in the hat with a hole punch and thread onto a string. Instant homemade birthday garland.</p>
-      </div>
       <p class="print-meta">Digital download · Editable Canva template · Use as an invitation or get creative</p>
       <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy">Get the template on Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 
 </div>
+
+<!-- ══════════════════════════════════════
+     DIY TIPS
+══════════════════════════════════════ -->
+
+<section class="diy-tips-section">
+  <div class="diy-tips-inner">
+    <div class="diy-tips-header reveal">
+      <span class="kicker">Creative ideas</span>
+      <h2 class="sec-title">DIY <em>Tips</em></h2>
+      <p class="diy-tips-intro">Get more out of the designs — here are some ideas for taking things further.</p>
+    </div>
+
+<!-- TIP 1: Santa activity wall -->
+<div class="diy-tip-row reveal">
+  <div class="diy-tip-text">
+    <h3 class="diy-tip-heading">Santa — <em>reusable activity wall</em></h3>
+    <p class="diy-tip-desc">The Santa design comes with a background poster and a character sheet. Print both, cut out the characters and laminate them — then attach with velcro for an activity wall your child can rearrange again and again.</p>
+    <div class="diy-steps">
+      <div class="diy-step">
+        <span class="diy-step-icon">🖨️</span>
+        <div>
+          <div class="diy-step-title">Print both files</div>
+          <p class="diy-step-desc">Print the background poster and the character sheet at your preferred size.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">✂️</span>
+        <div>
+          <div class="diy-step-title">Cut out the characters</div>
+          <p class="diy-step-desc">Cut carefully around each character, leaving a small border.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">🛡️</span>
+        <div>
+          <div class="diy-step-title">Laminate for durability</div>
+          <p class="diy-step-desc">Laminate the characters so they can be handled again and again.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">📌</span>
+        <div>
+          <div class="diy-step-title">Attach with velcro</div>
+          <p class="diy-step-desc">Stick small velcro dots on the back of each character and on the poster — and play!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="diy-tip-img">
+    <!-- Replace with: <img src="../images/santa-diy-finished.jpg" alt="Finished Santa activity wall"/> -->
+    <div class="diy-img-placeholder">
+      <span>🎅</span>
+      <p>Photo of finished<br/>activity wall<br/>coming soon</p>
+    </div>
+  </div>
+</div>
+
+<!-- TIP 2: Birthday garland -->
+<div class="diy-tip-row flip reveal">
+  <div class="diy-tip-text">
+    <h3 class="diy-tip-heading">Birthday card — <em>homemade garland</em></h3>
+    <p class="diy-tip-desc">Print several copies of the birthday invitation, swap in a different photo for each one, and you have the makings of a totally personal homemade decoration.</p>
+    <div class="diy-steps">
+      <div class="diy-step">
+        <span class="diy-step-icon">🖨️</span>
+        <div>
+          <div class="diy-step-title">Print multiple copies</div>
+          <p class="diy-step-desc">Use different photos in each — different expressions make it more fun.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">✂️</span>
+        <div>
+          <div class="diy-step-title">Cut away the background</div>
+          <p class="diy-step-desc">Cut around the hat shape, leaving a small border if you like.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">⭕</span>
+        <div>
+          <div class="diy-step-title">Punch a hole in the hat</div>
+          <p class="diy-step-desc">Use a hole punch at the top of the birthday hat.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">🧵</span>
+        <div>
+          <div class="diy-step-title">Thread onto a string</div>
+          <p class="diy-step-desc">Thread all the cards onto a piece of string or twine — instant garland!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="diy-tip-img">
+    <!-- Replace with: <img src="../images/garland.jpg" alt="Finished birthday garland"/> -->
+    <div class="diy-img-placeholder">
+      <span>🎉</span>
+      <p>Photo of finished<br/>birthday garland<br/>coming soon</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
 
 <!-- CTA -->
 
