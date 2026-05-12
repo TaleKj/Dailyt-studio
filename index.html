@@ -29,8 +29,8 @@
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
 
 /* STATS — 4 columns */
-.stats-bar { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr 1px 1fr; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; }
-.stat-div { background:var(--rule); height:32px; align-self:center; }
+.stats-bar { display:flex; align-items:center; justify-content:center; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; gap:0; }
+.stat-div { background:var(--rule); height:32px; width:1px; flex-shrink:0; margin:0 24px; }
 .stat { text-align:center; padding:0 8px; }
 .stat-num { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:400; white-space:nowrap; }
 .stat-lbl { font-size:0.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-muted); margin-top:2px; white-space:nowrap; }
@@ -120,8 +120,8 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-kicker">Daily T Studio &nbsp;·&nbsp; Design &amp; Art Prints</span>
-    <h1 class="hero-title">Design that<br/><em>brightens</em><br/>every day.</h1>
-    <p class="hero-desc">Art prints, digital templates and playful activity posters for children — made with warmth, humour and a Scandinavian eye.</p>
+    <h1 class="hero-title">Art that<br/><em>lives</em><br/>with you.</h1>
+    <p class="hero-desc">Art prints, digital templates, activity posters and custom illustrations — handmade with a cup of tea and a Scandinavian eye.</p>
     <div class="hero-actions">
       <a href="#work" class="btn-white">Explore the work <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy-hero">Etsy shop <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -153,7 +153,7 @@
       <span class="kicker">Portfolio</span>
       <h2 class="sec-title">Explore the<br/><em>designs</em></h2>
     </div>
-    <p class="reveal d1" style="font-size:0.97rem;line-height:1.8;color:var(--ink-soft);max-width:340px;">Swipe to browse — or visit Etsy for the full collection.</p>
+    <p class="reveal d1" style="font-size:0.97rem;line-height:1.8;color:var(--ink-soft);max-width:340px;">Swipe to browse — or visit Etsy for a selection of the work.</p>
   </div>
 
   <div class="carousel-track" id="track">
@@ -177,8 +177,8 @@
     <div class="card-tags">
       <span class="tag tag-a">Art Print</span>
     </div>
-    <div class="card-name">Duo Loops</div>
-    <p class="card-meta">Two abstract faces in line art — a poetic pair for any wall.</p>
+    <div class="card-name">Loop I &amp; Loop II</div>
+    <p class="card-meta">Two bold graphic prints — striking on their own, even better as a pair.</p>
   </div>
 </a>
 
@@ -190,8 +190,8 @@
       <span class="tag tag-a">Art Print</span>
       <span class="tag tag-d">Kids</span>
     </div>
-    <div class="card-name">Ada — A World Full of Life</div>
-    <p class="card-meta">A richly detailed activity poster for the bedroom.</p>
+    <div class="card-name">A Big Small World</div>
+    <p class="card-meta">A whimsical art print packed with details, made for curious little eyes.</p>
   </div>
 </a>
 
@@ -203,8 +203,8 @@
       <span class="tag tag-c">DIY</span>
       <span class="tag tag-d">Kids</span>
     </div>
-    <div class="card-name">Santa — DIY Activity Set</div>
-    <p class="card-meta">Cut out, laminate and attach with velcro — endlessly reusable!</p>
+    <div class="card-name">Advent</div>
+    <p class="card-meta">Two art posters — a Christmas backdrop and a sheet of characters. Print, hang and play.</p>
   </div>
 </a>
 
@@ -216,8 +216,8 @@
       <span class="tag tag-b">Template</span>
       <span class="tag tag-d">Kids</span>
     </div>
-    <div class="card-name">Invitation Templates</div>
-    <p class="card-meta">Editable templates for birthdays, christenings and celebrations.</p>
+    <div class="card-name">Birthday Invitation Template</div>
+    <p class="card-meta">A personalised birthday invitation — edit in Canva, add your photo and send.</p>
   </div>
 </a>
 
@@ -266,7 +266,7 @@
   <div class="split-text">
     <span class="kicker">Kids Design · DIY</span>
     <h2 class="sec-title" style="margin-bottom:18px;">Play that<br/><em>lasts</em></h2>
-    <p class="sec-desc">Activity posters packed with detail. Figures are cut out, laminated and attached with velcro — reusable again and again.</p>
+    <p class="sec-desc">Two art posters — a backdrop and a sheet of characters. Print them, hang them up, and let imagination do the rest.</p>
     <a href="pages/kids-design.html" class="btn-dark" style="align-self:flex-start;">See kids design <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </div>
@@ -278,9 +278,8 @@
     <div class="about-text reveal">
       <span class="kicker">About Daily T Studio</span>
       <h2 class="sec-title" style="margin-bottom:20px;">Designed with<br/><em>heart and humour</em></h2>
-      <p>Daily T Studio is a small creative studio run by a designer with a love of colour, detail and things that make everyday life a little more joyful.</p>
-      <p>Here you'll find art prints you'll want to hang up again and again, digital templates that make party planning easier, and playful products kids will love — all with Scandinavian simplicity as the foundation.</p>
-      <p>Colourful and playful, but never cluttered.</p>
+      <p>Daily T Studio is a small creative studio run by a Scandinavian designer with a love of colour, detail and things that make everyday life a little more joyful.</p>
+      <a href="pages/about.html" class="btn-dark" style="align-self:flex-start;margin-top:8px;margin-bottom:28px;">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="about-tags">
         <a href="pages/art-prints.html" class="about-tag tag-a">Art Prints</a>
         <a href="pages/digital-templates.html" class="about-tag tag-b">Templates</a>
@@ -297,7 +296,7 @@
 
 <section class="etsy-section">
   <span class="kicker" style="display:block;margin-bottom:14px;">Ready to shop?</span>
-  <h2 class="sec-title reveal">Find all designs<br/>on <em>Etsy</em></h2>
+  <h2 class="sec-title reveal">Browse the<br/><em>Etsy shop</em></h2>
   <p class="reveal d1">Digital downloads and art prints delivered via Gelato — order directly from my shop.</p>
   <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy reveal d2">Visit DailyTstudio on Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </section>
@@ -320,12 +319,12 @@
     <div class="footer-col">
       <h4>Shop</h4>
       <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank">Etsy: DailyTstudio</a>
-      <a href="pages/custom-illustrations.html">Contact</a>
+      <a href="pages/custom-illustrations.html">Custom Illustrations</a>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2025 Daily T Studio</span>
-    <span>Made with warmth and coffee</span>
+    <span>Made with tea and stolen moments</span>
   </div>
 </footer>
 
