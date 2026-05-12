@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="color-scheme" content="light only"/>
+  <meta name="description" content="Make it your own — creative ideas and DIY tips from Daily T Studio. Take the designs further with these step-by-step projects."/>
+  <title>Make It Your Own — Daily T Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* ── Page header ── */
+    .page-header { padding:120px 24px 56px; background:#fff; border-bottom:1px solid var(--rule); }
+    .breadcrumb { font-size:0.78rem; color:var(--ink-muted); margin-bottom:20px; display:flex; align-items:center; gap:8px; }
+    .breadcrumb a { color:var(--ink-muted); text-decoration:none; transition:color .2s; }
+    .breadcrumb a:hover { color:var(--ink); }
+    .page-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,3.5rem); font-weight:400; line-height:1.1; margin-bottom:16px; }
+    .page-header h1 em { font-style:italic; color:#f5a050; }
+    .page-header p { font-size:1rem; line-height:1.75; color:var(--ink-soft); max-width:520px; }
+
+/* ── Tips section ── */
+.tips-section { padding:80px 24px; background:#FAFAF8; }
+.tips-inner { max-width:1060px; margin:0 auto; }
+
+/* ── Tip row ── */
+.diy-tip-row {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:72px; align-items:center;
+  padding:80px 0; border-bottom:1px solid var(--rule);
+}
+.diy-tip-row:first-of-type { padding-top:0; }
+.diy-tip-row:last-of-type { border-bottom:none; padding-bottom:0; }
+@media(max-width:800px) {
+  .diy-tip-row { grid-template-columns:1fr; gap:36px; padding:60px 0; }
+}
+
+/* Product tag link */
+.tip-product-tag {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:0.72rem; font-weight:500; letter-spacing:.09em; text-transform:uppercase;
+  padding:5px 12px; border-radius:50px; margin-bottom:16px;
+  border:1.5px solid #f5a050; color:#f5a050; background:transparent;
+  text-decoration:none; transition:background .2s, color .2s;
+}
+.tip-product-tag:hover { background:#f5a050; color:#fff; }
+
+.diy-tip-heading {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:400; line-height:1.2;
+  margin-bottom:14px; color:#1C1C1E;
+}
+.diy-tip-heading em { font-style:italic; color:#f5a050; }
+.diy-tip-desc { font-size:0.96rem; line-height:1.8; color:var(--ink-soft); margin-bottom:28px; max-width:420px; }
+
+.diy-steps { display:flex; flex-direction:column; gap:18px; }
+.diy-step { display:flex; gap:14px; align-items:flex-start; }
+.diy-step-icon {
+  font-size:1.2rem; flex-shrink:0;
+  width:40px; height:40px; border-radius:50%;
+  background:#ffffff; display:flex; align-items:center; justify-content:center;
+  box-shadow:var(--shadow);
+}
+.diy-step-title { font-size:0.88rem; font-weight:500; color:#1C1C1E; margin-bottom:2px; }
+.diy-step-desc { font-size:0.81rem; color:var(--ink-soft); line-height:1.55; }
+
+/* Image / placeholder */
+.diy-tip-img { width:100%; }
+.diy-tip-img img { width:100%; aspect-ratio:4/5; border-radius:20px; object-fit:cover; box-shadow:var(--shadow-lg); display:block; }
+.diy-img-placeholder {
+  width:100%; aspect-ratio:4/5; border-radius:20px;
+  background:linear-gradient(135deg, #fde8d4 0%, #fff5ad 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:14px; color:rgba(28,28,30,0.4); text-align:center; padding:32px;
+  box-shadow:var(--shadow);
+}
+.diy-img-placeholder span { font-size:2.4rem; opacity:.6; }
+.diy-img-placeholder p { font-size:0.82rem; line-height:1.6; }
+
+/* ── CTA ── */
+.cta-section { background:#fff; border-top:1px solid var(--rule); text-align:center; padding:80px 24px; }
+.cta-section .sec-title { max-width:480px; margin:0 auto 16px; }
+.cta-section .sec-title em { color:#f5a050; }
+.cta-section > p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:400px; margin:0 auto 36px; }
+
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../images/logo.png" alt="Daily T Studio"/>
+    <span class="nav-wordmark">Daily T Studio</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="art-prints.html">Art Prints</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="nav-btn">
+      Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span style="opacity:.4">/</span>
+    <span>Make It Your Own</span>
+  </div>
+  <h1>Make it <em>your own</em></h1>
+  <p>The designs are a starting point — here are some ideas for taking things further. Not a kit, not a product, just a little inspiration for what you can do with a printer and a bit of creativity.</p>
+</div>
+
+<!-- TIPS -->
+
+<section class="tips-section">
+  <div class="tips-inner">
+
+<!-- TIP 1: Advent — activity wall -->
+<div class="diy-tip-row reveal">
+  <div class="diy-tip-text">
+    <a href="kids-design.html" class="tip-product-tag">
+      ↗ From Advent — Kids Design
+    </a>
+    <h3 class="diy-tip-heading">Advent — <em>reusable activity wall</em></h3>
+    <p class="diy-tip-desc">The Advent design comes with a background poster and a character sheet. Print both, cut out the characters and laminate them — then attach with velcro for an activity wall your child can rearrange again and again.</p>
+    <div class="diy-steps">
+      <div class="diy-step">
+        <span class="diy-step-icon">🖨️</span>
+        <div>
+          <div class="diy-step-title">Print both files</div>
+          <p class="diy-step-desc">Print the background poster and the character sheet at your preferred size.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">✂️</span>
+        <div>
+          <div class="diy-step-title">Cut out the characters</div>
+          <p class="diy-step-desc">Cut carefully around each character, leaving a small border.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">🛡️</span>
+        <div>
+          <div class="diy-step-title">Laminate for durability</div>
+          <p class="diy-step-desc">Laminate the characters so they can be handled again and again.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">📌</span>
+        <div>
+          <div class="diy-step-title">Attach with velcro</div>
+          <p class="diy-step-desc">Stick small velcro dots on the back of each character and on the poster — and play!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="diy-tip-img">
+    <!-- Replace with: <img src="../images/santa-diy-finished.jpg" alt="Finished Advent activity wall"/> -->
+    <div class="diy-img-placeholder">
+      <span>🎅</span>
+      <p>Photo of finished<br/>activity wall<br/>coming soon</p>
+    </div>
+  </div>
+</div>
+
+<!-- TIP 2: Birthday garland -->
+<div class="diy-tip-row reveal">
+  <div class="diy-tip-text">
+    <a href="digital-templates.html" class="tip-product-tag">
+      ↗ From Birthday Invitation Template
+    </a>
+    <h3 class="diy-tip-heading">Birthday card — <em>homemade garland</em></h3>
+    <p class="diy-tip-desc">Print several copies of the birthday invitation, swap in a different photo for each one, and you have the makings of a totally personal homemade decoration.</p>
+    <div class="diy-steps">
+      <div class="diy-step">
+        <span class="diy-step-icon">🖨️</span>
+        <div>
+          <div class="diy-step-title">Print multiple copies</div>
+          <p class="diy-step-desc">Use different photos in each — different expressions make it more fun.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">✂️</span>
+        <div>
+          <div class="diy-step-title">Cut away the background</div>
+          <p class="diy-step-desc">Cut around the hat shape, leaving a small border if you like.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">⭕</span>
+        <div>
+          <div class="diy-step-title">Punch a hole in the hat</div>
+          <p class="diy-step-desc">Use a hole punch at the top of the birthday hat.</p>
+        </div>
+      </div>
+      <div class="diy-step">
+        <span class="diy-step-icon">🧵</span>
+        <div>
+          <div class="diy-step-title">Thread onto a string</div>
+          <p class="diy-step-desc">Thread all the cards onto a piece of string or twine — instant garland!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="diy-tip-img">
+    <!-- Replace with: <img src="../images/garland.jpg" alt="Finished birthday garland"/> -->
+    <div class="diy-img-placeholder">
+      <span>🎉</span>
+      <p>Photo of finished<br/>birthday garland<br/>coming soon</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section">
+  <span class="kicker" style="display:block;margin-bottom:14px;">Get the designs</span>
+  <h2 class="sec-title reveal">Find the designs<br/>on <em>Etsy</em></h2>
+  <p class="reveal d1">All designs used in these tips are available in the Etsy shop — print at home or order a printed version.</p>
+  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy reveal d2">
+    Visit DailyTstudio on Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="../images/logo.png" alt="Daily T Studio"/>
+      <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="../index.html#work">Portfolio</a>
+      <a href="art-prints.html">Art Prints</a>
+      <a href="kids-design.html">Kids Design</a>
+      <a href="digital-templates.html">Templates</a>
+      <a href="make-it-your-own.html">Make It Your Own</a>
+      <a href="about.html">About</a>
+      <a href="custom-illustrations.html">Custom Illustrations</a>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank">Etsy: DailyTstudio</a>
+      <a href="custom-illustrations.html">Custom Illustrations</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Daily T Studio</span>
+    <span>Made with tea and stolen moments</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, {passive:true});
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, {threshold:0.07});
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
