@@ -1,1 +1,125 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="color-scheme" content="light only"/>
+  <meta name="robots" content="noindex"/>
+
+  <title>Page not found · Daily T Studio</title>
+  <meta name="description" content="The page you were looking for couldn't be found. Browse the home page, art prints or Etsy shop instead."/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/mini-favicon.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/medium-favicon.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <script src="js/site.js" defer></script>
+  <style>
+    /* ── 404 page layout ── */
+    .err-wrap {
+      min-height:calc(100vh - 64px);
+      display:flex; align-items:center; justify-content:center;
+      padding:96px 24px 64px;
+      background:linear-gradient(135deg, #FFE8E3 0%, #CEE8FF 50%, #FFF5AD 100%);
+      text-align:center;
+    }
+    .err-inner { max-width:540px; }
+    .err-code {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(4rem, 14vw, 7rem); font-weight:400;
+      line-height:1; margin-bottom:8px;
+      color:var(--ink);
+    }
+    .err-code em { font-style:italic; color:#d97b2a; }
+    .err-title {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.4rem, 3vw, 2rem); font-weight:400;
+      line-height:1.2; margin-bottom:18px;
+    }
+    .err-desc {
+      font-size:0.97rem; line-height:1.8; color:var(--ink-soft);
+      max-width:420px; margin:0 auto 32px;
+    }
+    .err-actions { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+  </style>
+</head>
+<body class="page-404">
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/document-header.png" alt="Daily T Studio" width="114" height="38"/>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="pages/art-prints.html">Art Prints</a></li>
+      <li><a href="pages/kids-design.html">Kids Design</a></li>
+      <li><a href="pages/digital-templates.html">Templates</a></li>
+      <li><a href="pages/illustrations.html">Illustrations</a></li>
+      <li><a href="pages/about.html">About</a></li>
+    </ul>
+    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="nav-btn">
+      Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="pages/art-prints.html">Art Prints</a>
+  <a href="pages/kids-design.html">Kids Design</a>
+  <a href="pages/digital-templates.html">Templates</a>
+  <a href="pages/illustrations.html">Illustrations</a>
+  <a href="pages/about.html">About</a>
+  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="menu-etsy">
+    Visit Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<main class="err-wrap" id="main">
+  <div class="err-inner">
+    <div class="err-code">4<em>0</em>4</div>
+    <h1 class="err-title">This page went for a <em>walk</em></h1>
+    <p class="err-desc">The page you were looking for couldn't be found. It might have moved, or perhaps it never existed at all.</p>
+    <div class="err-actions">
+      <a href="index.html" class="btn-dark">Back to home <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="pages/art-prints.html" class="btn-outline">See the art prints</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/document-header.png" alt="Daily T Studio" width="156" height="52"/>
+      <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html#work">Portfolio</a>
+      <a href="pages/art-prints.html">Art Prints</a>
+      <a href="pages/kids-design.html">Kids Design</a>
+      <a href="pages/digital-templates.html">Templates</a>
+      <a href="pages/illustrations.html">Custom Illustrations</a>
+      <a href="pages/about.html">About</a>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener">Etsy: DailyTstudio</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Daily T Studio</span>
+    <span>Made with tea and stolen moments</span>
+  </div>
+</footer>
+
+</body>
+</html>
