@@ -33,7 +33,7 @@
 }
 
 /* ── Per-page accent colours ── */
-body.page-index         { --accent: #d97b2a; --accent-strong: #d97b2a; }
+body.page-index         { --accent: var(--lilac); --accent-strong: var(--lilac); }
 body.page-art-prints    { --accent: #9b6bad; --accent-strong: #9b6bad; }
 body.page-kids-design   { --accent: #f5a050; --accent-strong: #d97b2a; }
 body.page-templates     { --accent: #f08fb5; --accent-strong: #f08fb5; }
@@ -526,7 +526,6 @@ footer { background:var(--off-white); border-top:1px solid var(--rule); padding:
 
 .etsy-section { background:#fff; text-align:center; padding:100px 24px; }
 .etsy-section .sec-title { max-width:520px; margin:0 auto 16px; }
-.etsy-section .sec-title em { color:var(--peach); }
 .etsy-section p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:380px; margin:0 auto 40px; }
 
 /* ============================================================
