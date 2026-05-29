@@ -39,7 +39,7 @@ body.page-kids-design   { --accent: #f5a050; --accent-strong: #d97b2a; }
 body.page-templates     { --accent: #f08fb5; --accent-strong: #f08fb5; }
 body.page-illustrations { --accent: #3a6ea8; --accent-strong: #3a6ea8; }
 body.page-about         { --accent: #4a8a5a; --accent-strong: #4a8a5a; }
-body.page-404,
+body.page-404           { --accent: #FFAFDF; --accent-strong: #FFAFDF; }
 body.page-archive       { --accent: #d97b2a; --accent-strong: #d97b2a; }
 
 /* ── Skip link (accessibility) ── */
