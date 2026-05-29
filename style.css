@@ -269,9 +269,12 @@ body.menu-open .nav-hamburger span:nth-child(3) { transform:translateY(-6.5px) r
   font-size:clamp(1.7rem, 7vw, 2.4rem); font-weight:400;
   color:var(--ink); text-decoration:none;
   padding:14px 24px; line-height:1.2;
+  border-radius:50px;
   transition:opacity .2s, transform .2s;
 }
 .mobile-menu a:hover { opacity:0.6; }
+.mobile-menu a:focus { outline:none; }
+.mobile-menu a:focus-visible { outline:2px solid var(--ink); outline-offset:4px; }
 .mobile-menu a.active { font-style:italic; color:var(--accent-strong); }
 .mobile-menu .menu-etsy {
   margin-top:32px;
