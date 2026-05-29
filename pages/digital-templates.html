@@ -1,271 +1,204 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="color-scheme" content="light only"/>
-  <meta name="description" content="Digital templates by Daily T Studio — editable Canva designs available on Etsy."/>
-  <title>Digital Templates — Daily T Studio</title>
+
+  <title>Digital Templates — Editable Canva Templates | Daily T Studio</title>
+  <meta name="description" content="Editable digital templates by Daily T Studio — birthday invitations, party templates and more. Customise in Canva, print at home. Instant download on Etsy."/>
+  <meta name="keywords" content="canva template, editable digital template, birthday invitation template, printable invitation, digital download etsy, canva birthday template, kids party invitation, customisable invitation"/>
+  <link rel="canonical" href="https://www.dailytstudio.com/pages/digital-templates.html"/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="../images/favicon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/mini-favicon.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/medium-favicon.png"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.dailytstudio.com/pages/digital-templates.html"/>
+  <meta property="og:title" content="Digital Templates — Editable Canva Templates | Daily T Studio"/>
+  <meta property="og:description" content="Editable digital templates — birthday invitations and party templates. Customise in Canva, print at home. Instant download on Etsy."/>
+  <meta property="og:image" content="https://www.dailytstudio.com/images/og-image.jpeg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="Daily T Studio"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Digital Templates — Editable Canva Templates | Daily T Studio"/>
+  <meta name="twitter:description" content="Editable digital templates — birthday invitations and party templates. Customise in Canva, print at home. Instant download on Etsy."/>
+  <meta name="twitter:image" content="https://www.dailytstudio.com/images/og-image.jpeg"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Digital Templates — Daily T Studio",
+    "description": "Editable digital templates including birthday invitations and party templates, customisable in Canva and printable at home.",
+    "url": "https://www.dailytstudio.com/pages/digital-templates.html",
+    "provider": {
+      "@type": "Brand",
+      "name": "Daily T Studio",
+      "url": "https://www.dailytstudio.com"
+    },
+    "hasPart": [
+      {
+        "@type": "Product",
+        "name": "Birthday Invitation Template",
+        "description": "A personalised birthday invitation — edit in Canva, add your photo and send.",
+        "category": "Digital Template",
+        "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "NOK" }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css"/>
-  <style>
-    /* ── Format pill ── */
-    .format-pill {
-      display:inline-flex; align-items:center; gap:5px;
-      font-size:0.68rem; font-weight:500; letter-spacing:.09em; text-transform:uppercase;
-      padding:5px 12px; border-radius:50px; white-space:nowrap; line-height:1;
-    }
-    .pill-digital { background:#CEE8FF; color:#1a3d6e; }
-
-.tag-row { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
-
-/* ── Page header ── */
-.page-header { padding:120px 24px 52px; background:#fff; border-bottom:1px solid rgba(28,28,30,0.09); }
-.breadcrumb { font-size:0.78rem; color:rgba(28,28,30,0.35); margin-bottom:20px; display:flex; align-items:center; gap:8px; }
-.breadcrumb a { color:rgba(28,28,30,0.35); text-decoration:none; transition:color .2s; }
-.breadcrumb a:hover { color:#1C1C1E; }
-.page-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,3.5rem); font-weight:400; line-height:1.1; margin-bottom:16px; }
-.page-header h1 em { font-style:italic; color:#f08fb5; }
-.page-header p { font-size:1rem; line-height:1.75; color:rgba(28,28,30,0.55); max-width:520px; }
-
-/* ── Print list ── */
-.print-list { padding:80px 24px 104px; max-width:1160px; margin:0 auto; }
-
-/* ── Print row ── */
-.print-row {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:72px; align-items:center;
-  padding:80px 0; border-bottom:1px solid rgba(28,28,30,0.09);
-}
-.print-row:first-child { padding-top:0; }
-.print-row:last-child { border-bottom:none; padding-bottom:0; }
-.print-row.flip .carousel-wrap { order:2; }
-.print-row.flip .print-text   { order:1; }
-@media(max-width:800px) {
-  .print-row { grid-template-columns:1fr; gap:36px; padding:60px 0; }
-  .print-row.flip .carousel-wrap { order:1; }
-  .print-row.flip .print-text   { order:2; }
-}
-
-/* ── Carousel ── */
-.carousel-wrap {
-  position:relative; border-radius:20px; overflow:hidden;
-  box-shadow:0 4px 20px rgba(28,28,30,0.10), 0 16px 48px rgba(28,28,30,0.09);
-  background:#FAFAF8; aspect-ratio:3/4; user-select:none; cursor:grab;
-}
-.carousel-wrap:active { cursor:grabbing; }
-.carousel-slides { display:flex; width:100%; height:100%; transition:transform .44s cubic-bezier(.25,.46,.45,.94); will-change:transform; }
-.carousel-slide { flex:0 0 100%; width:100%; height:100%; background:#FAFAF8; }
-.carousel-slide img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
-.c-btn {
-  position:absolute; top:50%; transform:translateY(-50%);
-  width:40px; height:40px; border-radius:50%;
-  background:rgba(255,255,255,0.88); backdrop-filter:blur(8px);
-  border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
-  box-shadow:0 2px 12px rgba(0,0,0,0.13); z-index:10; opacity:0;
-  transition:opacity .25s, background .2s, transform .2s;
-}
-.carousel-wrap:hover .c-btn { opacity:1; }
-@media(hover:none) { .c-btn { opacity:1; } }
-.c-prev { left:12px; } .c-next { right:12px; }
-.c-prev:hover { background:#fff; transform:translateY(-50%) scale(1.08); }
-.c-next:hover { background:#fff; transform:translateY(-50%) scale(1.08); }
-.c-dots { position:absolute; bottom:14px; left:0; right:0; display:flex; justify-content:center; gap:7px; z-index:10; }
-.cdot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.5); border:none; padding:0; cursor:pointer; transition:background .25s, transform .25s; }
-.cdot.active { background:#fff; transform:scale(1.45); }
-
-/* ── Print text ── */
-.print-text { display:flex; flex-direction:column; align-items:flex-start; }
-.print-title { font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.6vw,2.4rem); font-weight:400; line-height:1.13; margin-bottom:20px; color:#1C1C1E; }
-.print-title em { font-style:italic; color:#f08fb5; }
-.print-desc { font-size:0.96rem; line-height:1.84; color:rgba(28,28,30,0.55); margin-bottom:20px; max-width:420px; }
-.print-meta { font-size:0.76rem; letter-spacing:.06em; text-transform:uppercase; color:rgba(28,28,30,0.35); margin-bottom:28px; line-height:1.7; }
-
-/* ── Tip box ── */
-.diy-tip { background:#fdf0f4; border-left:3px solid #f08fb5; border-radius:0 10px 10px 0; padding:14px 18px; margin-bottom:28px; max-width:420px; }
-.diy-tip-title { font-size:0.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#f08fb5; margin-bottom:6px; }
-.diy-tip p { font-size:0.84rem; line-height:1.7; color:rgba(28,28,30,0.65); }
-
-/* ── How it works ── */
-.how-section { background:#FAFAF8; border-top:1px solid rgba(28,28,30,0.09); border-bottom:1px solid rgba(28,28,30,0.09); padding:64px 24px; text-align:center; }
-.how-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:48px; max-width:720px; margin-left:auto; margin-right:auto; }
-@media(max-width:600px) { .how-steps { grid-template-columns:1fr; gap:24px; } }
-.how-step { display:flex; flex-direction:column; align-items:center; gap:14px; }
-.how-num { width:44px; height:44px; border-radius:50%; background:#1C1C1E; color:#fff; font-family:'Playfair Display',serif; font-size:1.1rem; display:flex; align-items:center; justify-content:center; }
-.how-title { font-family:'Playfair Display',serif; font-size:1rem; font-weight:400; color:#1C1C1E; }
-.how-desc { font-size:0.84rem; color:rgba(28,28,30,0.55); line-height:1.6; }
-
-/* ── CTA ── */
-/* ── DIY Tips section ── */
-.diy-tips-section {
-  background:#FAFAF8;
-  border-top:1px solid rgba(28,28,30,0.09);
-  border-bottom:1px solid rgba(28,28,30,0.09);
-  padding:80px 24px;
-}
-.diy-tips-inner { max-width:1060px; margin:0 auto; }
-.diy-tips-header { margin-bottom:64px; }
-.diy-tips-header .sec-title em { color:#f08fb5; }
-.diy-tips-intro { font-size:0.97rem; line-height:1.8; color:rgba(28,28,30,0.55); max-width:480px; margin-top:12px; }
-
-.diy-tip-row {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:72px; align-items:center;
-  padding:64px 0; border-top:1px solid rgba(28,28,30,0.09);
-}
-.diy-tip-row:first-of-type { border-top:none; padding-top:0; }
-.diy-tip-row.flip .diy-tip-text { order:2; }
-.diy-tip-row.flip .diy-tip-img  { order:1; }
-@media(max-width:800px) {
-  .diy-tip-row { grid-template-columns:1fr; gap:36px; padding:48px 0; }
-  .diy-tip-row.flip .diy-tip-text { order:2; }
-  .diy-tip-row.flip .diy-tip-img  { order:1; }
-}
-.diy-tip-heading {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.4rem,2vw,1.9rem); font-weight:400; line-height:1.2;
-  margin-bottom:14px; color:#1C1C1E;
-}
-.diy-tip-heading em { font-style:italic; color:#f08fb5; }
-.diy-tip-desc { font-size:0.96rem; line-height:1.8; color:rgba(28,28,30,0.55); margin-bottom:28px; max-width:420px; }
-.diy-steps { display:flex; flex-direction:column; gap:18px; }
-.diy-step { display:flex; gap:14px; align-items:flex-start; }
-.diy-step-icon {
-  font-size:1.2rem; flex-shrink:0;
-  width:40px; height:40px; border-radius:50%;
-  background:#ffffff; display:flex; align-items:center; justify-content:center;
-  box-shadow:0 2px 12px rgba(28,28,30,0.07), 0 8px 32px rgba(28,28,30,0.06);
-}
-.diy-step-title { font-size:0.88rem; font-weight:500; color:#1C1C1E; margin-bottom:2px; }
-.diy-step-desc { font-size:0.81rem; color:rgba(28,28,30,0.55); line-height:1.55; }
-.diy-tip-img { width:100%; }
-.diy-tip-img img { width:100%; aspect-ratio:4/5; border-radius:20px; object-fit:cover; box-shadow:0 4px 20px rgba(28,28,30,0.10), 0 16px 48px rgba(28,28,30,0.09); display:block; }
-.diy-img-placeholder {
-  width:100%; aspect-ratio:4/5; border-radius:20px;
-  background:linear-gradient(135deg, #fdf0f4 0%, #fde8d4 100%);
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:14px; color:rgba(28,28,30,0.4); text-align:center; padding:32px;
-  box-shadow:0 2px 12px rgba(28,28,30,0.07), 0 8px 32px rgba(28,28,30,0.06);
-}
-.diy-img-placeholder span { font-size:2.4rem; opacity:.6; }
-.diy-img-placeholder p { font-size:0.82rem; line-height:1.6; }
-
-.cta-section { background:#fff; text-align:center; padding:80px 24px; }    .cta-section .sec-title { max-width:480px; margin:0 auto 16px; }
-.cta-section .sec-title em { color:#f08fb5; }
-.cta-section > p { font-size:0.97rem; color:rgba(28,28,30,0.55); line-height:1.8; max-width:360px; margin:0 auto 36px; }
-
-  </style>
+  <script src="../js/site.js" defer></script>
 </head>
-<body>
+<body class="page-templates">
+
+<a href="#main" class="skip-link">Skip to content</a>
 
 <nav id="nav">
   <a href="../index.html" class="nav-logo">
-    <img src="../images/logo.png" alt="Daily T Studio"/>
-    <span class="nav-wordmark">Daily T Studio</span>
+    <img src="../images/document-header.png" alt="Daily T Studio" width="114" height="38"/>
   </a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="../index.html#work">Work</a></li>
       <li><a href="art-prints.html">Art Prints</a></li>
+      <li><a href="kids-design.html">Kids Design</a></li>
+      <li><a href="digital-templates.html" class="active">Templates</a></li>
+      <li><a href="illustrations.html">Illustrations</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
-    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="nav-btn">
-      Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="nav-btn">
+      Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="art-prints.html">Art Prints</a>
+  <a href="kids-design.html">Kids Design</a>
+  <a href="digital-templates.html" class="active">Templates</a>
+  <a href="illustrations.html">Illustrations</a>
+  <a href="about.html">About</a>
+  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="menu-etsy">
+    Visit Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<main id="main">
 
 <div class="page-header">
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
-    <span style="opacity:.4">/</span>
-    <span>Digital Templates</span>
+    <span class="breadcrumb-sep">/</span>
+    <span>Templates</span>
   </div>
   <h1>Digital <em>Templates</em></h1>
-  <p>Editable designs you can make your own — buy once on Etsy, open in Canva and customise as many times as you like. Print or share digitally, the choice is yours.</p>
+  <p>Editable templates for everyday celebrations — customise in Canva, add your details, and print at home or share digitally. Instant download via Etsy.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="birthday">Birthday</button>
 </div>
 
 <div class="print-list">
 
-  <!-- 1. BIRTHDAY CARD TEMPLATE -->
-
-  <div class="print-row reveal">
+  <!-- BIRTHDAY INVITATION TEMPLATE -->
+  <div class="print-row reveal" data-category="birthday">
     <div class="carousel-wrap" data-carousel>
       <div class="carousel-slides">
-        <div class="carousel-slide"><img src="../images/bday-card.jpg" alt="Birthday invitation template"/></div>
-        <div class="carousel-slide"><img src="../images/bday-card-mockup.jpeg" alt="Birthday invitation template mockup"/></div>
+        <div class="carousel-slide"><img src="../images/bday-card.jpg" alt="Birthday invitation template — front" width="900" height="1200" loading="lazy"/></div>
+        <div class="carousel-slide"><img src="../images/bday-card-back.jpg" alt="Birthday invitation template — back" width="900" height="1200" loading="lazy"/></div>
       </div>
-      <button class="c-btn c-prev"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button class="c-btn c-next"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="c-dots"><button class="cdot active"></button><button class="cdot"></button></div>
+      <button class="c-btn c-prev" aria-label="Previous image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="c-btn c-next" aria-label="Next image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="c-dots">
+        <button class="cdot active" aria-label="Go to image 1"></button>
+        <button class="cdot" aria-label="Go to image 2"></button>
+      </div>
     </div>
     <div class="print-text">
       <div class="tag-row">
-        <span style="display:inline-flex;align-items:center;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;padding:5px 12px;border-radius:50px;border:1.5px solid #f08fb5;color:#f08fb5;background:transparent;white-space:nowrap;line-height:1;">Template</span>
+        <span class="tag-outline">Birthday</span>
         <span class="format-pill pill-digital">Digital download</span>
       </div>
-      <h2 class="print-title">Birthday <em>Invitation Template</em></h2>
-      <p class="print-desc">A Canva template featuring a cheerful birthday hat with a built-in photo frame — drop in a photo of your child and the invite is almost done. Edit the text, download and send, or print and hand out. The template is fully editable and reusable for every birthday to come.</p>
-      <p style="font-size:0.82rem;color:rgba(28,28,30,0.45);margin-bottom:10px;">Looking for ideas? See <a href="make-it-your-own.html" style="color:rgba(28,28,30,0.55);text-decoration:underline;text-underline-offset:3px;">Make it your own</a>.</p>
-      <p class="print-meta">Digital download · Editable Canva template · Use as an invitation or get creative</p>
-      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy">
-        Get the template on Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <h2 class="print-title">Birthday Invitation <em>Template</em></h2>
+      <p class="print-desc">A flexible birthday invitation that's easy to make your own — open it in Canva, add your child's name, photo and party details, and you're ready to print or send digitally. Designed to feel personal without the hassle of starting from scratch.</p>
+      <p class="print-meta">Editable in Canva · Print at home or send digitally · Instant download</p>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="btn-etsy">Download on Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 
-</div>
+  <!-- DIY STRIP under Birthday Template — finishing touches -->
+  <section class="diy-strip reveal" data-category="birthday">
+    <div class="diy-strip-inner">
+      <div class="diy-strip-img">
+        <img src="../images/garland.jpeg" alt="Finished birthday invitation with garland" width="800" height="1200" style="aspect-ratio:2/3;" loading="lazy"/>
+      </div>
+      <div class="diy-strip-text">
+        <span class="diy-strip-kicker">Make it your own</span>
+        <h3 class="diy-strip-heading">Add the <em>finishing touches</em></h3>
+        <p class="diy-strip-desc">Open the file in Canva, swap in your photo and details, then print at home on quality card stock. Pair it with a paper garland for a cohesive party set — invitation, decor and atmosphere from a single afternoon.</p>
+        <div class="diy-strip-steps">
+          <span class="diy-strip-step"><span class="diy-strip-step-icon">🎨</span> Edit in Canva</span>
+          <span class="diy-strip-step"><span class="diy-strip-step-icon">📸</span> Add your photo</span>
+          <span class="diy-strip-step"><span class="diy-strip-step-icon">🖨️</span> Print on card stock</span>
+          <span class="diy-strip-step"><span class="diy-strip-step-icon">🎉</span> Match with decor</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- HOW IT WORKS -->
+</div>
 
 <section class="how-section">
   <span class="kicker" style="display:block;margin-bottom:12px;">How it works</span>
-  <h2 class="sec-title">Simple from<br/><em style="color:#f08fb5;">start to print</em></h2>
+  <h2 class="sec-title">From template<br/><em>to party</em></h2>
   <div class="how-steps">
     <div class="how-step reveal">
       <div class="how-num">1</div>
-      <div class="how-title">Buy &amp; download</div>
-      <p class="how-desc">Purchase on Etsy and get instant access to the editable Canva template.</p>
+      <div class="how-title">Download instantly</div>
+      <p class="how-desc">Buy on Etsy and get a link to your editable Canva template — no waiting, no shipping.</p>
     </div>
     <div class="how-step reveal d1">
       <div class="how-num">2</div>
-      <div class="how-title">Customise</div>
-      <p class="how-desc">Open in Canva (free), add your photo, edit the text and make it yours.</p>
+      <div class="how-title">Customise in Canva</div>
+      <p class="how-desc">Edit the text, swap photos, change colours — Canva is free to use and easy for anyone.</p>
     </div>
     <div class="how-step reveal d2">
       <div class="how-num">3</div>
       <div class="how-title">Print or share</div>
-      <p class="how-desc">Download and send digitally, or print at home or at a local print shop.</p>
+      <p class="how-desc">Print at home or at a print shop, or send digitally as a PDF or image.</p>
     </div>
   </div>
 </section>
 
-<!-- MAKE IT YOUR OWN TEASER -->
-
-<section style="background:#FAFAF8; border-top:1px solid rgba(28,28,30,0.09); border-bottom:1px solid rgba(28,28,30,0.09); padding:64px 24px; text-align:center;">
-  <span class="kicker" style="display:block;margin-bottom:14px;">Get creative</span>
-  <h2 class="sec-title reveal" style="max-width:480px;margin:0 auto 16px;">Make it <em style="color:#f08fb5;">your own</em></h2>
-  <p class="reveal d1" style="font-size:0.97rem;color:rgba(28,28,30,0.55);line-height:1.8;max-width:400px;margin:0 auto 36px;">Got a printer and a bit of time? See what you can make with the designs — step-by-step ideas and inspiration.</p>
-  <a href="make-it-your-own.html" class="btn-dark reveal d2">
-    See ideas <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-</section>
-
 <section class="cta-section">
-  <span class="kicker" style="display:block;margin-bottom:14px;">Stay in the loop</span>
-  <h2 class="sec-title reveal">More templates<br/>on <em>the way</em></h2>
-  <p class="reveal d1">Follow DailyTstudio on Etsy to be notified when new templates are added to the shop.</p>
-  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" class="btn-etsy reveal d2">
-    Visit DailyTstudio on Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="kicker" style="display:block;margin-bottom:14px;">More templates coming</span>
+  <h2 class="sec-title reveal">See what's<br/>on <em>Etsy</em></h2>
+  <p class="reveal d1">New templates are added regularly — browse the full selection in the shop.</p>
+  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="btn-etsy reveal d2">
+    Visit DailyTstudio on Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="../images/logo.png" alt="Daily T Studio"/>
+      <img src="../images/document-header.png" alt="Daily T Studio" width="156" height="52"/>
       <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
     </div>
     <div class="footer-col">
@@ -273,15 +206,13 @@
       <a href="../index.html#work">Portfolio</a>
       <a href="art-prints.html">Art Prints</a>
       <a href="kids-design.html">Kids Design</a>
-      <a href="make-it-your-own.html">Make It Your Own</a>
       <a href="digital-templates.html">Templates</a>
-      <a href="about.html">About</a>
       <a href="illustrations.html">Custom Illustrations</a>
+      <a href="about.html">About</a>
     </div>
     <div class="footer-col">
       <h4>Shop</h4>
-      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank">Etsy: DailyTstudio</a>
-      <a href="illustrations.html">Custom Illustrations</a>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener">Etsy: DailyTstudio</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -289,38 +220,6 @@
     <span>Made with tea and stolen moments</span>
   </div>
 </footer>
-
-<script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, {passive:true});
-
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
-  }, {threshold:0.07});
-  reveals.forEach(el => io.observe(el));
-
-  document.querySelectorAll('[data-carousel]').forEach(wrap => {
-    const slides = wrap.querySelector('.carousel-slides');
-    const dotEls = wrap.querySelectorAll('.cdot');
-    const prev   = wrap.querySelector('.c-prev');
-    const next   = wrap.querySelector('.c-next');
-    const count  = wrap.querySelectorAll('.carousel-slide').length;
-    let cur = 0, startX = 0, dragging = false;
-    function goTo(i) {
-      cur = ((i % count) + count) % count;
-      slides.style.transform = `translateX(-${cur * 100}%)`;
-      dotEls.forEach((d, idx) => d.classList.toggle('active', idx === cur));
-    }
-    prev.addEventListener('click', () => goTo(cur - 1));
-    next.addEventListener('click', () => goTo(cur + 1));
-    dotEls.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
-    wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
-    wrap.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - startX; if(Math.abs(dx) > 38) goTo(cur + (dx < 0 ? 1 : -1)); }, {passive:true});
-    wrap.addEventListener('mousedown', e => { startX = e.clientX; dragging = true; e.preventDefault(); });
-    window.addEventListener('mouseup', e => { if(!dragging) return; dragging = false; const dx = e.clientX - startX; if(Math.abs(dx) > 38) goTo(cur + (dx < 0 ? 1 : -1)); });
-  });
-</script>
 
 </body>
 </html>
