@@ -6,19 +6,20 @@
   <meta name="color-scheme" content="light only"/>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="512x512" href="../images/favicon.png"/>
+  <link rel="icon" href="../favicon.ico" sizes="any"/>
   <link rel="icon" type="image/png" sizes="32x32" href="../images/mini-favicon.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="../images/medium-favicon.png"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="../images/favicon.png"/>
 
-  <title>Custom Illustrations — Editorial, Brand & Children's Illustration | Daily T Studio</title>
-  <meta name="description" content="Custom illustration services by Daily T Studio — editorial, brand, packaging and children's book illustration. Scandinavian-inspired, hand-drawn. Get in touch for a quote."/>
-  <meta name="keywords" content="custom illustration commission, editorial illustration, brand illustration, children's book illustration, packaging illustration, scandinavian illustrator, hand drawn illustration, freelance illustrator"/>
+  <title>Custom Illustrations — Brand, Print & Kids Illustration | Daily T Studio</title>
+  <meta name="description" content="Custom illustration services by Daily T Studio — for brands and products, print and editorial, and playful kids projects. Scandinavian-inspired, hand-drawn. Get in touch for a quote."/>
+  <meta name="keywords" content="custom illustration commission, brand illustration, app illustration, icon design, print illustration, editorial illustration, kids illustration, scandinavian illustrator, hand drawn illustration, freelance illustrator"/>
   <link rel="canonical" href="https://www.dailytstudio.com/pages/illustrations.html"/>
 
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.dailytstudio.com/pages/illustrations.html"/>
   <meta property="og:title" content="Custom Illustrations | Daily T Studio"/>
-  <meta property="og:description" content="Custom illustration services — editorial, brand, packaging and children's book illustration. Scandinavian-inspired, hand-drawn."/>
+  <meta property="og:description" content="Custom illustration services — for brands and products, print and editorial, and playful kids projects. Scandinavian-inspired, hand-drawn."/>
   <meta property="og:image" content="https://www.dailytstudio.com/images/og-image.jpeg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -27,7 +28,7 @@
 
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Custom Illustrations | Daily T Studio"/>
-  <meta name="twitter:description" content="Custom illustration services — editorial, brand, packaging and children's book illustration. Scandinavian-inspired, hand-drawn."/>
+  <meta name="twitter:description" content="Custom illustration services — for brands and products, print and editorial, and playful kids projects. Scandinavian-inspired, hand-drawn."/>
   <meta name="twitter:image" content="https://www.dailytstudio.com/images/og-image.jpeg"/>
 
   <script type="application/ld+json">
@@ -36,7 +37,7 @@
     "@type": "Service",
     "serviceType": "Illustration",
     "name": "Custom Illustration — Daily T Studio",
-    "description": "Custom illustration services including editorial, brand, packaging and children's book illustration.",
+    "description": "Custom illustration services for brands and products, print and editorial, and playful kids projects.",
     "url": "https://www.dailytstudio.com/pages/illustrations.html",
     "provider": {
       "@type": "Person",
@@ -48,10 +49,9 @@
       "@type": "OfferCatalog",
       "name": "Illustration services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Editorial illustration" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand illustration" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Packaging illustration" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Children's book illustration" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Illustration for brands and products" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Illustration for print and editorial" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Illustration for kids and playful projects" } }
       ]
     }
   }
@@ -83,7 +83,7 @@
     .offer-section { padding:80px 24px; background:#fff; border-bottom:1px solid var(--rule); }
     .offer-inner { max-width:1060px; margin:0 auto; }
     .offer-section .sec-title { margin-bottom:48px; }
-    .offer-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:24px; }
+    .offer-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
     @media(max-width:760px) { .offer-grid { grid-template-columns:1fr; } }
     .offer-card {
       background:var(--off-white);
@@ -117,6 +117,39 @@
     .case-text p { font-size:0.96rem; line-height:1.85; color:var(--ink-soft); margin-bottom:14px; }
     .case-text .small-note { font-size:0.82rem; color:var(--ink-muted); font-style:italic; }
 
+    /* Konka — app illustration placeholders (4 square) */
+    .konka-illos { margin-top:56px; }
+    .konka-illos h3, .konka-icons h3 {
+      font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:500;
+      letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft);
+      margin-bottom:20px;
+    }
+    .konka-illo-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+    @media(max-width:760px) { .konka-illo-grid { grid-template-columns:repeat(2,1fr); gap:14px; } }
+    .konka-illo {
+      aspect-ratio:1/1; border-radius:14px; overflow:hidden;
+      background:var(--off-white);
+      box-shadow:0 2px 12px rgba(28,28,30,0.06);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .konka-illo img { width:100%; height:100%; object-fit:cover; display:block; }
+    .konka-illo .ph {
+      font-size:0.72rem; color:var(--ink-muted); text-align:center; padding:12px; line-height:1.5;
+    }
+
+    /* Konka — sport icon placeholders (6 small) */
+    .konka-icons { margin-top:44px; }
+    .konka-icon-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:14px; }
+    @media(max-width:760px) { .konka-icon-grid { grid-template-columns:repeat(3,1fr); gap:12px; } }
+    .konka-icon {
+      aspect-ratio:1/1; border-radius:50%; overflow:hidden;
+      background:var(--off-white);
+      box-shadow:0 2px 10px rgba(28,28,30,0.06);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .konka-icon img { width:100%; height:100%; object-fit:cover; display:block; }
+    .konka-icon .ph { font-size:0.62rem; color:var(--ink-muted); text-align:center; padding:6px; line-height:1.3; }
+
     /* Gallery */
     .gallery-section { padding:80px 24px; background:#fff; border-bottom:1px solid var(--rule); }
     .gallery-inner { max-width:1160px; margin:0 auto; }
@@ -139,17 +172,30 @@
     }
     .gallery-item:hover img { transform:scale(1.05); }
 
-    /* Process timeline */
+    /* Process — vertical timeline */
     .process-svc { padding:80px 24px; background:var(--off-white); border-bottom:1px solid var(--rule); }
-    .process-svc-inner { max-width:1060px; margin:0 auto; }
+    .process-svc-inner { max-width:640px; margin:0 auto; }
     .process-svc .sec-title { margin-bottom:48px; text-align:center; }
-    .process-list { display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; }
-    @media(max-width:760px) { .process-list { grid-template-columns:1fr 1fr; gap:20px; } }
-    @media(max-width:480px) { .process-list { grid-template-columns:1fr; } }
+    .process-list { display:flex; flex-direction:column; gap:0; position:relative; }
+    .process-list::before {
+      content:''; position:absolute;
+      left:7px; top:0; bottom:0; width:2px;
+      background:linear-gradient(to bottom, color-mix(in srgb, var(--accent) 25%, transparent), color-mix(in srgb, var(--accent) 8%, transparent));
+      z-index:0;
+    }
     .process-card-svc {
-      background:#fff;
-      border-radius:14px;
-      padding:24px 22px;
+      display:grid; grid-template-columns:16px 1fr;
+      gap:24px; align-items:flex-start;
+      padding-bottom:20px; position:relative; z-index:1;
+      background:none; box-shadow:none; border-radius:0;
+    }
+    .process-card-svc:last-child { padding-bottom:0; }
+    .step-dot {
+      width:14px; height:14px; border-radius:50%; flex-shrink:0;
+      background:var(--accent); opacity:0.6; position:relative; left:1px; margin-top:29px;
+    }
+    .process-card-inner {
+      background:#fff; border-radius:14px; padding:18px 20px;
       box-shadow:0 2px 12px rgba(28,28,30,0.06);
     }
     .process-card-header { display:flex; align-items:baseline; gap:14px; margin-bottom:8px; }
@@ -282,24 +328,19 @@
     <h2 class="sec-title">Illustration<br/><em>that fits the brief</em></h2>
     <div class="offer-grid">
       <div class="offer-card reveal">
-        <div class="offer-icon">📰</div>
-        <h3 class="offer-title">Editorial illustration</h3>
-        <p class="offer-desc">Illustrations for articles, magazines and online publications. Concept-driven work that brings a story to life.</p>
-      </div>
-      <div class="offer-card reveal d1">
         <div class="offer-icon">✦</div>
-        <h3 class="offer-title">Brand illustration</h3>
-        <p class="offer-desc">Bespoke illustrations for brands — for use on websites, packaging, social media or print materials.</p>
-      </div>
-      <div class="offer-card reveal">
-        <div class="offer-icon">📦</div>
-        <h3 class="offer-title">Packaging illustration</h3>
-        <p class="offer-desc">Product packaging that stands out on the shelf — illustrations that feel handmade and inviting.</p>
+        <h3 class="offer-title">For brands &amp; products</h3>
+        <p class="offer-desc">Illustrations and icons for brands — logos, patterns, packaging, app graphics and social media. Like the work I did for the Konka training app.</p>
       </div>
       <div class="offer-card reveal d1">
-        <div class="offer-icon">📚</div>
-        <h3 class="offer-title">Children's illustration</h3>
-        <p class="offer-desc">Warm, playful illustrations for children's books, educational materials and kids' brands.</p>
+        <div class="offer-icon">🖼️</div>
+        <h3 class="offer-title">For print &amp; editorial</h3>
+        <p class="offer-desc">Art prints, cards, posters and illustrations to accompany articles or publications — concept-driven work that brings a story to life.</p>
+      </div>
+      <div class="offer-card reveal d2">
+        <div class="offer-icon">🎈</div>
+        <h3 class="offer-title">For kids &amp; playful projects</h3>
+        <p class="offer-desc">Warm, playful illustrations for children's rooms, activity sheets, books and anything that calls for a lighter, more whimsical touch.</p>
       </div>
     </div>
   </div>
@@ -308,16 +349,41 @@
 <section class="case-section">
   <div class="case-inner">
     <span class="case-tag">Case study</span>
-    <h2 class="sec-title">Konka <em>Mediumistic</em></h2>
-    <p style="font-size:0.95rem; color:var(--ink-soft); max-width:520px; margin-top:8px;">Album cover artwork for the band Konka — a piece of work close to my heart.</p>
+    <h2 class="sec-title">Konka <em>training app</em></h2>
+    <p style="font-size:0.95rem; color:var(--ink-soft); max-width:560px; margin-top:8px;">A full set of illustrations and sport icons for Konka — an iOS training app that rewards variety and consistency, syncing with Garmin to turn your activity into something you actually want to look at.</p>
     <div class="case-grid">
       <div class="case-img reveal">
-        <img src="../images/logo-transparent.png" alt="Konka Mediumistic — album cover artwork" width="800" height="800" loading="lazy"/>
+        <img src="../images/konka-illo-1.png" alt="Konka app illustration" width="800" height="800" loading="lazy"/>
       </div>
       <div class="case-text reveal d1">
-        <h3>An album cover for Konka's debut</h3>
-        <p>The brief was open: capture the feeling of the album. I worked closely with the band to develop something that felt right — playful but rooted, colourful but considered. The artwork lives on the cover and supports the band's wider visual identity.</p>
-        <p class="small-note">Client: Konka · Year: 2023 · Medium: Hand-drawn illustration</p>
+        <h3>Illustrations that make training data feel human</h3>
+        <p>Konka motivates you to push your own limits — not against others, but against yourself. The brief was to bring warmth and personality to what is usually cold, chart-heavy fitness data: home screen, statistics, groups, heart-rate zones and an activity map.</p>
+        <p>I developed a set of illustrations and a family of sport icons that carry the app's playful rosa-blue-gold palette across every screen, keeping the feel consistent whether you're checking your weekly overview or exploring new map tiles.</p>
+        <p class="small-note">Client: Konka · Medium: Digital illustration &amp; icon set · iOS app</p>
+      </div>
+    </div>
+
+    <!-- App illustrations: 4 larger square pieces -->
+    <div class="konka-illos reveal d1">
+      <h3>App illustrations</h3>
+      <div class="konka-illo-grid">
+        <div class="konka-illo"><img src="../images/konka-illo-1.png" alt="Konka app illustration 1" width="400" height="400" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;App illustration 1&lt;/span&gt;'"/></div>
+        <div class="konka-illo"><img src="../images/konka-illo-2.png" alt="Konka app illustration 2" width="400" height="400" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;App illustration 2&lt;/span&gt;'"/></div>
+        <div class="konka-illo"><img src="../images/konka-illo-3.png" alt="Konka app illustration 3" width="400" height="400" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;App illustration 3&lt;/span&gt;'"/></div>
+        <div class="konka-illo"><img src="../images/konka-illo-4.png" alt="Konka app illustration 4" width="400" height="400" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;App illustration 4&lt;/span&gt;'"/></div>
+      </div>
+    </div>
+
+    <!-- Sport icons: 6 small round icons -->
+    <div class="konka-icons reveal d2">
+      <h3>Sport icons</h3>
+      <div class="konka-icon-grid">
+        <div class="konka-icon"><img src="../images/konka-icon-1.png" alt="Konka sport icon 1" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;Icon 1&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/konka-icon-2.png" alt="Konka sport icon 2" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;Icon 2&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/konka-icon-3.png" alt="Konka sport icon 3" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;Icon 3&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/konka-icon-4.png" alt="Konka sport icon 4" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;Icon 4&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/konka-icon-5.png" alt="Konka sport icon 5" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;Icon 5&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/konka-icon-6.png" alt="Konka sport icon 6" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;Icon 6&lt;/span&gt;'"/></div>
       </div>
     </div>
   </div>
@@ -334,7 +400,7 @@
       <div class="gallery-item reveal d2"><img src="../images/duo-loops.jpeg" alt="Loop II graphic illustration" width="600" height="600" loading="lazy"/></div>
       <div class="gallery-item reveal"><img src="../images/loops.jpeg" alt="Loop I graphic illustration" width="600" height="600" loading="lazy"/></div>
       <div class="gallery-item reveal d1"><img src="../images/santa-total-barnerom.jpeg" alt="Advent activity illustration" width="600" height="600" loading="lazy"/></div>
-      <div class="gallery-item reveal d2"><img src="../images/logo-transparent.png" alt="Konka Mediumistic album illustration" width="600" height="600" loading="lazy"/></div>
+      <div class="gallery-item reveal d2"><img src="../images/duo-duo.jpeg" alt="Loop I and Loop II illustrations" width="600" height="600" loading="lazy"/></div>
     </div>
   </div>
 </section>
@@ -344,32 +410,44 @@
     <h2 class="sec-title">How a <em>commission</em> works</h2>
     <div class="process-list">
       <div class="process-card-svc reveal">
-        <div class="process-card-header">
-          <span class="step-num">01</span>
-          <span class="step-title">Get in touch</span>
+        <div class="step-dot"></div>
+        <div class="process-card-inner">
+          <div class="process-card-header">
+            <span class="step-num">01</span>
+            <span class="step-title">Get in touch</span>
+          </div>
+          <p class="step-desc">Send a message via the contact form below with your idea, timeline and budget.</p>
         </div>
-        <p class="step-desc">Send a message via the contact form below with your idea, timeline and budget.</p>
       </div>
       <div class="process-card-svc reveal d1">
-        <div class="process-card-header">
-          <span class="step-num">02</span>
-          <span class="step-title">Brief &amp; quote</span>
+        <div class="step-dot"></div>
+        <div class="process-card-inner">
+          <div class="process-card-header">
+            <span class="step-num">02</span>
+            <span class="step-title">Brief &amp; quote</span>
+          </div>
+          <p class="step-desc">We talk through your needs, agree on scope and I send a quote with a clear timeline.</p>
         </div>
-        <p class="step-desc">We talk through your needs, agree on scope and I send a quote with a clear timeline.</p>
       </div>
       <div class="process-card-svc reveal d2">
-        <div class="process-card-header">
-          <span class="step-num">03</span>
-          <span class="step-title">Sketches &amp; feedback</span>
+        <div class="step-dot"></div>
+        <div class="process-card-inner">
+          <div class="process-card-header">
+            <span class="step-num">03</span>
+            <span class="step-title">Sketches &amp; feedback</span>
+          </div>
+          <p class="step-desc">I share initial sketches for your input — we refine together until the direction feels right.</p>
         </div>
-        <p class="step-desc">I share initial sketches for your input — we refine together until the direction feels right.</p>
       </div>
       <div class="process-card-svc reveal d3">
-        <div class="process-card-header">
-          <span class="step-num">04</span>
-          <span class="step-title">Final artwork</span>
+        <div class="step-dot"></div>
+        <div class="process-card-inner">
+          <div class="process-card-header">
+            <span class="step-num">04</span>
+            <span class="step-title">Final artwork</span>
+          </div>
+          <p class="step-desc">Once approved, I deliver final files in the formats you need — print-ready and web-optimised.</p>
         </div>
-        <p class="step-desc">Once approved, I deliver final files in the formats you need — print-ready and web-optimised.</p>
       </div>
     </div>
   </div>

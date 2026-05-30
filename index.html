@@ -81,11 +81,16 @@
     }
 
     /* STATS */
-    .stats-bar { display:flex; align-items:center; justify-content:center; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; gap:0; }
+    .stats-bar { display:flex; align-items:center; justify-content:center; padding:32px 24px; border-bottom:1px solid var(--rule); background:#fff; gap:0; flex-wrap:wrap; }
     .stat-div { background:var(--rule); height:32px; width:1px; flex-shrink:0; margin:0 24px; }
     .stat { text-align:center; padding:0 8px; }
     .stat-num { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:400; white-space:nowrap; }
     .stat-lbl { font-size:0.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-muted); margin-top:2px; white-space:nowrap; }
+    @media(max-width:560px) {
+      .stats-bar { gap:8px 0; padding:24px 16px; }
+      .stat { flex:0 0 50%; padding:10px 4px; }
+      .stat-div { display:none; }
+    }
 
     /* HORIZONTAL CAROUSEL */
     #work { overflow:visible; }
@@ -119,7 +124,8 @@
     .split-text .sec-title { margin-bottom:18px; }
     @media(max-width:760px) {
       .split { grid-template-columns:1fr; min-height:auto; }
-      .split-img { height:280px; }
+      .split-img { height:auto; aspect-ratio:1/1; background:var(--off-white); }
+      .split-img img { object-fit:contain; }
       .split-text { padding:44px 20px; order:1!important; }
     }
 
@@ -131,7 +137,7 @@
     .about-tag:hover { opacity:.78; transform:translateY(-2px); }
     .logo-circle { width:min(320px,80vw); aspect-ratio:1; border-radius:50%; background:linear-gradient(135deg,var(--blush-s) 0%,var(--sky-s) 50%,var(--yellow) 100%); display:flex; align-items:center; justify-content:center; box-shadow:0 20px 60px rgba(28,28,30,.08); margin:0 auto; }
     .logo-circle img { width:72%; height:72%; object-fit:contain; }
-    @media(max-width:760px) { .about-grid { grid-template-columns:1fr; } .logo-circle { display:none; } }
+    @media(max-width:760px) { .about-grid { grid-template-columns:1fr; gap:40px; } .logo-circle { width:min(240px,64vw); margin:8px auto 0; } }
   </style>
 </head>
 <body class="page-index">
