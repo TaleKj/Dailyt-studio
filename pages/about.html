@@ -67,8 +67,8 @@
     /* Artist photo — deliberately small, low-focus */
     .artist-figure { margin:0; display:flex; flex-direction:column; align-items:center; }
     .artist-photo {
-      width:100%; max-width:280px; aspect-ratio:3/4;
-      border-radius:18px; object-fit:cover; object-position:center top;
+      width:220px; height:220px; max-width:100%;
+      border-radius:50%; object-fit:cover; object-position:center;
       box-shadow:0 4px 20px rgba(28,28,30,0.10); display:block;
     }
     .artist-caption {
@@ -133,7 +133,7 @@
       .intro-text h2 { margin-bottom:16px; }
       .intro-text p { margin-bottom:14px; }
       .artist-figure { flex-direction:row; align-items:center; gap:14px; }
-      .artist-photo { max-width:120px; border-radius:12px; flex-shrink:0; }
+      .artist-photo { width:120px; height:120px; border-radius:50%; flex-shrink:0; }
       .artist-caption { margin-top:0; text-align:left; }
 
       /* Values: compact horizontal items (icon left, text right) */
@@ -231,7 +231,7 @@
       <p>The style sits somewhere between Scandinavian restraint and joyful colour — never too serious, never too loud.</p>
     </div>
     <figure class="artist-figure reveal d1">
-      <img class="artist-photo" src="../images/babyartist.png" alt="Baby artist, circa 2000" width="600" height="800" loading="lazy">
+      <img class="artist-photo" src="../images/babyartist.PNG" alt="Baby artist, circa 2000" width="1024" height="1024" loading="lazy">
       <figcaption class="artist-caption">The aspiring artist, circa 2000</figcaption>
     </figure>
   </div>
