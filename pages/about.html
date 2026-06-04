@@ -64,6 +64,17 @@
     .intro-text h2 em { font-style:italic; color:var(--accent); }
     .intro-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
     .intro-text p:last-child { margin-bottom:0; }
+    /* Artist photo — deliberately small, low-focus */
+    .artist-figure { margin:0; display:flex; flex-direction:column; align-items:center; }
+    .artist-photo {
+      width:100%; max-width:280px; aspect-ratio:3/4;
+      border-radius:18px; object-fit:cover; object-position:center top;
+      box-shadow:0 4px 20px rgba(28,28,30,0.10); display:block;
+    }
+    .artist-caption {
+      font-size:0.78rem; font-style:italic; color:var(--ink-muted);
+      margin-top:10px; text-align:center;
+    }
 
     /* Values */
     .values-section { background:var(--off-white); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:80px 24px; }
@@ -89,7 +100,6 @@
     }
     .process-design-label::after { content:''; flex:1; height:1px; background:rgba(28,28,30,0.09); }
     .process-pair { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    @media(max-width:600px) { .process-pair { grid-template-columns:1fr; } }
     .process-card { border-radius:16px; overflow:hidden; background:var(--off-white); box-shadow:0 2px 12px rgba(28,28,30,0.06); }
     .process-img { aspect-ratio:3/4; overflow:hidden; position:relative; background:var(--off-white); }
     .process-img img { width:100%; height:100%; object-fit:cover; display:block; }
@@ -108,6 +118,51 @@
     .contact-teaser { background:var(--off-white); border-top:1px solid var(--rule); padding:72px 24px; text-align:center; }
     .contact-teaser .sec-title { max-width:440px; margin:0 auto 14px; }
     .contact-teaser p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:420px; margin:0 auto 32px; }
+
+    /* ── MOBILE OPTIMISATION ── */
+    @media(max-width:760px) {
+      /* Tighter header + smaller banner image */
+      .page-header { padding:92px 20px 0; }
+      .header-text { padding-bottom:28px; }
+      .header-img-strip { margin-top:24px; border-radius:16px 16px 0 0; }
+      .header-img-strip img { max-height:220px; }
+
+      /* Intro: tighter gap, low-focus thumbnail photo */
+      .intro-section { padding:48px 20px; }
+      .intro-grid { gap:24px; }
+      .intro-text h2 { margin-bottom:16px; }
+      .intro-text p { margin-bottom:14px; }
+      .artist-figure { flex-direction:row; align-items:center; gap:14px; }
+      .artist-photo { max-width:120px; border-radius:12px; flex-shrink:0; }
+      .artist-caption { margin-top:0; text-align:left; }
+
+      /* Values: compact horizontal items (icon left, text right) */
+      .values-section { padding:48px 20px; }
+      .values-section .sec-title { margin-bottom:28px; }
+      .values-grid { gap:14px; }
+      .value-item {
+        display:grid; grid-template-columns:auto 1fr;
+        column-gap:14px; row-gap:3px; align-items:center;
+        background:#fff; border-radius:14px; padding:16px 18px;
+        box-shadow:0 2px 10px rgba(28,28,30,0.05);
+      }
+      .value-icon { grid-row:1 / span 2; align-self:center; width:40px; height:40px; font-size:1.1rem; }
+      .value-title { align-self:end; }
+      .value-desc { align-self:start; }
+
+      /* Process: keep before/after side by side, tighten spacing */
+      .process-section { padding:48px 20px; }
+      .process-intro { margin-bottom:32px; }
+      .process-design { margin-bottom:36px; }
+      .process-design-label { margin-bottom:12px; }
+      .process-design p { margin-bottom:14px !important; }
+      .process-pair { gap:10px; }
+      .process-body { padding:10px 12px 12px; }
+      .process-body .step-title { font-size:0.86rem; line-height:1.3; }
+
+      /* Contact teaser */
+      .contact-teaser { padding:48px 20px; }
+    }
   </style>
 </head>
 <body class="page-about">
@@ -175,9 +230,10 @@
       <p>Every illustration is drawn by hand — using an Apple Pencil in Linearity Curve on iPad, working in layers until it feels right. Some designs begin as acrylic paintings on canvas or paper before being redrawn digitally; others go straight from idea to screen.</p>
       <p>The style sits somewhere between Scandinavian restraint and joyful colour — never too serious, never too loud.</p>
     </div>
-    <div class="reveal d1">
-      <img src="../images/babyartist.png" alt="Baby artist, circa 2000" width="600" height="800" style="width:100%;aspect-ratio:3/4;border-radius:20px;object-fit:cover;object-position:center top;box-shadow:0 4px 20px rgba(28,28,30,0.10);" loading="lazy">
-    </div>
+    <figure class="artist-figure reveal d1">
+      <img class="artist-photo" src="../images/babyartist.png" alt="Baby artist, circa 2000" width="600" height="800" loading="lazy">
+      <figcaption class="artist-caption">The aspiring artist, circa 2000</figcaption>
+    </figure>
   </div>
 </section>
 

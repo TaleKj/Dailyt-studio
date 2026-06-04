@@ -33,14 +33,15 @@
 }
 
 /* ── Per-page accent colours ── */
-body.page-index         { --accent: var(--lilac); --accent-strong: var(--lilac); }
-body.page-art-prints    { --accent: #9b6bad; --accent-strong: #9b6bad; }
-body.page-kids-design   { --accent: #f5a050; --accent-strong: #d97b2a; }
-body.page-templates     { --accent: #f08fb5; --accent-strong: #f08fb5; }
-body.page-illustrations { --accent: #6498ED; --accent-strong: #6498ED; }
-body.page-about         { --accent: #4a8a5a; --accent-strong: #4a8a5a; }
-body.page-404           { --accent: #FFAFDF; --accent-strong: #FFAFDF; }
-body.page-archive       { --accent: #d97b2a; --accent-strong: #d97b2a; }
+body.page-index            { --accent: #FFAFDF; --accent-strong: #FFAFDF; }
+body.page-art-prints       { --accent: #FFCB4F; --accent-strong: #FFCB4F; }
+body.page-kids-prints      { --accent: #B494F9; --accent-strong: #B494F9; }
+body.page-activity-posters { --accent: #AADCF9; --accent-strong: #AADCF9; }
+body.page-templates        { --accent: #C02121; --accent-strong: #C02121; }
+body.page-illustrations    { --accent: #6498ED; --accent-strong: #6498ED; }
+body.page-about            { --accent: #7CAF57; --accent-strong: #7CAF57; }
+body.page-404              { --accent: #FFAFDF; --accent-strong: #FFAFDF; }
+body.page-archive          { --accent: #d97b2a; --accent-strong: #d97b2a; }
 
 /* ── Skip link (accessibility) ── */
 .skip-link {
@@ -397,7 +398,7 @@ footer { background:var(--off-white); border-top:1px solid var(--rule); padding:
 .print-row.flip .carousel-wrap { order:2; }
 .print-row.flip .print-text   { order:1; }
 @media(max-width:800px) {
-  .print-row { grid-template-columns:1fr; gap:36px; padding:60px 0; }
+  .print-row { grid-template-columns:1fr; gap:28px; padding:44px 0; }
   .print-row.flip .carousel-wrap { order:1; }
   .print-row.flip .print-text   { order:2; }
 }
@@ -561,3 +562,18 @@ footer { background:var(--off-white); border-top:1px solid var(--rule); padding:
    ============================================================ */
 
 .arrow { display:inline-flex; align-items:center; flex-shrink:0; }
+
+/* ============================================================
+   MOBILE SECTION SPACING — placed last so it wins the cascade
+   over the unconditional base rules defined earlier above.
+   Tightens tall section padding on phones to reduce scrolling
+   while preserving layout and function.
+   ============================================================ */
+@media(max-width:600px) {
+  .page-header  { padding:88px 20px 32px; }
+  .print-list   { padding:40px 20px 52px; }
+  .how-section  { padding:44px 20px; }
+  .how-steps    { margin-top:28px; }
+  .cta-section  { padding:48px 20px; }
+  .etsy-section { padding:56px 20px; }
+}

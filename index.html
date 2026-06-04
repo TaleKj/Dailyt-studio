@@ -126,7 +126,11 @@
       .split { grid-template-columns:1fr; min-height:auto; }
       .split-img { height:auto; aspect-ratio:1/1; background:var(--off-white); }
       .split-img img { object-fit:contain; }
-      .split-text { padding:44px 20px; order:1!important; }
+      .split-text { padding:32px 20px; order:1!important; }
+    }
+    @media(max-width:600px) {
+      .carousel-track { padding:22px 20px; }
+      .sec-header { margin-bottom:24px; }
     }
 
     /* ABOUT (index) */

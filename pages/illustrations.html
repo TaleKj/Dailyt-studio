@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="../style.css"/>
   <script src="../js/site.js" defer></script>
   <style>
-    /* ── Page-specific: illustrations hero, services, case study, gallery, process, contact ── */
+    /* ── Page-specific: illustrations hero, services, case study, process, contact ── */
 
     /* HERO */
     .illus-hero {
@@ -84,7 +84,6 @@
     .offer-inner { max-width:1060px; margin:0 auto; }
     .offer-section .sec-title { margin-bottom:48px; }
     .offer-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
-    @media(max-width:760px) { .offer-grid { grid-template-columns:1fr; } }
     .offer-card {
       background:var(--off-white);
       border-radius:16px;
@@ -99,6 +98,19 @@
       margin-bottom:10px;
     }
     .offer-desc { font-size:0.92rem; line-height:1.75; color:var(--ink-soft); }
+    /* Mobile: stack into 3 compact horizontal cards (icon left, text right) */
+    @media(max-width:760px) {
+      .offer-grid { grid-template-columns:1fr; gap:12px; }
+      .offer-card {
+        display:grid;
+        grid-template-columns:auto 1fr;
+        column-gap:16px; row-gap:3px;
+        padding:18px 20px;
+      }
+      .offer-icon { grid-row:1 / span 2; align-self:center; font-size:1.5rem; margin-bottom:0; }
+      .offer-title { font-size:1.1rem; margin-bottom:0; }
+      .offer-desc { font-size:0.88rem; line-height:1.6; }
+    }
 
     /* Case study */
     .case-section { background:var(--off-white); border-bottom:1px solid var(--rule); padding:80px 24px; }
@@ -149,28 +161,6 @@
     }
     .konka-icon img { width:100%; height:100%; object-fit:contain; display:block; }
     .konka-icon .ph { font-size:0.62rem; color:var(--ink-muted); text-align:center; padding:6px; line-height:1.3; }
-
-    /* Gallery */
-    .gallery-section { padding:80px 24px; background:#fff; border-bottom:1px solid var(--rule); }
-    .gallery-inner { max-width:1160px; margin:0 auto; }
-    .gallery-section .sec-title { margin-bottom:14px; }
-    .gallery-intro { font-size:0.96rem; line-height:1.8; color:var(--ink-soft); max-width:560px; margin-bottom:48px; }
-    .gallery-grid {
-      display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;
-    }
-    @media(max-width:760px) { .gallery-grid { grid-template-columns:repeat(2, 1fr); gap:12px; } }
-    @media(max-width:480px) { .gallery-grid { grid-template-columns:1fr; } }
-    .gallery-item {
-      aspect-ratio:1/1;
-      border-radius:12px; overflow:hidden;
-      background:var(--off-white);
-      box-shadow:0 2px 12px rgba(28,28,30,0.06);
-    }
-    .gallery-item img {
-      width:100%; height:100%; object-fit:cover; display:block;
-      transition:transform .5s;
-    }
-    .gallery-item:hover img { transform:scale(1.05); }
 
     /* Process — vertical timeline */
     .process-svc { padding:80px 24px; background:var(--off-white); border-bottom:1px solid var(--rule); }
@@ -389,22 +379,6 @@
         <div class="konka-icon"><img src="../images/high-five.jpeg" alt="Konka sport icon — high five" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;high-five.jpeg&lt;/span&gt;'"/></div>
         <div class="konka-icon"><img src="../images/duck.jpeg" alt="Konka sport icon — duck" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;duck.jpeg&lt;/span&gt;'"/></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="gallery-section">
-  <div class="gallery-inner">
-    <span class="kicker">Selected work</span>
-    <h2 class="sec-title">A glimpse of<br/><em>the work</em></h2>
-    <p class="gallery-intro">A small selection of recent illustration work — personal pieces and commissioned projects.</p>
-    <div class="gallery-grid">
-      <div class="gallery-item reveal"><img src="../images/ada.jpeg" alt="A Big Small World illustration" width="600" height="600" loading="lazy"/></div>
-      <div class="gallery-item reveal d1"><img src="../images/silken.jpeg" alt="Silken Currents illustration" width="600" height="600" loading="lazy"/></div>
-      <div class="gallery-item reveal d2"><img src="../images/duo-loops.jpeg" alt="Loop II graphic illustration" width="600" height="600" loading="lazy"/></div>
-      <div class="gallery-item reveal"><img src="../images/loops.jpeg" alt="Loop I graphic illustration" width="600" height="600" loading="lazy"/></div>
-      <div class="gallery-item reveal d1"><img src="../images/santa-total-barnerom.jpeg" alt="Advent activity illustration" width="600" height="600" loading="lazy"/></div>
-      <div class="gallery-item reveal d2"><img src="../images/duo-duo.jpeg" alt="Loop I and Loop II illustrations" width="600" height="600" loading="lazy"/></div>
     </div>
   </div>
 </section>
