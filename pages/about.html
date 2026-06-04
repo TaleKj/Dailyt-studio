@@ -64,16 +64,12 @@
     .intro-text h2 em { font-style:italic; color:var(--accent); }
     .intro-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
     .intro-text p:last-child { margin-bottom:0; }
-    /* Artist photo — deliberately small, low-focus */
+    /* Artist photo — circular, matched to the homepage logo circle */
     .artist-figure { margin:0; display:flex; flex-direction:column; align-items:center; }
     .artist-photo {
-      width:220px; height:220px; max-width:100%;
+      width:min(320px,80vw); height:min(320px,80vw); max-width:100%;
       border-radius:50%; object-fit:cover; object-position:center;
-      box-shadow:0 4px 20px rgba(28,28,30,0.10); display:block;
-    }
-    .artist-caption {
-      font-size:0.78rem; font-style:italic; color:var(--ink-muted);
-      margin-top:10px; text-align:center;
+      box-shadow:0 20px 60px rgba(28,28,30,0.08); display:block;
     }
 
     /* Values */
@@ -127,14 +123,12 @@
       .header-img-strip { margin-top:24px; border-radius:16px 16px 0 0; }
       .header-img-strip img { max-height:220px; }
 
-      /* Intro: tighter gap, low-focus thumbnail photo */
+      /* Intro: tighter gap; circular photo matched to logo circle */
       .intro-section { padding:48px 20px; }
-      .intro-grid { gap:24px; }
+      .intro-grid { gap:28px; }
       .intro-text h2 { margin-bottom:16px; }
       .intro-text p { margin-bottom:14px; }
-      .artist-figure { flex-direction:row; align-items:center; gap:14px; }
-      .artist-photo { width:120px; height:120px; border-radius:50%; flex-shrink:0; }
-      .artist-caption { margin-top:0; text-align:left; }
+      .artist-photo { width:min(240px,64vw); height:min(240px,64vw); }
 
       /* Values: compact horizontal items (icon left, text right) */
       .values-section { padding:48px 20px; }
@@ -232,7 +226,6 @@
     </div>
     <figure class="artist-figure reveal d1">
       <img class="artist-photo" src="../images/babyartist.PNG" alt="Baby artist, circa 2000" width="1024" height="1024" loading="lazy">
-      <figcaption class="artist-caption">The aspiring artist, circa 2000</figcaption>
     </figure>
   </div>
 </section>
