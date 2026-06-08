@@ -9,14 +9,13 @@
   <title>Make It Your Own — Archive | Daily T Studio</title>
   <meta name="description" content="Archived: the original Make It Your Own page. DIY ideas have been integrated into the relevant product pages."/>
 
-  <!-- Favicon -->
-  <link rel="icon" href="../favicon.ico" sizes="any"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/mini-favicon.png"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/medium-favicon.png"/>
-  <link rel="icon" type="image/png" sizes="512x512" href="../images/favicon.png"/>
 
+  <!-- Favicon (root-relative → works on every page; SVG preferred, .ico fallback) -->
+  <link rel="icon" href="/favicon.ico" sizes="any"/>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="/images/medium-favicon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css"/>
   <script src="../js/site.js" defer></script>
   <style>
@@ -37,7 +36,7 @@
       max-width:760px; margin:0 auto;
     }
     .archive-header h1 {
-      font-family:'Playfair Display',serif;
+      font-family:'Hanken Grotesk', sans-serif;
       font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.15;
       margin-bottom:16px;
     }

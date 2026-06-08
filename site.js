@@ -6,6 +6,27 @@
 (function () {
   'use strict';
 
+  // ── Favicons (injected once here → applies to every page) ────
+  // Root-relative paths resolve correctly from any page depth
+  // (incl. /pages/...). Browsers that support SVG favicons will
+  // prefer the crisp /favicon.svg; others fall back to /favicon.ico.
+  (function injectFavicons() {
+    const head = document.head;
+    const icons = [
+      { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
+      { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+      { rel: 'apple-touch-icon', href: '/images/medium-favicon.png' }
+    ];
+    const existing = head.querySelectorAll('link[rel*="icon"]');
+    icons.forEach((attrs) => {
+      const dup = Array.from(existing).some((l) => l.getAttribute('href') === attrs.href);
+      if (dup) return;
+      const link = document.createElement('link');
+      Object.entries(attrs).forEach(([k, v]) => link.setAttribute(k, v));
+      head.appendChild(link);
+    });
+  })();
+
   // ── Nav scroll (toggle transparent → solid) ──────────────────
   const nav = document.getElementById('nav');
   if (nav) {
@@ -42,6 +63,8 @@
       hamburger.setAttribute('aria-expanded', 'true');
       hamburger.setAttribute('aria-label', 'Close menu');
       mobileMenu.setAttribute('aria-hidden', 'false');
+      const firstLink = mobileMenu.querySelector('a');
+      if (firstLink) setTimeout(() => firstLink.focus(), 320);
     }
     function closeMenu() {
       mobileMenu.classList.remove('open');
