@@ -10,8 +10,8 @@
   --white:     #FFFFFF;
   --off-white: #FAFAF8;
   --ink:       #1C1C1E;
-  --ink-soft:  rgba(28,28,30,0.55);
-  --ink-muted: rgba(28,28,30,0.35);
+  --ink-soft:  rgba(28,28,30,0.68);
+  --ink-muted: rgba(28,28,30,0.60);
   --rule:      rgba(28,28,30,0.09);
 
   /* Palette */
@@ -22,13 +22,14 @@
   --yellow:    #FFF5AD;
   --peach:     #F9D597;
   --etsy:      #F1641E;
-  --brand-red: #C0241F;   /* logo cup red */
-  --brand-pink:#FFAFDF;   /* soft logo pink — shop CTAs */
+  --brand-red: #C02121;   /* logo cup red */
+  --brand-pink:#FFAFDF;   /* soft logo pink — accents */
   --blob:      #FFD4EC;   /* soft logo pink — decorative motif */
 
   /* Per-page accent — overridden by body.page-* classes */
   --accent:        #9b6bad;  /* default = art-prints lilac */
   --accent-strong: #9b6bad;
+  --accent-deep:   #9b6bad;
 
   /* Shadows */
   --shadow:    0 1px 2px rgba(28,28,30,0.04), 0 6px 18px rgba(28,28,30,0.05);
@@ -36,15 +37,15 @@
 }
 
 /* ── Per-page accent colours ── */
-body.page-index            { --accent: #FFAFDF; --accent-strong: #FFAFDF; }
-body.page-art-prints       { --accent: #FFCB4F; --accent-strong: #FFCB4F; }
-body.page-kids-prints      { --accent: #B494F9; --accent-strong: #B494F9; }
-body.page-craft-prints     { --accent: #AAC9F7; --accent-strong: #AAC9F7; }
-body.page-templates        { --accent: #FF987A; --accent-strong: #FF987A; }
-body.page-illustrations    { --accent: #6498ED; --accent-strong: #6498ED; }
-body.page-about            { --accent: #7CAF57; --accent-strong: #7CAF57; }
-body.page-404              { --accent: #FFAFDF; --accent-strong: #FFAFDF; }
-body.page-archive          { --accent: #d97b2a; --accent-strong: #d97b2a; }
+body.page-index            { --accent: #FFAFDF; --accent-strong: #FFAFDF; --accent-deep:#C02121; }
+body.page-art-prints       { --accent: #FFCB4F; --accent-strong: #FFCB4F; --accent-deep:#FFB94F; }
+body.page-kids-prints      { --accent: #B494F9; --accent-strong: #B494F9; --accent-deep:#9575DD; }
+body.page-craft-prints     { --accent: #AAC9F7; --accent-strong: #AAC9F7; --accent-deep:#6498ED; }
+body.page-templates        { --accent: #FF987A; --accent-strong: #FF987A; --accent-deep:#F18261; }
+body.page-illustrations    { --accent: #6498ED; --accent-strong: #6498ED; --accent-deep:#316DCE; }
+body.page-about            { --accent: #7CAF57; --accent-strong: #7CAF57; --accent-deep:#699548; }
+body.page-404              { --accent: #FFAFDF; --accent-strong: #FFAFDF; --accent-deep:#C02121; }
+body.page-archive          { --accent: #d97b2a; --accent-strong: #d97b2a; --accent-deep:#C57A3A; }
 
 /* ── Skip link (accessibility) ── */
 .skip-link {
@@ -60,7 +61,8 @@ body.page-archive          { --accent: #d97b2a; --accent-strong: #d97b2a; }
 /* ── Reset ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-html, body { max-width:100%; overflow-x:hidden; background:#ffffff; }
+html, body { max-width:100%; overflow-x:hidden; background:#ffffff; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+img { max-width:100%; }
 body {
   font-family:'DM Sans', sans-serif;
   font-weight:300;
@@ -129,7 +131,7 @@ body {
 
 .btn-etsy {
   display:inline-flex; align-items:center; gap:8px;
-  background:var(--brand-pink); color:var(--ink);
+  background:var(--brand-red); color:#fff;
   font-size:0.92rem; font-weight:500;
   padding:15px 32px; border-radius:50px;
   text-decoration:none; white-space:nowrap;
@@ -154,7 +156,7 @@ body {
 
 .btn-etsy-sm {
   display:inline-flex; align-items:center; gap:7px;
-  background:var(--brand-pink); color:var(--ink);
+  background:var(--brand-red); color:#fff;
   font-size:0.82rem; font-weight:500;
   padding:10px 18px; border-radius:50px;
   text-decoration:none; white-space:nowrap;
@@ -182,7 +184,7 @@ body {
 .center  { text-align:center; }
 
 /* ── Reveal animation ── */
-.reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease; }
+.js .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease; }
 .reveal.vis { opacity:1; transform:none; }
 .d1 { transition-delay:.12s; }
 .d2 { transition-delay:.24s; }
@@ -299,7 +301,7 @@ body.menu-open .nav-hamburger span:nth-child(3) { transform:translateY(-6.5px) r
   margin-top:32px;
   font-family:'DM Sans',sans-serif;
   font-size:0.92rem; font-weight:500;
-  background:var(--brand-pink); color:var(--ink);
+  background:var(--brand-red); color:#fff;
   padding:14px 28px; border-radius:50px;
   display:inline-flex; align-items:center; gap:10px;
 }
@@ -454,7 +456,7 @@ footer { background:var(--off-white); padding:64px 24px 36px; }
 }
 .cdot {
   width:6px; height:6px; border-radius:50%;
-  background:rgba(255,255,255,0.5); border:none; padding:0;
+  background:rgba(255,255,255,0.5); border:none; padding:10px; box-sizing:content-box; background-clip:content-box;
   cursor:pointer; transition:background .25s, transform .25s;
 }
 .cdot.active { background:#fff; transform:scale(1.45); }
@@ -588,7 +590,28 @@ footer { background:var(--off-white); padding:64px 24px 36px; }
 .blob-bg::before {
   content:""; position:absolute; z-index:-1; pointer-events:none;
   left:50%; top:50%; transform:translate(-50%,-50%);
-  width:140%; height:180%;
-  background:var(--blob); opacity:.6;
-  border-radius:49% 51% 47% 53% / 54% 47% 53% 46%;
+  width:128%; aspect-ratio:1.8/1;
+  background-color:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 168'%3E%3Cpath d='M173.1,13.9 C191.3,16.0 213.9,19.0 227.2,27.0 C240.5,35.0 250.2,50.3 252.9,62.1 C255.5,74.0 246.8,86.1 243.1,98.1 C239.4,110.2 241.4,126.1 230.9,134.5 C220.3,142.9 197.3,144.5 179.8,148.5 C162.2,152.4 142.2,160.3 125.6,158.2 C108.9,156.1 90.6,145.0 79.8,135.8 C69.0,126.6 67.0,114.3 61.0,102.9 C54.9,91.6 41.3,78.7 43.8,67.9 C46.3,57.0 63.6,46.6 76.0,37.8 C88.4,28.9 101.9,18.8 118.1,14.8 C134.3,10.8 154.9,11.9 173.1,13.9 Z' fill='%23000'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 168'%3E%3Cpath d='M173.1,13.9 C191.3,16.0 213.9,19.0 227.2,27.0 C240.5,35.0 250.2,50.3 252.9,62.1 C255.5,74.0 246.8,86.1 243.1,98.1 C239.4,110.2 241.4,126.1 230.9,134.5 C220.3,142.9 197.3,144.5 179.8,148.5 C162.2,152.4 142.2,160.3 125.6,158.2 C108.9,156.1 90.6,145.0 79.8,135.8 C69.0,126.6 67.0,114.3 61.0,102.9 C54.9,91.6 41.3,78.7 43.8,67.9 C46.3,57.0 63.6,46.6 76.0,37.8 C88.4,28.9 101.9,18.8 118.1,14.8 C134.3,10.8 154.9,11.9 173.1,13.9 Z' fill='%23000'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  opacity:.35;
+}
+
+h1.blob-bg em, h2.blob-bg em { color:var(--accent-deep); }
+
+/* Serif on accent words only (echoes the serif T in the logo) */
+h1 em, h2 em { font-family:'Fraunces', serif; }
+
+/* Accessibility: honour reduced-motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important; scroll-behavior:auto !important;
+  }
+}
+
+/* Opt-in higher contrast: deepen accent words for users who request it */
+@media (prefers-contrast: more) {
+  .sec-title em, .page-header h1 em, .print-title em,
+  .diy-strip-heading em, .cta-section .sec-title em { color:var(--accent-deep); }
 }

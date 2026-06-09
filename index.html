@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+  <script>document.documentElement.classList.add('js');</script>
   <meta name="color-scheme" content="light only"/>
 
   <!-- Favicon (root-relative → works on every page; SVG preferred, .ico fallback) -->
@@ -14,14 +16,14 @@
   <title>Daily T Studio — Scandinavian Art Prints, Kids Prints & Digital Templates</title>
   <meta name="description" content="Scandinavian-inspired wall art prints, editable digital templates, kids prints and activity posters — available as print-on-demand via Etsy or instant digital download. Handmade with warmth."/>
   <meta name="keywords" content="scandinavian art print, wall art print, abstract poster, digital template, kids wall art, printable art, Etsy art print, minimalist poster, Canva template, nursery print"/>
-  <link rel="canonical" href="https://www.dailytstudio.com/"/>
+  <link rel="canonical" href="https://dailytstudio.com/"/>
 
   <!-- SEO: Open Graph -->
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://www.dailytstudio.com/"/>
+  <meta property="og:url" content="https://dailytstudio.com/"/>
   <meta property="og:title" content="Daily T Studio — Scandinavian Art Prints & Digital Design"/>
   <meta property="og:description" content="Wall art prints, editable digital templates and playful kids design. Scandinavian-inspired, available on Etsy."/>
-  <meta property="og:image" content="https://www.dailytstudio.com/images/og-image.jpeg"/>
+  <meta property="og:image" content="https://dailytstudio.com/images/og-image.jpeg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta property="og:site_name" content="Daily T Studio"/>
@@ -31,7 +33,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Daily T Studio — Scandinavian Art Prints & Digital Design"/>
   <meta name="twitter:description" content="Wall art prints, editable digital templates and playful kids design. Scandinavian-inspired, available on Etsy."/>
-  <meta name="twitter:image" content="https://www.dailytstudio.com/images/og-image.jpeg"/>
+  <meta name="twitter:image" content="https://dailytstudio.com/images/og-image.jpeg"/>
 
   <!-- SEO: Structured data (JSON-LD) -->
   <script type="application/ld+json">
@@ -39,8 +41,8 @@
     "@context": "https://schema.org",
     "@type": "Brand",
     "name": "Daily T Studio",
-    "url": "https://www.dailytstudio.com",
-    "logo": "https://www.dailytstudio.com/images/homepage-icon.png",
+    "url": "https://dailytstudio.com",
+    "logo": "https://dailytstudio.com/images/homepage-icon.png",
     "description": "Scandinavian-inspired art prints, digital templates and kids design, available on Etsy and as digital downloads.",
     "sameAs": ["https://www.etsy.com/shop/DailyTstudio"],
     "offers": {
@@ -53,7 +55,7 @@
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
   <script src="js/site.js" defer></script>
   <style>
@@ -71,7 +73,7 @@
     .hero-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
     .btn-white { display:inline-flex; align-items:center; gap:8px; background:#fff; color:#1C1C1E; font-size:0.88rem; font-weight:500; padding:13px 24px; border-radius:50px; text-decoration:none; white-space:nowrap; transition:opacity .2s,transform .2s; }
     .btn-white:hover { opacity:.88; transform:translateY(-1px); }
-    .btn-etsy-hero { display:inline-flex; align-items:center; gap:8px; background:var(--brand-pink); color:var(--ink); font-size:0.88rem; font-weight:500; padding:13px 24px; border-radius:50px; text-decoration:none; white-space:nowrap; transition:opacity .2s,transform .2s; }
+    .btn-etsy-hero { display:inline-flex; align-items:center; gap:8px; background:var(--brand-red); color:#fff; font-size:0.88rem; font-weight:500; padding:13px 24px; border-radius:50px; text-decoration:none; white-space:nowrap; transition:opacity .2s,transform .2s; }
     .btn-etsy-hero:hover { opacity:.88; transform:translateY(-1px); }
     .hero-scroll-hint { position:absolute; bottom:20px; right:28px; font-size:0.68rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); animation:bounce 2.4s ease-in-out infinite; display:flex; align-items:center; gap:5px; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
@@ -96,21 +98,23 @@
     .sec-header { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:40px; flex-wrap:wrap; }
     .carousel-track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding:44px 20px; scroll-padding-left:20px; width:100vw; margin-left:-24px; box-sizing:border-box; }
     .carousel-track::-webkit-scrollbar { display:none; }
+    /* Square cards (original) — tinted text area, accent label, format tag */
     .card { flex:0 0 calc(100vw - 40px); scroll-snap-align:start; background:#fff; border-radius:20px; overflow:hidden; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:box-shadow .3s,transform .3s; }
     .card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
-    .card-img { width:100%; aspect-ratio:3/4; overflow:hidden; background:var(--off-white); display:block; }
-    .card-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s; }
+    .card-img { position:relative; width:100%; aspect-ratio:3/4; overflow:hidden; background:var(--off-white); display:block; }
+    .card-img img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:transform .5s; }
     .card:hover .card-img img { transform:scale(1.03); }
-    .card-body { padding:20px 22px 26px; flex:1; }
-    .card-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:2px; }
-    .card-name { font-family:'Hanken Grotesk', sans-serif; font-size:1.1rem; font-weight:400; margin-bottom:6px; }
-    .card-meta { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; margin-bottom:0; }
+    .fmt { position:absolute; top:12px; right:12px; z-index:2; background:rgba(255,255,255,0.9); font-size:0.56rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:4px 9px; border-radius:999px; box-shadow:0 1px 3px rgba(28,28,30,0.12); }
+    .card-body { padding:18px 22px 22px; flex:1; }
+    .kick { font-family:'Hanken Grotesk', sans-serif; font-size:0.68rem; font-weight:300; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); margin-bottom:7px; }
+    .card-name { font-family:'Hanken Grotesk', sans-serif; font-size:1.25rem; font-weight:300; letter-spacing:-0.01em; line-height:1.25; color:var(--ink); }
+    .card-name em { font-family:'Fraunces', serif; font-style:normal; font-weight:600; }
     .carousel-dots { display:flex; justify-content:center; gap:8px; padding:4px 0 8px; }
-    .dot { width:6px; height:6px; border-radius:50%; background:rgba(28,28,30,0.15); border:none; padding:0; cursor:pointer; transition:background .25s,transform .25s; }
+    .dot { width:6px; height:6px; border-radius:50%; background:rgba(28,28,30,0.15); border:none; padding:9px; box-sizing:content-box; background-clip:content-box; cursor:pointer; transition:background .25s,transform .25s; }
     .dot.active { background:#1C1C1E; transform:scale(1.4); }
     @media(min-width:900px) {
-      .carousel-track { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; scroll-snap-type:none; width:auto; margin-left:0; padding:44px 0; gap:24px; }
-      .card { flex:none; max-width:none; scroll-snap-align:none; }
+      .carousel-track { display:flex; flex-wrap:wrap; justify-content:center; overflow:visible; scroll-snap-type:none; width:auto; margin-left:0; padding:30px 0 12px; gap:40px 28px; }
+      .card { flex:0 0 320px; max-width:320px; scroll-snap-align:none; }
       .carousel-dots { display:none; }
     }
 
@@ -123,8 +127,8 @@
     .split-text .sec-title { margin-bottom:18px; }
     @media(max-width:760px) {
       .split { grid-template-columns:1fr; min-height:auto; }
-      .split-img { height:auto; aspect-ratio:1/1; background:var(--off-white); }
-      .split-img img { object-fit:contain; }
+      .split-img { height:auto; aspect-ratio:auto; background:transparent; }
+      .split-img img { width:100%; height:auto; object-fit:contain; }
       .split-text { padding:32px 20px; order:1!important; }
     }
     @media(max-width:600px) {
@@ -222,54 +226,73 @@
   <div class="carousel-track" id="track">
 
     <a href="pages/art-prints.html" class="card">
-      <div class="card-img"><img src="images/silken.jpeg" alt="Silken Currents — abstract pastel art print" width="900" height="1200" loading="lazy"/></div>
-      <div class="card-body">
-        <div class="card-tags"><span class="tag tag-a">Art Print</span></div>
-        <div class="card-name">Silken Currents</div>
-        <p class="card-meta">Abstract wall print with flowing forms in a dreamy pastel palette.</p>
+      <div class="card-img">
+        <span class="fmt" style="color:#F7AE00;">Physical print</span>
+        <img src="images/1412-preview.png" alt="Silken Currents — abstract pastel art print" width="1000" height="1400" loading="lazy"/>
+      </div>
+      <div class="card-body" style="background:#FFF8E8;">
+        <div class="kick">Art Print</div>
+        <div class="card-name">Silken <em style="color:#F7AE00;">Currents</em></div>
       </div>
     </a>
-
     <a href="pages/art-prints.html" class="card">
-      <div class="card-img"><img src="images/duo-duo.jpeg" alt="Loop I and Loop II graphic art prints" width="900" height="1200" loading="lazy"/></div>
-      <div class="card-body">
-        <div class="card-tags"><span class="tag tag-a">Art Print</span></div>
-        <div class="card-name">Loop I &amp; Loop II</div>
-        <p class="card-meta">Two bold graphic prints — striking on their own, even better as a pair.</p>
+      <div class="card-img">
+        <span class="fmt" style="color:#F7AE00;">Physical print</span>
+        <img src="images/loopI-preview.png" alt="Loop I — single-line face art print" width="1000" height="1400" loading="lazy"/>
+      </div>
+      <div class="card-body" style="background:#FFF8E8;">
+        <div class="kick">Art Print</div>
+        <div class="card-name">Loop <em style="color:#F7AE00;">I</em></div>
       </div>
     </a>
-
+    <a href="pages/art-prints.html" class="card">
+      <div class="card-img">
+        <span class="fmt" style="color:#F7AE00;">Physical print</span>
+        <img src="images/loopII-preview.png" alt="Loop II — single-line faces art print" width="1000" height="1400" loading="lazy"/>
+      </div>
+      <div class="card-body" style="background:#FFF8E8;">
+        <div class="kick">Art Print</div>
+        <div class="card-name">Loop <em style="color:#F7AE00;">II</em></div>
+      </div>
+    </a>
     <a href="pages/kids-prints.html" class="card">
-      <div class="card-img"><img src="images/ada.jpeg" alt="A Big Small World — whimsical kids art print" width="900" height="1200" loading="lazy"/></div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="tag tag-d">Kids Print</span>
-        </div>
-        <div class="card-name">A Big Small World</div>
-        <p class="card-meta">A whimsical art print packed with details, made for curious little eyes.</p>
+      <div class="card-img">
+        <span class="fmt" style="color:#783CFA;">Physical print</span>
+        <img src="images/ada-preview.png" alt="A Big Small World — whimsical kids art print" width="1000" height="1400" loading="lazy"/>
+      </div>
+      <div class="card-body" style="background:#F5F1FE;">
+        <div class="kick">Kids Print</div>
+        <div class="card-name">A Big Small <em style="color:#783CFA;">World</em></div>
       </div>
     </a>
-
     <a href="pages/craft-prints.html" class="card">
-      <div class="card-img"><img src="images/santa-total-barnerom.jpeg" alt="Advent — DIY Christmas activity poster" width="900" height="1200" loading="lazy"/></div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="tag tag-c">Activity Poster</span>
-        </div>
-        <div class="card-name">Advent</div>
-        <p class="card-meta">Two art posters — a Christmas backdrop and a sheet of 24 characters, one for each day of advent. Print, hang and play.</p>
+      <div class="card-img">
+        <span class="fmt" style="color:#5596F5;">Physical print</span>
+        <img src="images/advent-preview.png" alt="Advent — DIY Christmas activity poster" width="1000" height="1400" loading="lazy"/>
+      </div>
+      <div class="card-body" style="background:#F4F8FE;">
+        <div class="kick">Activity Poster</div>
+        <div class="card-name"><em style="color:#5596F5;">Advent</em></div>
       </div>
     </a>
-
     <a href="pages/digital-templates.html" class="card">
-      <div class="card-img"><img src="images/bday-card.jpg" alt="Birthday invitation template" width="900" height="1200" loading="lazy"/></div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="tag tag-b">Template</span>
-          <span class="tag tag-d">Kids</span>
-        </div>
-        <div class="card-name">Birthday Invitation Template</div>
-        <p class="card-meta">A personalised birthday invitation — edit in Canva, add your photo and send.</p>
+      <div class="card-img">
+        <span class="fmt" style="color:#FF5523;">Digital download</span>
+        <img src="images/birthday-preview.png" alt="Birthday invitation template" width="1000" height="1400" loading="lazy"/>
+      </div>
+      <div class="card-body" style="background:#FFF2EE;">
+        <div class="kick">Template</div>
+        <div class="card-name">Birthday <em style="color:#FF5523;">Invite</em></div>
+      </div>
+    </a>
+    <a href="pages/illustrations.html" class="card">
+      <div class="card-img">
+        <span class="fmt" style="color:#1363E8;">Commission</span>
+        <img src="images/sleepy-preview.png" alt="Konka illustration — Sleepy character" width="1000" height="1400" loading="lazy"/>
+      </div>
+      <div class="card-body" style="background:#EBF2FD;">
+        <div class="kick">Illustration</div>
+        <div class="card-name">Konka — <em style="color:#1363E8;">Sleepy</em></div>
       </div>
     </a>
 
@@ -281,6 +304,8 @@
     <button class="dot" data-i="2" aria-label="Go to slide 3"></button>
     <button class="dot" data-i="3" aria-label="Go to slide 4"></button>
     <button class="dot" data-i="4" aria-label="Go to slide 5"></button>
+    <button class="dot" data-i="5" aria-label="Go to slide 6"></button>
+    <button class="dot" data-i="6" aria-label="Go to slide 7"></button>
   </div>
 </section>
 
@@ -308,7 +333,7 @@
   <div class="about-grid">
     <div class="about-text reveal">
       <span class="kicker">About Daily T Studio</span>
-      <h2 class="sec-title blob-bg" style="margin-bottom:20px;">Small studio,<br/><em>big imagination</em></h2>
+      <h2 class="sec-title" style="margin-bottom:20px;">Small studio,<br/><em>big imagination</em></h2>
       <p>Daily T Studio is a small creative studio run by a Scandinavian designer with a love of colour, detail and things that make everyday life a little more joyful.</p>
       <a href="pages/about.html" class="btn-dark" style="align-self:flex-start;margin-top:8px;margin-bottom:28px;">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="about-tags">
