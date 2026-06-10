@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#BC2942"/>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
   <script>document.documentElement.classList.add('js');</script>
   <meta name="color-scheme" content="light only"/>
@@ -68,13 +69,13 @@
     .hero-content { position:absolute; bottom:0; left:0; right:0; padding:0 28px 52px; color:#fff; }
     .hero-kicker { font-size:0.72rem; font-weight:400; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:14px; display:block; }
     .hero-title { font-family:'Hanken Grotesk', sans-serif; font-size:clamp(2.4rem,7vw,4rem); font-weight:300; letter-spacing:-0.01em; line-height:1.1; color:#fff; margin-bottom:20px; text-shadow:0 2px 24px rgba(0,0,0,0.15); }
-    .hero-title em { font-style:normal; font-weight:600; color:var(--brand-red); }
+    .hero-title em { font-style:normal; font-weight:600; color:var(--brand-blue); }
     .hero-desc { font-size:0.97rem; line-height:1.75; color:rgba(255,255,255,0.8); max-width:400px; margin-bottom:32px; }
     .hero-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
     .btn-white { display:inline-flex; align-items:center; gap:8px; background:#fff; color:#1C1C1E; font-size:0.88rem; font-weight:500; padding:13px 24px; border-radius:50px; text-decoration:none; white-space:nowrap; transition:opacity .2s,transform .2s; }
     .btn-white:hover { opacity:.88; transform:translateY(-1px); }
     .btn-etsy-hero { display:inline-flex; align-items:center; gap:8px; background:var(--brand-red); color:#fff; font-size:0.88rem; font-weight:500; padding:13px 24px; border-radius:50px; text-decoration:none; white-space:nowrap; transition:opacity .2s,transform .2s; }
-    .btn-etsy-hero:hover { opacity:.88; transform:translateY(-1px); }
+    .btn-etsy-hero:hover { background:var(--cherry-deep); transform:translateY(-1px); }
     .hero-scroll-hint { position:absolute; bottom:20px; right:28px; font-size:0.68rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); animation:bounce 2.4s ease-in-out infinite; display:flex; align-items:center; gap:5px; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
     @media (prefers-reduced-motion: reduce) {
@@ -88,9 +89,12 @@
     .stat-num { font-family:'Hanken Grotesk', sans-serif; font-size:1.3rem; font-weight:400; white-space:nowrap; }
     .stat-lbl { font-size:0.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-muted); margin-top:2px; white-space:nowrap; }
     @media(max-width:560px) {
-      .stats-bar { gap:8px 0; padding:24px 16px; }
-      .stat { flex:0 0 50%; padding:10px 4px; }
+      .stats-bar { display:grid; grid-template-columns:1fr 1fr; gap:0; padding:10px 20px; }
+      .stat { padding:18px 4px; }
       .stat-div { display:none; }
+      /* subtle hairline cross so the four stats feel anchored */
+      .stat:nth-child(1), .stat:nth-child(3) { border-bottom:1px solid var(--rule); }
+      .stat:nth-child(1), .stat:nth-child(5) { border-right:1px solid var(--rule); }
     }
 
     /* HORIZONTAL CAROUSEL */
@@ -110,12 +114,23 @@
     .card-name { font-family:'Hanken Grotesk', sans-serif; font-size:1.25rem; font-weight:300; letter-spacing:-0.01em; line-height:1.25; color:var(--ink); }
     .card-name em { font-family:'Fraunces', serif; font-style:normal; font-weight:600; }
     .carousel-dots { display:flex; justify-content:center; gap:8px; padding:4px 0 8px; }
-    .dot { width:6px; height:6px; border-radius:50%; background:rgba(28,28,30,0.15); border:none; padding:9px; box-sizing:content-box; background-clip:content-box; cursor:pointer; transition:background .25s,transform .25s; }
-    .dot.active { background:#1C1C1E; transform:scale(1.4); }
+    .dot { width:5px; height:5px; border-radius:50%; background:rgba(28,28,30,0.15); border:none; padding:9px; box-sizing:content-box; background-clip:content-box; cursor:pointer; transition:background .25s,transform .25s; }
+    .dot.active { background:#1C1C1E; transform:scale(1.15); }
+    /* Desktop carousel nav arrows */
+    .carousel-nav { display:none; align-items:center; gap:10px; }
+    .cnav-btn {
+      width:42px; height:42px; border-radius:50%; border:none; cursor:pointer;
+      background:#fff; box-shadow:var(--shadow);
+      display:flex; align-items:center; justify-content:center;
+      transition:box-shadow .2s, transform .2s, opacity .2s;
+    }
+    .cnav-btn:hover { box-shadow:var(--shadow-lg); transform:translateY(-1px); }
+    .cnav-btn:disabled { opacity:.35; cursor:default; transform:none; box-shadow:var(--shadow); }
     @media(min-width:900px) {
-      .carousel-track { display:flex; flex-wrap:wrap; justify-content:center; overflow:visible; scroll-snap-type:none; width:auto; margin-left:0; padding:30px 0 12px; gap:40px 28px; }
-      .card { flex:0 0 320px; max-width:320px; scroll-snap-align:none; }
+      .carousel-track { gap:28px; padding:36px 8px 28px; width:auto; margin-left:0; scroll-padding-left:8px; }
+      .card { flex:0 0 320px; max-width:320px; }
       .carousel-dots { display:none; }
+      .carousel-nav { display:flex; }
     }
 
     /* SPLIT */
@@ -141,6 +156,7 @@
     .about-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
     .about-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
     .about-tag { display:inline-flex !important; align-items:center; font-size:0.78rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; padding:6px 14px !important; border-radius:50px !important; margin-bottom:0 !important; text-decoration:none; cursor:pointer; transition:opacity .2s, transform .2s; }
+    .about-tag { background:var(--tint-blue); color:var(--brand-blue-deep); }
     .about-tag:hover { opacity:.78; transform:translateY(-2px); }
     .about-logo { width:min(340px,82vw); margin:0 auto; display:block; }
     .about-logo img { width:100%; height:auto; display:block; filter:drop-shadow(0 22px 40px rgba(28,28,30,.14)); }
@@ -189,7 +205,7 @@
 <main id="main">
 
 <section class="hero">
-  <img class="hero-bg" src="images/silken-currents.jpeg" alt="Silken Currents — abstract pastel art print" width="1920" height="1080" fetchpriority="high"/>
+  <img class="hero-bg" src="images/silken-currents.jpeg" alt="The Stream — abstract pastel art print" width="1920" height="1080" fetchpriority="high"/>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-kicker">Daily T Studio &nbsp;·&nbsp; Design &amp; Art Prints</span>
@@ -221,78 +237,82 @@
       <h2 class="sec-title">Explore the<br/><em>designs</em></h2>
     </div>
     <p class="reveal d1" style="font-size:0.97rem;line-height:1.8;color:var(--ink-soft);max-width:340px;">Swipe to browse — or visit Etsy for a selection of the work.</p>
+    <div class="carousel-nav" aria-hidden="false">
+      <button class="cnav-btn" id="track-prev" aria-label="Previous designs"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="cnav-btn" id="track-next" aria-label="Next designs"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
   </div>
 
   <div class="carousel-track" id="track">
 
     <a href="pages/art-prints.html" class="card">
       <div class="card-img">
-        <span class="fmt" style="color:#F7AE00;">Physical print</span>
-        <img src="images/1412-preview.png" alt="Silken Currents — abstract pastel art print" width="1000" height="1400" loading="lazy"/>
+        <span class="fmt" style="color:var(--brand-red);">Physical print</span>
+        <img src="images/1412-preview.png" alt="The Stream — abstract pastel art print" width="1000" height="1400" loading="lazy"/>
       </div>
-      <div class="card-body" style="background:#FFF8E8;">
+      <div class="card-body" style="background:var(--tint-red);">
         <div class="kick">Art Print</div>
-        <div class="card-name">Silken <em style="color:#F7AE00;">Currents</em></div>
+        <div class="card-name">The <em style="color:var(--brand-red);">Stream</em></div>
       </div>
     </a>
     <a href="pages/art-prints.html" class="card">
       <div class="card-img">
-        <span class="fmt" style="color:#F7AE00;">Physical print</span>
-        <img src="images/loopI-preview.png" alt="Loop I — single-line face art print" width="1000" height="1400" loading="lazy"/>
+        <span class="fmt" style="color:var(--brand-red);">Physical print</span>
+        <img src="images/loopI-preview.png" alt="The Loop I — single-line face art print" width="1000" height="1400" loading="lazy"/>
       </div>
-      <div class="card-body" style="background:#FFF8E8;">
+      <div class="card-body" style="background:var(--tint-red);">
         <div class="kick">Art Print</div>
-        <div class="card-name">Loop <em style="color:#F7AE00;">I</em></div>
+        <div class="card-name">The Loop <em style="color:var(--brand-red);">I</em></div>
       </div>
     </a>
     <a href="pages/art-prints.html" class="card">
       <div class="card-img">
-        <span class="fmt" style="color:#F7AE00;">Physical print</span>
-        <img src="images/loopII-preview.png" alt="Loop II — single-line faces art print" width="1000" height="1400" loading="lazy"/>
+        <span class="fmt" style="color:var(--brand-red);">Physical print</span>
+        <img src="images/loopII-preview.png" alt="The Loop II — single-line faces art print" width="1000" height="1400" loading="lazy"/>
       </div>
-      <div class="card-body" style="background:#FFF8E8;">
+      <div class="card-body" style="background:var(--tint-red);">
         <div class="kick">Art Print</div>
-        <div class="card-name">Loop <em style="color:#F7AE00;">II</em></div>
+        <div class="card-name">The Loop <em style="color:var(--brand-red);">II</em></div>
       </div>
     </a>
     <a href="pages/kids-prints.html" class="card">
       <div class="card-img">
-        <span class="fmt" style="color:#783CFA;">Physical print</span>
-        <img src="images/ada-preview.png" alt="A Big Small World — whimsical kids art print" width="1000" height="1400" loading="lazy"/>
+        <span class="fmt" style="color:var(--brand-pink-deep);">Physical print</span>
+        <img src="images/ada-preview.png" alt="Little One — whimsical kids art print" width="1000" height="1400" loading="lazy"/>
       </div>
-      <div class="card-body" style="background:#F5F1FE;">
+      <div class="card-body" style="background:var(--tint-pink);">
         <div class="kick">Kids Print</div>
-        <div class="card-name">A Big Small <em style="color:#783CFA;">World</em></div>
+        <div class="card-name">Little <em style="color:var(--brand-pink-deep);">One</em></div>
       </div>
     </a>
     <a href="pages/craft-prints.html" class="card">
       <div class="card-img">
-        <span class="fmt" style="color:#5596F5;">Physical print</span>
-        <img src="images/advent-preview.png" alt="Advent — DIY Christmas activity poster" width="1000" height="1400" loading="lazy"/>
+        <span class="fmt" style="color:var(--brand-blue-deep);">Physical print</span>
+        <img src="images/advent-preview.png" alt="24 of Advent — DIY Christmas craft print" width="1000" height="1400" loading="lazy"/>
       </div>
-      <div class="card-body" style="background:#F4F8FE;">
-        <div class="kick">Activity Poster</div>
-        <div class="card-name"><em style="color:#5596F5;">Advent</em></div>
+      <div class="card-body" style="background:var(--tint-blue);">
+        <div class="kick">Craft Print</div>
+        <div class="card-name">24 of <em style="color:var(--brand-blue-deep);">Advent</em></div>
       </div>
     </a>
     <a href="pages/digital-templates.html" class="card">
       <div class="card-img">
-        <span class="fmt" style="color:#FF5523;">Digital download</span>
-        <img src="images/birthday-preview.png" alt="Birthday invitation template" width="1000" height="1400" loading="lazy"/>
+        <span class="fmt" style="color:var(--brand-pink-deep);">Digital download</span>
+        <img src="images/birthday-preview.png" alt="Happy Birthday invitation template" width="1000" height="1400" loading="lazy"/>
       </div>
-      <div class="card-body" style="background:#FFF2EE;">
+      <div class="card-body" style="background:var(--tint-pink);">
         <div class="kick">Template</div>
-        <div class="card-name">Birthday <em style="color:#FF5523;">Invite</em></div>
+        <div class="card-name">Happy <em style="color:var(--brand-pink-deep);">Birthday</em></div>
       </div>
     </a>
     <a href="pages/illustrations.html" class="card">
       <div class="card-img">
-        <span class="fmt" style="color:#1363E8;">Commission</span>
+        <span class="fmt" style="color:var(--brand-blue-deep);">Commission</span>
         <img src="images/sleepy-preview.png" alt="Konka illustration — Sleepy character" width="1000" height="1400" loading="lazy"/>
       </div>
-      <div class="card-body" style="background:#EBF2FD;">
+      <div class="card-body" style="background:var(--tint-blue);">
         <div class="kick">Illustration</div>
-        <div class="card-name">Konka — <em style="color:#1363E8;">Sleepy</em></div>
+        <div class="card-name">Konka — <em style="color:var(--brand-blue-deep);">Sleepy</em></div>
       </div>
     </a>
 
@@ -310,7 +330,7 @@
 </section>
 
 <div class="split" id="prints">
-  <div class="split-img"><img src="images/silken-stue.jpeg" alt="Silken Currents in a living room" width="900" height="900" loading="lazy"/></div>
+  <div class="split-img"><img src="images/silken-stue.jpeg" alt="The Stream in a living room" width="900" height="900" loading="lazy"/></div>
   <div class="split-text">
     <span class="kicker">Art Prints · POD</span>
     <h2 class="sec-title" style="margin-bottom:18px;">Prints that<br/><em>lift a room</em></h2>
@@ -325,7 +345,7 @@
     <span class="kicker">Craft Prints · DIY</span>
     <h2 class="sec-title" style="margin-bottom:18px;">Play that<br/><em>lasts</em></h2>
     <p class="sec-desc" style="margin-bottom:32px;">Two art posters — a backdrop and a sheet of 24 characters, one for each day of advent. Print them, hang them up, and let imagination do the rest.</p>
-    <a href="pages/craft-prints.html" class="btn-dark" style="align-self:flex-start;">See activity posters <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="pages/craft-prints.html" class="btn-dark" style="align-self:flex-start;">See craft prints <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </div>
 
@@ -337,11 +357,11 @@
       <p>Daily T Studio is a small creative studio run by a Scandinavian designer with a love of colour, detail and things that make everyday life a little more joyful.</p>
       <a href="pages/about.html" class="btn-dark" style="align-self:flex-start;margin-top:8px;margin-bottom:28px;">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="about-tags">
-        <a href="pages/art-prints.html" class="about-tag tag-a">Art Prints</a>
-        <a href="pages/kids-prints.html" class="about-tag tag-d">Kids Prints</a>
-        <a href="pages/craft-prints.html" class="about-tag tag-c">Craft Prints</a>
-        <a href="pages/digital-templates.html" class="about-tag tag-b">Digital Templates</a>
-        <a href="pages/illustrations.html" class="about-tag tag-e">Illustrations</a>
+        <a href="pages/art-prints.html" class="about-tag">Art Prints</a>
+        <a href="pages/kids-prints.html" class="about-tag">Kids Prints</a>
+        <a href="pages/craft-prints.html" class="about-tag">Craft Prints</a>
+        <a href="pages/digital-templates.html" class="about-tag">Digital Templates</a>
+        <a href="pages/illustrations.html" class="about-tag">Illustrations</a>
       </div>
     </div>
     <div class="reveal d1">
@@ -354,7 +374,7 @@
   <span class="kicker" style="display:block;margin-bottom:14px;">Ready to shop?</span>
   <h2 class="sec-title reveal blob-bg">Browse the<br/><em>Etsy shop</em></h2>
   <p class="reveal d1">Digital downloads and art prints delivered via Gelato — order directly from my shop.</p>
-  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="btn-etsy reveal d2">Visit DailyTstudio on Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="btn-etsy reveal d2">Visit on Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </section>
 
 </main>

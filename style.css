@@ -8,7 +8,7 @@
 
   /* ── Colours ── */
   --white:     #FFFFFF;
-  --off-white: #FAFAF8;
+  --off-white: var(--cream);   /* warm cream replaces neutral off-white */
   --ink:       #1C1C1E;
   --ink-soft:  rgba(28,28,30,0.68);
   --ink-muted: rgba(28,28,30,0.60);
@@ -22,9 +22,38 @@
   --yellow:    #FFF5AD;
   --peach:     #F9D597;
   --etsy:      #F1641E;
-  --brand-red: #C02121;   /* logo cup red */
-  --brand-pink:#FFAFDF;   /* soft logo pink — accents */
-  --blob:      #FFD4EC;   /* soft logo pink — decorative motif */
+
+  /* ════ Brand palette v2 — Cherry · Peony · Cornflower · Butter ════ */
+  --cherry:           #BC2942;   /* primary red — logo cup */
+  --cherry-deep:      #8A1E2E;   /* hover / dark accent */
+  --cherry-soft:      #D45E70;   /* decorative */
+  --cherry-tint:      #F9EBED;   /* card surface */
+  --peony:            #EA7BB8;   /* primary pink */
+  --peony-light:      #FFAFDF;   /* logo blob pink */
+  --peony-deep:       #AE3270;   /* text-safe pink */
+  --peony-soft:       #F49ACB;   /* decorative */
+  --peony-tint:       #FCEDF6;   /* card surface */
+  --cornflower:       #6C88E5;   /* secondary blue */
+  --cornflower-light: #A1B5ED;   /* decorative */
+  --cornflower-deep:  #3757AE;   /* text-safe blue */
+  --cornflower-tint:  #EEF1FC;   /* card surface */
+  --butter:           #F5E3A3;   /* warm surface — merch & strips */
+  --butter-strong:    #F0D67E;   /* decorative */
+  --butter-soft:      #F8ECC4;   /* soft warm surface */
+  --cream:            #FBF6E7;   /* very light butter — section background */
+
+  /* aliases used throughout the stylesheets */
+  --brand-red:        var(--cherry);
+  --brand-red-deep:   var(--cherry-deep);
+  --brand-pink:       var(--peony);
+  --brand-pink-light: var(--peony-light);
+  --brand-pink-deep:  var(--peony-deep);
+  --brand-blue:       var(--cornflower);
+  --brand-blue-deep:  var(--cornflower-deep);
+  --tint-pink:        var(--peony-tint);
+  --tint-blue:        var(--cornflower-tint);
+  --tint-red:         var(--cherry-tint);
+  --blob:             var(--peony-light);
 
   /* Per-page accent — overridden by body.page-* classes */
   --accent:        #9b6bad;  /* default = art-prints lilac */
@@ -37,15 +66,15 @@
 }
 
 /* ── Per-page accent colours ── */
-body.page-index            { --accent: #FFAFDF; --accent-strong: #FFAFDF; --accent-deep:#C02121; }
-body.page-art-prints       { --accent: #FFCB4F; --accent-strong: #FFCB4F; --accent-deep:#FFB94F; }
-body.page-kids-prints      { --accent: #B494F9; --accent-strong: #B494F9; --accent-deep:#9575DD; }
-body.page-craft-prints     { --accent: #AAC9F7; --accent-strong: #AAC9F7; --accent-deep:#6498ED; }
-body.page-templates        { --accent: #FF987A; --accent-strong: #FF987A; --accent-deep:#F18261; }
-body.page-illustrations    { --accent: #6498ED; --accent-strong: #6498ED; --accent-deep:#316DCE; }
-body.page-about            { --accent: #7CAF57; --accent-strong: #7CAF57; --accent-deep:#699548; }
-body.page-404              { --accent: #FFAFDF; --accent-strong: #FFAFDF; --accent-deep:#C02121; }
-body.page-archive          { --accent: #d97b2a; --accent-strong: #d97b2a; --accent-deep:#C57A3A; }
+body.page-index            { --accent: var(--brand-pink); --accent-strong: var(--brand-pink); --accent-deep: var(--brand-red); }
+body.page-art-prints       { --accent: var(--brand-red);  --accent-strong: var(--brand-red);  --accent-deep: var(--brand-red); }
+body.page-kids-prints      { --accent: var(--brand-pink); --accent-strong: var(--brand-pink-deep); --accent-deep: var(--brand-pink-deep); }
+body.page-craft-prints     { --accent: var(--brand-blue); --accent-strong: var(--brand-blue); --accent-deep: var(--brand-blue-deep); }
+body.page-templates        { --accent: var(--brand-pink); --accent-strong: var(--brand-pink-deep); --accent-deep: var(--brand-pink-deep); }
+body.page-illustrations    { --accent: var(--brand-blue); --accent-strong: var(--brand-blue); --accent-deep: var(--brand-blue-deep); }
+body.page-about            { --accent: var(--brand-pink); --accent-strong: var(--brand-pink-deep); --accent-deep: var(--brand-pink-deep); }
+body.page-404              { --accent: var(--brand-pink); --accent-strong: var(--brand-pink); --accent-deep: var(--brand-red); }
+body.page-archive          { --accent: var(--brand-blue); --accent-strong: var(--brand-blue); --accent-deep: var(--brand-blue-deep); }
 
 /* ── Skip link (accessibility) ── */
 .skip-link {
@@ -63,6 +92,8 @@ body.page-archive          { --accent: #d97b2a; --accent-strong: #d97b2a; --acce
 html { scroll-behavior:smooth; }
 html, body { max-width:100%; overflow-x:hidden; background:#ffffff; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
 img { max-width:100%; }
+::selection { background:var(--peony-light); color:var(--ink); }
+a, button { touch-action:manipulation; -webkit-tap-highlight-color:rgba(28,28,30,0.06); }
 body {
   font-family:'DM Sans', sans-serif;
   font-weight:300;
@@ -91,7 +122,7 @@ body {
   font-size:0.68rem; font-weight:500; letter-spacing:.09em;
   text-transform:uppercase;
   padding:5px 12px; border-radius:50px;
-  border:1.5px solid var(--accent); color:var(--accent);
+  border:1.5px solid var(--accent-strong); color:var(--accent-strong);
   background:transparent; white-space:nowrap; line-height:1;
 }
 
@@ -137,7 +168,7 @@ body {
   text-decoration:none; white-space:nowrap;
   transition:opacity .2s, transform .2s;
 }
-.btn-etsy:hover { opacity:.88; transform:translateY(-2px); }
+.btn-etsy:hover { background:var(--cherry-deep); transform:translateY(-2px); }
 
 /* "Coming soon" state — visually distinct from the active Etsy button.
    Muted outline + small Etsy-orange dot, non-clickable (rendered as a <span>). */
@@ -161,7 +192,7 @@ body {
   text-decoration:none; white-space:nowrap;
   transition:opacity .2s;
 }
-.btn-etsy-sm:hover { opacity:.88; }
+.btn-etsy-sm:hover { background:var(--cherry-deep); }
 
 /* ── Typography helpers ── */
 .kicker {
@@ -304,7 +335,7 @@ body.menu-open .nav-hamburger span:nth-child(3) { transform:translateY(-6.5px) r
   padding:14px 28px; border-radius:50px;
   display:inline-flex; align-items:center; gap:10px;
 }
-.mobile-menu .menu-etsy:hover { opacity:.88; }
+.mobile-menu .menu-etsy:hover { background:var(--cherry-deep); }
 
 @media (max-width:760px) {
   .nav-links { display:none; }
@@ -323,7 +354,13 @@ body.menu-open { overflow:hidden; }
    FOOTER
    ============================================================ */
 
-footer { background:var(--off-white); padding:64px 24px 36px; }
+footer { position:relative; background:var(--off-white); padding:64px 24px calc(36px + env(safe-area-inset-bottom, 0px)); }
+footer::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(to right,
+    var(--cherry) 0 25%, var(--cornflower) 25% 50%,
+    var(--peony) 50% 75%, var(--butter) 75% 100%);
+}
 .footer-top {
   display:grid; grid-template-columns:2fr 1fr 1fr;
   gap:48px; margin-bottom:40px;
@@ -335,7 +372,7 @@ footer { background:var(--off-white); padding:64px 24px 36px; }
   font-size:0.7rem; font-weight:500; letter-spacing:.12em;
   text-transform:uppercase; color:var(--ink-muted); margin-bottom:16px;
 }
-.footer-col a { display:block; font-size:0.88rem; color:var(--ink-soft); text-decoration:none; margin-bottom:10px; transition:color .2s; }
+.footer-col a { display:block; font-size:0.88rem; color:var(--ink-soft); text-decoration:none; padding:5px 0; margin-bottom:2px; transition:color .2s; }
 .footer-col a:hover { color:#1C1C1E; }
 .footer-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:0.78rem; color:var(--ink-muted); }
 @media(max-width:640px) { .footer-top { grid-template-columns:1fr; gap:32px; } }
@@ -380,12 +417,13 @@ footer { background:var(--off-white); padding:64px 24px 36px; }
 }
 .filter-btn {
   font-size:0.78rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase;
-  padding:8px 18px; border-radius:50px; border:1.5px solid var(--rule);
-  background:rgba(28,28,30,0.05); color:var(--ink-soft); cursor:pointer; transition:all .2s;
+  padding:9px 18px; border-radius:50px; border:none;
+  background:rgba(28,28,30,0.055); color:var(--ink-soft); cursor:pointer;
+  transition:background .2s, color .2s;
   font-family:'DM Sans',sans-serif;
 }
-.filter-btn:hover { border-color:var(--ink); color:var(--ink); }
-.filter-btn.active { background:#1C1C1E; border-color:#1C1C1E; color:#fff; }
+.filter-btn:hover { background:rgba(28,28,30,0.1); color:var(--ink); }
+.filter-btn.active { background:#1C1C1E; color:#fff; }
 
 /* ============================================================
    PRINT LIST + ROW — product display on collection pages
@@ -454,11 +492,11 @@ footer { background:var(--off-white); padding:64px 24px 36px; }
   display:flex; justify-content:center; gap:7px; z-index:10;
 }
 .cdot {
-  width:6px; height:6px; border-radius:50%;
-  background:rgba(255,255,255,0.5); border:none; padding:10px; box-sizing:content-box; background-clip:content-box;
+  width:5px; height:5px; border-radius:50%;
+  background:rgba(255,255,255,0.55); border:none; padding:10px; box-sizing:content-box; background-clip:content-box;
   cursor:pointer; transition:background .25s, transform .25s;
 }
-.cdot.active { background:#fff; transform:scale(1.45); }
+.cdot.active { background:#fff; transform:scale(1.15); }
 
 @media (prefers-reduced-motion: reduce) {
   .carousel-slides { transition:none; }
@@ -469,7 +507,7 @@ footer { background:var(--off-white); padding:64px 24px 36px; }
    ============================================================ */
 
 .diy-strip {
-  background:var(--off-white);
+  background:var(--butter-soft);
   padding:56px 24px;
   margin:0 -24px 0 -24px;
 }
@@ -493,33 +531,42 @@ footer { background:var(--off-white); padding:64px 24px 36px; }
 .diy-strip-text { display:flex; flex-direction:column; align-items:flex-start; }
 .diy-strip-kicker {
   font-size:0.7rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
-  color:var(--accent-strong); margin-bottom:14px;
+  color:var(--cherry); margin-bottom:14px;
   display:flex; align-items:center; gap:8px;
 }
 .diy-strip-kicker::before {
-  content:''; width:24px; height:1px; background:var(--accent-strong);
+  content:''; width:24px; height:1px; background:var(--cherry);
 }
 .diy-strip-heading {
   font-family:'Hanken Grotesk', sans-serif;
   font-size:clamp(1.4rem,2.2vw,1.9rem); font-weight:300; line-height:1.2;
   margin-bottom:12px; color:#1C1C1E;
 }
-.diy-strip-heading em { font-style:normal; color:var(--accent-deep); font-weight:600; }
+.diy-strip-heading em { font-style:normal; color:var(--cherry); font-weight:600; }
 .diy-strip-desc {
   font-size:0.93rem; line-height:1.75; color:var(--ink-soft);
   margin-bottom:20px; max-width:440px;
 }
 .diy-strip-steps {
-  display:flex; flex-wrap:wrap; gap:10px;
+  display:flex; flex-wrap:wrap; align-items:center; gap:6px 4px;
   margin-bottom:0;
 }
 .diy-strip-step {
-  display:inline-flex; align-items:center; gap:7px;
+  display:inline-flex; align-items:center; gap:8px;
   font-size:0.78rem; color:var(--ink-soft);
-  background:#fff; padding:7px 13px; border-radius:50px;
+  background:#fff; padding:6px 13px 6px 6px; border-radius:50px;
   box-shadow:0 1px 4px rgba(28,28,30,0.04);
 }
-.diy-strip-step-icon { font-size:0.9rem; flex-shrink:0; }
+.diy-strip-step-num {
+  width:20px; height:20px; border-radius:50%; flex-shrink:0;
+  background:var(--cherry); color:#fff;
+  font-size:0.66rem; font-weight:600; font-family:'Hanken Grotesk',sans-serif;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.diy-strip-step-arrow {
+  color:var(--ink-muted); opacity:.5; flex-shrink:0;
+  display:inline-flex; align-items:center; padding:0 2px;
+}
 
 /* ============================================================
    HOW-IT-WORKS SECTION

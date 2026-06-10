@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#BC2942"/>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
   <script>document.documentElement.classList.add('js');</script>
   <meta name="color-scheme" content="light only"/>
@@ -51,7 +52,7 @@
   <style>
     /* ── Page-specific: about page hero, values, process, contact teaser ── */
 
-    .page-header { background:linear-gradient(135deg, #d4ecd9 0%, #CEE8FF 50%, #e8d5f5 100%); padding:120px 48px 0; }
+    .page-header { background:#fff; padding:120px 48px 0; }
     @media(max-width:760px) { .page-header { padding:120px 24px 0; } }
     .header-text { max-width:640px; padding-bottom:48px; }
     .header-img-strip { width:100%; margin-top:48px; border-radius:20px 20px 0 0; overflow:hidden; box-shadow:0 -4px 32px rgba(28,28,30,0.08); }
@@ -62,7 +63,7 @@
     .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; max-width:1060px; margin:0 auto; }
     @media(max-width:760px) { .intro-grid { grid-template-columns:1fr; gap:40px; } }
     .intro-text h2 { font-family:'Hanken Grotesk', sans-serif; font-size:clamp(1.8rem,3vw,2.4rem); font-weight:400; line-height:1.2; margin-bottom:24px; }
-    .intro-text h2 em { color:var(--accent); font-weight:600; }
+    .intro-text h2 em { color:var(--accent-deep); font-weight:600; }
     .intro-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
     .intro-text p:last-child { margin-bottom:0; }
     /* Artist photo — circular, matched to the homepage logo circle */
@@ -106,7 +107,7 @@
       padding:4px 10px; border-radius:50px;
       background:rgba(255,255,255,0.9); backdrop-filter:blur(8px); color:var(--ink);
     }
-    .step-badge.finished { background:rgba(74,138,90,0.12); color:var(--accent); }
+    .step-badge.finished { background:var(--tint-pink); color:var(--accent-deep); }
 
     /* Contact teaser */
     .contact-teaser { background:var(--off-white); padding:72px 24px; text-align:center; }
@@ -254,18 +255,18 @@
     <p class="process-intro reveal">Each design starts with a loose idea — a colour palette, a feeling, a scene. It's worked up in layers and refined until it feels right. Here's a glimpse behind the scenes.</p>
 
     <div class="process-design reveal">
-      <div class="process-design-label">A Big Small World</div>
+      <div class="process-design-label">Little One</div>
       <p style="font-size:0.9rem;line-height:1.8;color:rgba(28,28,30,0.55);margin-bottom:20px;max-width:680px;">Drawn entirely digitally by hand using an Apple Pencil in Linearity Curve. Worked on over a period of one and a half years — started when I became pregnant, and continued in stolen moments here and there. The goal was to create a magical little universe, intentionally a little odd and random, so there's always a new detail to discover.</p>
       <div class="process-pair">
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/process-ada-wip.jpg" alt="A Big Small World — work in progress" width="900" height="1200" loading="lazy"/>
+            <img src="../images/process-ada-wip.jpg" alt="Little One — work in progress" width="900" height="1200" loading="lazy"/>
             <span class="step-badge">In progress</span>
           </div>
         </div>
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/ada.jpeg" alt="A Big Small World — finished art print" width="900" height="1200" loading="lazy"/>
+            <img src="../images/ada.jpeg" alt="Little One — finished art print" width="900" height="1200" loading="lazy"/>
             <span class="step-badge finished">Finished</span>
           </div>
         </div>
@@ -273,18 +274,18 @@
     </div>
 
     <div class="process-design reveal">
-      <div class="process-design-label">Silken Currents</div>
+      <div class="process-design-label">The Stream</div>
       <p style="font-size:0.9rem;line-height:1.8;color:rgba(28,28,30,0.55);margin-bottom:20px;max-width:680px;">Inspired by water and rivers — the calm movement, the texture of light on the surface. Started as an acrylic painting on canvas, then redrawn digitally by hand using an Apple Pencil in Linearity Curve.</p>
       <div class="process-pair">
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/process-silken-wip.JPG" alt="Silken Currents — work in progress" width="900" height="1200" loading="lazy"/>
+            <img src="../images/process-silken-wip.JPG" alt="The Stream — work in progress" width="900" height="1200" loading="lazy"/>
             <span class="step-badge">In progress</span>
           </div>
         </div>
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/silken.jpeg" alt="Silken Currents — finished art print" width="900" height="1200" loading="lazy"/>
+            <img src="../images/silken.jpeg" alt="The Stream — finished art print" width="900" height="1200" loading="lazy"/>
             <span class="step-badge finished">Finished</span>
           </div>
         </div>
@@ -292,18 +293,18 @@
     </div>
 
     <div class="process-design reveal">
-      <div class="process-design-label">Loop I &amp; Loop II</div>
+      <div class="process-design-label">The Loop I &amp; The Loop II</div>
       <p style="font-size:0.9rem;line-height:1.8;color:rgba(28,28,30,0.55);margin-bottom:20px;max-width:680px;">Both began as acrylic paintings on thick paper — loose, exploratory brushwork that became the foundation for the final designs. Each was then redrawn digitally by hand using an Apple Pencil in Linearity Curve. They work beautifully together, but each holds its own on a wall.</p>
       <div class="process-pair">
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/process-loops-wip.jpg" alt="Loop I and Loop II — work in progress" width="900" height="1200" loading="lazy"/>
+            <img src="../images/process-loops-wip.jpg" alt="The Loop I and The Loop II — work in progress" width="900" height="1200" loading="lazy"/>
             <span class="step-badge">In progress</span>
           </div>
         </div>
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/duo-duo.jpeg" alt="Loop I and Loop II — finished art prints" width="900" height="1200" loading="lazy"/>
+            <img src="../images/duo-duo.jpeg" alt="The Loop I and The Loop II — finished art prints" width="900" height="1200" loading="lazy"/>
             <span class="step-badge finished">Finished</span>
           </div>
         </div>

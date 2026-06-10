@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#BC2942"/>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
   <script>document.documentElement.classList.add('js');</script>
   <meta name="color-scheme" content="light only"/>
@@ -26,7 +27,7 @@
       min-height:calc(100vh - 64px);
       display:flex; align-items:center; justify-content:center;
       padding:96px 24px 64px;
-      background:linear-gradient(135deg, #FFE8E3 0%, #CEE8FF 50%, #FFF5AD 100%);
+      background:var(--off-white);
       text-align:center;
     }
     .err-inner { max-width:540px; }
@@ -36,13 +37,13 @@
       line-height:1; margin-bottom:8px;
       color:var(--ink);
     }
-    .err-code em { color:var(--accent); font-weight:600; }
+    .err-code em { color:var(--accent-deep); font-weight:600; }
     .err-title {
       font-family:'Hanken Grotesk', sans-serif;
       font-size:clamp(1.4rem, 3vw, 2rem); font-weight:400;
       line-height:1.2; margin-bottom:18px;
     }
-    .err-title em { color:var(--accent); font-weight:600; }
+    .err-title em { color:var(--accent-deep); font-weight:600; }
     .err-desc {
       font-size:0.97rem; line-height:1.8; color:var(--ink-soft);
       max-width:420px; margin:0 auto 32px;
