@@ -55,6 +55,8 @@
     .page-header { background:#fff; padding:124px 48px 0; }
     @media(max-width:760px) { .page-header { padding:124px 24px 0; } }
     .header-text { max-width:640px; padding-bottom:48px; }
+    /* The wordmark logo as the second line of the h1 */
+    .h1-logo { display:block; height:clamp(2.1rem,5vw,3.6rem); width:auto; margin-top:16px; }
     .header-img-strip { width:100%; margin-top:48px; border-radius:20px 20px 0 0; overflow:hidden; box-shadow:0 -4px 32px rgba(28,28,30,0.08); }
     .header-img-strip img { width:100%; height:auto; display:block; max-height:520px; object-fit:cover; object-position:center 30%; }
 
@@ -69,10 +71,10 @@
     /* Artist photo — masked in the brand blob */
     .artist-figure { margin:0; display:flex; flex-direction:column; align-items:center; }
     .artist-photo {
-      width:min(340px,82vw); height:min(260px,62vw); max-width:100%;
+      width:min(440px,88vw); height:auto; aspect-ratio:486/512; max-width:100%;
       object-fit:cover; object-position:center;
-      -webkit-mask:var(--blob-mask) center/100% 100% no-repeat;
-              mask:var(--blob-mask) center/100% 100% no-repeat;
+      -webkit-mask:var(--blob-mask-logo) center/100% 100% no-repeat;
+              mask:var(--blob-mask-logo) center/100% 100% no-repeat;
       display:block;
     }
 
@@ -83,11 +85,11 @@
     @media(max-width:640px) { .values-grid { grid-template-columns:1fr; gap:24px; } }
     .value-item { display:flex; flex-direction:column; gap:14px; }
     .value-icon {
-      width:58px; height:42px;
+      width:54px; height:56px;
       background:#ffffff;
       display:flex; align-items:center; justify-content:center; font-size:1.2rem;
-      -webkit-mask:var(--blob-mask) center/100% 100% no-repeat;
-              mask:var(--blob-mask) center/100% 100% no-repeat;
+      -webkit-mask:var(--blob-mask-logo) center/100% 100% no-repeat;
+              mask:var(--blob-mask-logo) center/100% 100% no-repeat;
     }
     .value-title { font-size:0.97rem; font-weight:500; color:var(--ink); }
     .value-desc { font-size:0.87rem; color:var(--ink-soft); line-height:1.65; }
@@ -136,7 +138,7 @@
       .intro-grid { gap:28px; }
       .intro-text h2 { margin-bottom:16px; }
       .intro-text p { margin-bottom:14px; }
-      .artist-photo { width:min(260px,72vw); height:min(196px,54vw); }
+      .artist-photo { width:min(330px,82vw); height:auto; }
 
       /* Values: compact horizontal items (icon left, text right) */
       .values-section { padding:48px 20px; }
@@ -148,7 +150,7 @@
         background:#fff; border-radius:14px; padding:16px 18px;
         box-shadow:0 2px 10px rgba(28,28,30,0.05);
       }
-      .value-icon { grid-row:1 / span 2; align-self:center; width:48px; height:34px; font-size:1.05rem; background:var(--cream); }
+      .value-icon { grid-row:1 / span 2; align-self:center; width:46px; height:48px; font-size:1.05rem; background:var(--cream); }
       .value-title { align-self:end; }
       .value-desc { align-self:start; }
 
@@ -213,7 +215,7 @@
       <span class="breadcrumb-sep">/</span>
       <span>About</span>
     </div>
-    <h1>About<br/><em>Daily T Studio</em></h1>
+    <h1>About<br/><img class="h1-logo" src="../images/document-header.png" alt="Daily T Studio" width="114" height="38"/></h1>
     <p>A small independent design studio making colourful, hand-drawn work — art prints, activity designs and illustrations.</p>
   </div>
   <div class="header-img-strip reveal d1">
@@ -337,10 +339,14 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-wordmark"><span class="blob-dot" aria-hidden="true"></span>Daily <em>T</em> Studio</div>
+      <a href="../index.html" class="footer-logo"><img src="../images/logo-white.png" alt="Daily T Studio" loading="lazy" decoding="async"/></a>
       <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
     </div>
     <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener">Etsy: DailyTstudio</a>
+    </div>
+    <div class="footer-col footer-col-end">
       <h4>Explore</h4>
       <a href="../index.html#work">Portfolio</a>
       <a href="art-prints.html">Art Prints</a>
@@ -349,10 +355,6 @@
       <a href="digital-templates.html">Digital Templates</a>
       <a href="illustrations.html">Custom Illustrations</a>
       <a href="about.html">About</a>
-    </div>
-    <div class="footer-col">
-      <h4>Shop</h4>
-      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener">Etsy: DailyTstudio</a>
     </div>
   </div>
   <div class="footer-bottom">

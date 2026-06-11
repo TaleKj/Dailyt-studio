@@ -93,12 +93,12 @@
     }
     .offer-card:hover { transform:translateY(-3px) rotate(-0.3deg); box-shadow:var(--shadow); }
     .offer-icon {
-      width:58px; height:42px;
+      width:54px; height:56px;
       background:#ffffff;
       display:flex; align-items:center; justify-content:center;
       font-size:1.2rem; margin-bottom:16px;
-      -webkit-mask:var(--blob-mask) center/100% 100% no-repeat;
-              mask:var(--blob-mask) center/100% 100% no-repeat;
+      -webkit-mask:var(--blob-mask-logo) center/100% 100% no-repeat;
+              mask:var(--blob-mask-logo) center/100% 100% no-repeat;
     }
     .offer-title {
       font-family:'Hanken Grotesk', sans-serif;
@@ -115,7 +115,7 @@
         column-gap:16px; row-gap:3px;
         padding:18px 20px;
       }
-      .offer-icon { grid-row:1 / span 2; align-self:center; margin-bottom:0; width:50px; height:36px; font-size:1.05rem; }
+      .offer-icon { grid-row:1 / span 2; align-self:center; margin-bottom:0; width:46px; height:48px; font-size:1.05rem; }
       .offer-title { font-size:1.1rem; margin-bottom:0; }
       .offer-desc { font-size:0.88rem; line-height:1.6; }
     }
@@ -486,10 +486,14 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-wordmark"><span class="blob-dot" aria-hidden="true"></span>Daily <em>T</em> Studio</div>
+      <a href="../index.html" class="footer-logo"><img src="../images/logo-white.png" alt="Daily T Studio" loading="lazy" decoding="async"/></a>
       <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
     </div>
     <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener">Etsy: DailyTstudio</a>
+    </div>
+    <div class="footer-col footer-col-end">
       <h4>Explore</h4>
       <a href="../index.html#work">Portfolio</a>
       <a href="art-prints.html">Art Prints</a>
@@ -498,10 +502,6 @@
       <a href="digital-templates.html">Digital Templates</a>
       <a href="illustrations.html">Custom Illustrations</a>
       <a href="about.html">About</a>
-    </div>
-    <div class="footer-col">
-      <h4>Shop</h4>
-      <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener">Etsy: DailyTstudio</a>
     </div>
   </div>
   <div class="footer-bottom">

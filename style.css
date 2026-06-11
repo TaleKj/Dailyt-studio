@@ -54,6 +54,9 @@
   /* The brand blob — one shape, used everywhere (logo blob) */
   --blob-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 168'%3E%3Cpath d='M173.1,13.9 C191.3,16.0 213.9,19.0 227.2,27.0 C240.5,35.0 250.2,50.3 252.9,62.1 C255.5,74.0 246.8,86.1 243.1,98.1 C239.4,110.2 241.4,126.1 230.9,134.5 C220.3,142.9 197.3,144.5 179.8,148.5 C162.2,152.4 142.2,160.3 125.6,158.2 C108.9,156.1 90.6,145.0 79.8,135.8 C69.0,126.6 67.0,114.3 61.0,102.9 C54.9,91.6 41.3,78.7 43.8,67.9 C46.3,57.0 63.6,46.6 76.0,37.8 C88.4,28.9 101.9,18.8 118.1,14.8 C134.3,10.8 154.9,11.9 173.1,13.9 Z' fill='%23000'/%3E%3C/svg%3E");
 
+  /* The logo blob as a second mask — rounder shape for icons & photo crops */
+  --blob-mask-logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M264 509C251 510 237 508 226 505C215 503 205 499 195 494C186 490 177 484 169 479C160 473 152 467 144 461C136 455 128 450 120 444C112 438 104 432 96 426C88 420 80 413 73 406C66 399 60 392 54 383C49 375 44 366 40 356C35 346 32 335 30 323C28 311 27 298 26 285C26 272 27 258 28 244C29 231 30 218 32 206C34 194 36 183 39 172C42 161 46 151 51 141C55 132 60 123 66 114C71 106 77 98 83 90C89 82 96 74 103 67C110 60 117 52 125 46C132 39 140 34 148 28C157 23 166 18 176 14C186 10 196 7 209 5C221 3 236 2 249 3C262 3 274 6 286 8C297 11 308 14 319 17C330 20 340 23 350 27C360 31 370 36 379 41C388 46 397 52 404 58C412 64 419 71 425 79C431 87 437 95 441 105C446 114 450 124 453 135C456 146 457 159 459 171C461 183 462 196 463 209C465 221 467 234 469 245C471 257 474 267 477 279C480 290 483 301 484 314C486 326 486 341 485 353C483 365 480 376 475 385C471 395 465 404 459 411C452 419 445 425 437 431C429 437 420 442 411 447C403 452 393 457 383 462C374 467 365 472 356 477C347 482 339 487 329 492C320 496 310 501 300 503C289 506 276 509 264 509Z' fill='%23000'/%3E%3C/svg%3E");
+
   /* Shadows */
   --shadow:    0 1px 2px rgba(28,28,30,0.04), 0 6px 18px rgba(28,28,30,0.05);
   --shadow-lg: 0 2px 6px rgba(28,28,30,0.05), 0 12px 30px rgba(28,28,30,0.07);
@@ -192,7 +195,7 @@ body {
 /* "Coming soon" state — visually distinct from the active Etsy button. */
 .btn-soon {
   display:inline-flex; align-items:center; gap:9px;
-  background:var(--cherry-tint); color:var(--cherry-deep);
+  background:var(--butter-soft); color:var(--cherry-deep);
   font-size:0.92rem; font-weight:500;
   padding:15px 32px; border-radius:50px;
   white-space:nowrap; cursor:default; user-select:none;
@@ -300,6 +303,12 @@ nav.transparent .nav-btn { color:#fff; border-color:rgba(255,255,255,0.6); }
 nav.transparent .nav-btn:hover { background:rgba(255,255,255,0.18); border-color:rgba(255,255,255,0.6); }
 nav.transparent.scrolled .nav-btn { color:#1C1C1E; border-color:rgba(28,28,30,0.4); }
 nav.transparent.scrolled .nav-btn:hover { background:var(--cherry); border-color:var(--cherry); color:#fff; }
+/* Transparent nav over a LIGHT (cream) hero — keep ink-coloured links/btn/hamburger */
+nav.transparent.nav-light .nav-links a { color:var(--ink-soft); }
+nav.transparent.nav-light .nav-links a:hover { color:#1C1C1E; }
+nav.transparent.nav-light .nav-btn { color:#1C1C1E; border-color:rgba(28,28,30,0.4); }
+nav.transparent.nav-light .nav-btn:hover { background:var(--cherry); border-color:var(--cherry); color:#fff; }
+nav.transparent.nav-light:not(.scrolled) .nav-hamburger span { background:var(--ink); }
 
 /* ── Hamburger ── */
 .nav-hamburger {
@@ -384,14 +393,9 @@ footer {
   border-bottom:1px solid rgba(251,246,231,0.18);
   max-width:1160px; margin-left:auto; margin-right:auto;
 }
-.footer-wordmark {
-  font-family:'Hanken Grotesk', sans-serif;
-  font-size:1.7rem; font-weight:300; letter-spacing:-0.01em;
-  color:var(--cream); margin-bottom:14px;
-  display:flex; align-items:center; gap:12px;
-}
-.footer-wordmark em { font-family:'Fraunces', serif; font-style:normal; font-weight:600; color:var(--peony-light); }
-.footer-wordmark .blob-dot { background:var(--peony-light); }
+.footer-logo { display:inline-block; margin-bottom:16px; }
+.footer-logo img { height:48px; width:auto; display:block; }
+.footer-col-end { text-align:right; }
 .footer-brand p { font-size:0.86rem; line-height:1.7; color:rgba(251,246,231,0.75); max-width:280px; }
 .footer-col h4 {
   font-size:0.7rem; font-weight:500; letter-spacing:.12em;
@@ -404,7 +408,7 @@ footer {
   font-size:0.78rem; color:rgba(251,246,231,0.6);
   max-width:1160px; margin:0 auto;
 }
-@media(max-width:640px) { .footer-top { grid-template-columns:1fr; gap:32px; } }
+@media(max-width:640px) { .footer-top { grid-template-columns:1fr; gap:32px; } .footer-col-end { text-align:left; } }
 
 /* --- General mobile spacing: tighten tall section padding on phones --- */
 @media(max-width:600px) {
@@ -451,13 +455,13 @@ footer {
 .filter-btn {
   font-size:0.78rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase;
   padding:12px 20px; border-radius:50px; border:none;
-  background:var(--cherry-tint); color:var(--cherry-deep); cursor:pointer;
+  background:var(--cornflower-tint); color:var(--cornflower-deep); cursor:pointer;
   transition:background .2s, color .2s;
   font-family:'DM Sans',sans-serif;
   min-height:44px; white-space:nowrap; flex-shrink:0;
 }
-.filter-btn:hover { background:#F3DCE1; color:var(--cherry-deep); }
-.filter-btn.active { background:var(--cherry-deep); color:#fff; }
+.filter-btn:hover { background:#E2E9FB; color:var(--cornflower-deep); }
+.filter-btn.active { background:var(--cornflower-deep); color:#fff; }
 
 /* ============================================================
    DESIGN GRID — collection pages: every design is its own
@@ -521,18 +525,25 @@ footer {
 .design-name em { font-family:'Fraunces', serif; font-style:normal; font-weight:600; color:var(--cherry); }
 .design-toggle {
   grid-column:2; grid-row:1 / span 2; align-self:center;
-  width:38px; height:38px; border-radius:50%; flex-shrink:0;
-  background:var(--cherry-tint); color:var(--cherry);
-  display:inline-flex; align-items:center; justify-content:center;
-  transition:transform .3s, background-color .2s, color .2s;
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  padding:9px 14px; border-radius:50px; flex-shrink:0;
+  background:var(--cherry-tint); color:var(--cherry-deep);
+  font-family:'DM Sans', sans-serif;
+  font-size:0.66rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; line-height:1;
+  transition:background-color .2s, color .2s;
 }
+.design-toggle svg { flex-shrink:0; transition:transform .3s; }
 .design summary:hover .design-toggle { background:var(--cherry); color:#fff; }
+.design-toggle .dt-close { display:none; }
+.design[open] .design-toggle .dt-open { display:none; }
+.design[open] .design-toggle .dt-close { display:inline; }
+.design[open] .design-toggle svg { transform:rotate(180deg); }
 
 /* Open: the card becomes a full-width spread */
 .design[open] { grid-column:1 / -1; transform:none; }
 .design[open] .design-cover { display:none; }
 .design[open] .design-bar { background:#fff; padding:22px 28px 6px; }
-.design[open] .design-toggle { transform:rotate(45deg); background:var(--ink); color:#fff; }
+.design[open] .design-toggle { background:var(--cherry-deep); color:#fff; }
 
 .design-detail {
   display:grid; grid-template-columns:minmax(0, 440px) 1fr;
@@ -554,7 +565,11 @@ footer {
   .design-bar { padding:12px 14px 14px; }
   .design-name { font-size:1.05rem; }
   .design-kick { font-size:0.6rem; margin-bottom:4px; }
-  .design-toggle { width:34px; height:34px; }
+  /* Compact toggle: chevron only, so design names fit on one line */
+  .design-toggle { width:36px; height:36px; padding:0; gap:0; border-radius:50%; }
+  .design .design-toggle .dt-open,
+  .design .design-toggle .dt-close,
+  .design[open] .design-toggle .dt-close { display:none; }
 }
 
 /* Text styles inside the open spread (shared with legacy rows) */
@@ -692,12 +707,12 @@ footer {
 @media(max-width:600px) { .how-steps { grid-template-columns:1fr; gap:24px; } }
 .how-step { display:flex; flex-direction:column; align-items:center; gap:14px; }
 .how-num {
-  width:56px; height:40px;
+  width:54px; height:56px;
   background:var(--cherry); color:#fff;
-  font-family:'Hanken Grotesk', sans-serif; font-size:1.05rem;
+  font-family:'Fraunces', serif; font-weight:600; font-size:1.3rem;
   display:flex; align-items:center; justify-content:center;
-  -webkit-mask:var(--blob-mask) center/100% 100% no-repeat;
-          mask:var(--blob-mask) center/100% 100% no-repeat;
+  -webkit-mask:var(--blob-mask-logo) center/100% 100% no-repeat;
+          mask:var(--blob-mask-logo) center/100% 100% no-repeat;
 }
 .how-title { font-family:'Hanken Grotesk', sans-serif; font-size:1rem; font-weight:400; color:#1C1C1E; }
 .how-desc { font-size:0.84rem; color:var(--ink-soft); line-height:1.6; }

@@ -223,31 +223,4 @@
     updateSticky();
   }
 
-  // ── Index page: horizontal carousel dots (work section) ──────
-
-  // ── Index page: desktop carousel arrows (work section) ───────
-  const trackPrev = document.getElementById('track-prev');
-  const trackNext = document.getElementById('track-next');
-  if (track && trackPrev && trackNext) {
-    function cardStep() {
-      const first = track.children[0];
-      if (!first) return 348;
-      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 28;
-      return first.offsetWidth + gap;
-    }
-    function updateArrowState() {
-      const max = track.scrollWidth - track.clientWidth - 2;
-      trackPrev.disabled = track.scrollLeft <= 2;
-      trackNext.disabled = track.scrollLeft >= max;
-    }
-    trackPrev.addEventListener('click', () => {
-      track.scrollBy({ left: -cardStep(), behavior: 'smooth' });
-    });
-    trackNext.addEventListener('click', () => {
-      track.scrollBy({ left: cardStep(), behavior: 'smooth' });
-    });
-    track.addEventListener('scroll', updateArrowState, { passive: true });
-    window.addEventListener('resize', updateArrowState, { passive: true });
-    updateArrowState();
-  }
 })();
