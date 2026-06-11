@@ -6,6 +6,9 @@
 (function () {
   'use strict';
 
+  var reducedMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ── Favicons (injected once here → applies to every page) ────
   // Root-relative paths resolve correctly from any page depth
   // (incl. /pages/...). Browsers that support SVG favicons will
@@ -134,46 +137,93 @@
     });
   });
 
+  // ── Design spreads (collection pages) ────────────────────────
+  // Each design is a native <details>; opening one closes the
+  // others (an "open spread" at a time) and scrolls it into view.
+  // Wrapped in the View Transitions API when available, with a
+  // plain native fallback otherwise.
+  document.querySelectorAll('.design-grid').forEach((grid) => {
+    const designs = Array.from(grid.querySelectorAll('details.design'));
+
+    function closeOthers(current) {
+      designs.forEach((d) => { if (d !== current && d.open) d.open = false; });
+    }
+
+    designs.forEach((d) => {
+      const summary = d.querySelector('summary');
+
+      // Enhance the toggle with View Transitions when supported
+      if (summary && document.startViewTransition && !reducedMotion) {
+        summary.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.startViewTransition(() => {
+            d.open = !d.open;
+            if (d.open) closeOthers(d);
+          });
+        });
+      }
+
+      d.addEventListener('toggle', () => {
+        if (!d.open) return;
+        closeOthers(d);
+        // Keep the opened spread in view under the fixed nav
+        requestAnimationFrame(() => {
+          d.scrollIntoView({
+            behavior: reducedMotion ? 'auto' : 'smooth',
+            block: 'start'
+          });
+        });
+      });
+    });
+  });
+
   // ── Filter bar (collection pages) ────────────────────────────
   const filterBtns = document.querySelectorAll('.filter-btn');
   if (filterBtns.length) {
-    // Filter all rows AND any matching diy-strip with same data-category
-    const filterables = document.querySelectorAll('.print-row, .diy-strip[data-category]');
+    // Filter design spreads, legacy rows AND any matching diy-strip
+    const filterables = document.querySelectorAll(
+      'details.design[data-category], .print-row, .diy-strip[data-category]'
+    );
     filterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         filterBtns.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
         const f = btn.dataset.filter;
         filterables.forEach((el) => {
-          el.style.display = (f === 'all' || el.dataset.category === f) ? '' : 'none';
+          const show = (f === 'all' || el.dataset.category === f);
+          el.style.display = show ? '' : 'none';
+          if (!show && el.tagName === 'DETAILS') el.open = false;
         });
       });
     });
   }
 
-  // ── Index page: horizontal carousel dots (work section) ──────
-  const track = document.getElementById('track');
-  const trackDots = document.querySelectorAll('#dots .dot');
-  if (track && trackDots.length) {
-    function updateTrackDots() {
-      const cards = Array.from(track.children);
-      const cx = track.scrollLeft + track.clientWidth / 2;
-      let closest = 0;
-      let min = Infinity;
-      cards.forEach((c, i) => {
-        const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - cx);
-        if (d < min) { min = d; closest = i; }
-      });
-      trackDots.forEach((d, i) => d.classList.toggle('active', i === closest));
+  // ── Sticky "Visit on Etsy" CTA (mobile, collection pages) ────
+  const sticky = document.getElementById('sticky-etsy');
+  if (sticky) {
+    sticky.hidden = false;
+    const endEls = document.querySelectorAll('.cta-section, footer');
+    const visibleEnds = new Set();
+
+    function updateSticky() {
+      sticky.classList.toggle('show', window.scrollY > 360 && visibleEnds.size === 0);
     }
-    track.addEventListener('scroll', updateTrackDots, { passive: true });
-    trackDots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const c = Array.from(track.children)[+dot.dataset.i];
-        if (c) track.scrollTo({ left: c.offsetLeft - 20, behavior: 'smooth' });
-      });
-    });
+
+    if ('IntersectionObserver' in window && endEls.length) {
+      const ioEnd = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) visibleEnds.add(en.target);
+          else visibleEnds.delete(en.target);
+        });
+        updateSticky();
+      }, { rootMargin: '0px 0px 80px 0px' });
+      endEls.forEach((el) => ioEnd.observe(el));
+    }
+    window.addEventListener('scroll', updateSticky, { passive: true });
+    updateSticky();
   }
+
+  // ── Index page: horizontal carousel dots (work section) ──────
 
   // ── Index page: desktop carousel arrows (work section) ───────
   const trackPrev = document.getElementById('track-prev');

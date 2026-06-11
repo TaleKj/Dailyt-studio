@@ -29,15 +29,16 @@
       padding:96px 24px 64px;
       background:var(--off-white);
       text-align:center;
+      isolation:isolate;
     }
     .err-inner { max-width:540px; }
     .err-code {
       font-family:'Hanken Grotesk', sans-serif;
-      font-size:clamp(4rem, 14vw, 7rem); font-weight:400;
+      font-size:clamp(4.5rem, 16vw, 8rem); font-weight:300;
       line-height:1; margin-bottom:8px;
       color:var(--ink);
     }
-    .err-code em { color:var(--accent-deep); font-weight:600; }
+    .err-code em { font-family:'Fraunces', serif; font-style:normal; color:var(--accent-deep); font-weight:600; }
     .err-title {
       font-family:'Hanken Grotesk', sans-serif;
       font-size:clamp(1.4rem, 3vw, 2rem); font-weight:400;
@@ -92,7 +93,7 @@
 
 <main class="err-wrap" id="main">
   <div class="err-inner">
-    <div class="err-code">4<em>0</em>4</div>
+    <div class="err-code blob-bg">4<em>0</em>4</div>
     <h1 class="err-title">This page went for a <em>walk</em></h1>
     <p class="err-desc">The page you were looking for couldn't be found. It might have moved, or perhaps it never existed at all.</p>
     <div class="err-actions">
@@ -105,7 +106,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="images/document-header.png" alt="Daily T Studio" width="156" height="52"/>
+      <div class="footer-wordmark"><span class="blob-dot" aria-hidden="true"></span>Daily <em>T</em> Studio</div>
       <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
     </div>
     <div class="footer-col">

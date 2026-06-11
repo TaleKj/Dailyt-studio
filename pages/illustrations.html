@@ -68,13 +68,13 @@
 
     /* HERO */
     .illus-hero {
-      padding:120px 24px 56px;
+      padding:124px 24px 56px;
       background:#fff;
     }
     .illus-hero-inner { max-width:1060px; margin:0 auto; }
     .illus-hero h1 {
       font-family:'Hanken Grotesk', sans-serif;
-      font-size:clamp(2.2rem,5vw,3.5rem); font-weight:400; line-height:1.1;
+      font-size:clamp(2.5rem,6vw,4.2rem); font-weight:300; line-height:1.06; letter-spacing:-0.015em;
       margin-bottom:16px;
     }
     .illus-hero h1 em { color:var(--accent-deep); font-weight:600; }
@@ -91,12 +91,14 @@
       padding:32px;
       transition:transform .25s, box-shadow .25s;
     }
-    .offer-card:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+    .offer-card:hover { transform:translateY(-3px) rotate(-0.3deg); box-shadow:var(--shadow); }
     .offer-icon {
-      width:48px; height:48px; border-radius:50%;
-      background:#ffffff; box-shadow:var(--shadow);
+      width:58px; height:42px;
+      background:#ffffff;
       display:flex; align-items:center; justify-content:center;
-      font-size:1.3rem; margin-bottom:16px;
+      font-size:1.2rem; margin-bottom:16px;
+      -webkit-mask:var(--blob-mask) center/100% 100% no-repeat;
+              mask:var(--blob-mask) center/100% 100% no-repeat;
     }
     .offer-title {
       font-family:'Hanken Grotesk', sans-serif;
@@ -113,7 +115,7 @@
         column-gap:16px; row-gap:3px;
         padding:18px 20px;
       }
-      .offer-icon { grid-row:1 / span 2; align-self:center; margin-bottom:0; }
+      .offer-icon { grid-row:1 / span 2; align-self:center; margin-bottom:0; width:50px; height:36px; font-size:1.05rem; }
       .offer-title { font-size:1.1rem; margin-bottom:0; }
       .offer-desc { font-size:0.88rem; line-height:1.6; }
     }
@@ -149,7 +151,9 @@
       background:#fff; padding:9%;
       box-shadow:0 2px 12px rgba(28,28,30,0.06);
       display:flex; align-items:center; justify-content:center;
+      transition:transform .25s, box-shadow .25s;
     }
+    .konka-illo:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
     .konka-illo img { width:100%; height:100%; object-fit:contain; display:block; }
     .konka-illo .ph {
       font-size:0.72rem; color:var(--ink-muted); text-align:center; padding:12px; line-height:1.5;
@@ -169,14 +173,14 @@
     .konka-icon .ph { font-size:0.62rem; color:var(--ink-muted); text-align:center; padding:6px; line-height:1.3; }
 
     /* Process — vertical timeline */
-    .process-svc { padding:80px 24px; background:var(--off-white); }
+    .process-svc { padding:80px 24px; background:#fff; }
     .process-svc-inner { max-width:640px; margin:0 auto; }
     .process-svc .sec-title { margin-bottom:48px; text-align:center; }
     .process-list { display:flex; flex-direction:column; gap:0; position:relative; }
     .process-list::before {
       content:''; position:absolute;
       left:7px; top:0; bottom:0; width:2px;
-      background:linear-gradient(to bottom, color-mix(in srgb, var(--accent) 25%, transparent), color-mix(in srgb, var(--accent) 8%, transparent));
+      background:linear-gradient(to bottom, color-mix(in srgb, var(--peony) 45%, transparent), color-mix(in srgb, var(--peony) 12%, transparent));
       z-index:0;
     }
     .process-card-svc {
@@ -188,7 +192,7 @@
     .process-card-svc:last-child { padding-bottom:0; }
     .step-dot {
       width:14px; height:14px; border-radius:50%; flex-shrink:0;
-      background:var(--accent); opacity:0.6; position:relative; left:1px; margin-top:29px;
+      background:var(--peony); opacity:0.85; position:relative; left:1px; margin-top:29px;
     }
     .process-card-inner {
       background:#fff; border-radius:14px; padding:18px 20px;
@@ -197,13 +201,13 @@
     .process-card-header { display:flex; align-items:baseline; gap:14px; margin-bottom:8px; }
     .step-num {
       font-family:'Hanken Grotesk', sans-serif; font-size:1.7rem; font-weight:400;
-      color:var(--accent); opacity:0.35; line-height:1; flex-shrink:0;
+      color:var(--peony); opacity:0.55; line-height:1; flex-shrink:0;
     }
     .step-title { font-size:0.94rem; font-weight:500; color:#1C1C1E; }
     .step-desc { font-size:0.85rem; line-height:1.65; color:var(--ink-soft); padding-left:calc(1.7rem + 14px); }
 
     /* Contact */
-    .contact-section { background:var(--off-white); padding:80px 24px; text-align:center; }
+    .contact-section { background:#fff; padding:80px 24px; text-align:center; }
     .contact-section .sec-title { max-width:440px; margin:0 auto 14px; }
     .contact-section .lead {
       font-size:0.97rem; color:var(--ink-soft); line-height:1.8;
@@ -228,19 +232,20 @@
       transition:border-color .2s, box-shadow .2s;
     }
     .form-field input:focus, .form-field textarea:focus {
-      outline:none; border-color:var(--accent);
+      outline:none; border-color:var(--cornflower);
       box-shadow:0 0 0 3px rgba(108,136,229,0.18);
     }
     .form-field textarea { resize:vertical; min-height:120px; }
     .form-submit {
       align-self:flex-start;
-      background:#1C1C1E; color:#fff;
+      background:var(--cherry); color:#fff;
       font-family:'DM Sans', sans-serif; font-size:0.88rem; font-weight:500;
       padding:13px 28px; border-radius:50px; border:none;
       cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+      min-height:44px;
       transition:opacity .2s, transform .2s;
     }
-    .form-submit:hover { opacity:.85; transform:translateY(-1px); }
+    .form-submit:hover { background:var(--cherry-deep); transform:translateY(-1px); }
     .form-note { font-size:0.82rem; color:var(--ink-muted); margin-top:8px; }
 
     /* Formspree AJAX states */
@@ -352,7 +357,7 @@
     <p style="font-size:0.95rem; color:var(--ink-soft); max-width:560px; margin-top:8px;">A full set of empty-state illustrations and sport icons for Konka — an iOS training app that rewards variety and consistency, syncing with Garmin to turn your activity into something you actually want to look at. Konka is <a href="https://apps.apple.com/no/app/konka/id6444194922?l=nb" target="_blank" rel="noopener" style="color:var(--accent-deep); text-decoration:underline;">live on the App Store</a>, and a complete new version is currently in the works.</p>
     <div class="case-grid">
       <div class="case-img reveal">
-        <img src="../images/logo-transparent.png" alt="Konka app logo" width="800" height="800" loading="lazy"/>
+        <img src="../images/logo-transparent.png" alt="Konka app logo" width="800" height="800" loading="lazy" decoding="async"/>
       </div>
       <div class="case-text reveal d1">
         <h3>Illustrations that make training data feel human</h3>
@@ -366,10 +371,10 @@
     <div class="konka-illos reveal d1">
       <h3>App illustrations</h3>
       <div class="konka-illo-grid">
-        <div class="konka-illo"><img src="../images/konka-runman.jpeg" alt="Konka empty-state illustration — run" width="400" height="400" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-runman.jpeg&lt;/span&gt;'"/></div>
-        <div class="konka-illo"><img src="../images/konka-sleepman.jpeg" alt="Konka empty-state illustration — sleep" width="400" height="400" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-sleepman.jpeg&lt;/span&gt;'"/></div>
-        <div class="konka-illo"><img src="../images/konka-mapman.jpeg" alt="Konka empty-state illustration — map" width="400" height="400" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-mapman.jpeg&lt;/span&gt;'"/></div>
-        <div class="konka-illo"><img src="../images/konka-noman.jpeg" alt="Konka empty-state illustration — no data" width="400" height="400" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-noman.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-illo"><img src="../images/konka-runman.jpeg" alt="Konka empty-state illustration — run" width="400" height="400" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-runman.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-illo"><img src="../images/konka-sleepman.jpeg" alt="Konka empty-state illustration — sleep" width="400" height="400" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-sleepman.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-illo"><img src="../images/konka-mapman.jpeg" alt="Konka empty-state illustration — map" width="400" height="400" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-mapman.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-illo"><img src="../images/konka-noman.jpeg" alt="Konka empty-state illustration — no data" width="400" height="400" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-noman.jpeg&lt;/span&gt;'"/></div>
       </div>
     </div>
 
@@ -377,12 +382,12 @@
     <div class="konka-icons reveal d2">
       <h3>Sport icons</h3>
       <div class="konka-icon-grid">
-        <div class="konka-icon"><img src="../images/konka-app-logo.jpeg" alt="Konka app logo icon" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-app-logo.jpeg&lt;/span&gt;'"/></div>
-        <div class="konka-icon"><img src="../images/helmet.jpeg" alt="Konka sport icon — helmet" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;helmet.jpeg&lt;/span&gt;'"/></div>
-        <div class="konka-icon"><img src="../images/walkabout.jpeg" alt="Konka sport icon — walk" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;walkabout.jpeg&lt;/span&gt;'"/></div>
-        <div class="konka-icon"><img src="../images/alpint.jpeg" alt="Konka sport icon — alpine" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;alpint.jpeg&lt;/span&gt;'"/></div>
-        <div class="konka-icon"><img src="../images/high-five.jpeg" alt="Konka sport icon — high five" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;high-five.jpeg&lt;/span&gt;'"/></div>
-        <div class="konka-icon"><img src="../images/duck.jpeg" alt="Konka sport icon — duck" width="120" height="120" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;duck.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/konka-app-logo.jpeg" alt="Konka app logo icon" width="120" height="120" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;konka-app-logo.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/helmet.jpeg" alt="Konka sport icon — helmet" width="120" height="120" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;helmet.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/walkabout.jpeg" alt="Konka sport icon — walk" width="120" height="120" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;walkabout.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/alpint.jpeg" alt="Konka sport icon — alpine" width="120" height="120" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;alpint.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/high-five.jpeg" alt="Konka sport icon — high five" width="120" height="120" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;high-five.jpeg&lt;/span&gt;'"/></div>
+        <div class="konka-icon"><img src="../images/duck.jpeg" alt="Konka sport icon — duck" width="120" height="120" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;span class=ph&gt;duck.jpeg&lt;/span&gt;'"/></div>
       </div>
     </div>
   </div>
@@ -481,7 +486,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="../images/document-header.png" alt="Daily T Studio" width="156" height="52"/>
+      <div class="footer-wordmark"><span class="blob-dot" aria-hidden="true"></span>Daily <em>T</em> Studio</div>
       <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
     </div>
     <div class="footer-col">

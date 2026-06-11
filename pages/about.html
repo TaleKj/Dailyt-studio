@@ -52,8 +52,8 @@
   <style>
     /* ── Page-specific: about page hero, values, process, contact teaser ── */
 
-    .page-header { background:#fff; padding:120px 48px 0; }
-    @media(max-width:760px) { .page-header { padding:120px 24px 0; } }
+    .page-header { background:#fff; padding:124px 48px 0; }
+    @media(max-width:760px) { .page-header { padding:124px 24px 0; } }
     .header-text { max-width:640px; padding-bottom:48px; }
     .header-img-strip { width:100%; margin-top:48px; border-radius:20px 20px 0 0; overflow:hidden; box-shadow:0 -4px 32px rgba(28,28,30,0.08); }
     .header-img-strip img { width:100%; height:auto; display:block; max-height:520px; object-fit:cover; object-position:center 30%; }
@@ -62,16 +62,18 @@
     .intro-section { padding:80px 24px; background:#ffffff; }
     .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; max-width:1060px; margin:0 auto; }
     @media(max-width:760px) { .intro-grid { grid-template-columns:1fr; gap:40px; } }
-    .intro-text h2 { font-family:'Hanken Grotesk', sans-serif; font-size:clamp(1.8rem,3vw,2.4rem); font-weight:400; line-height:1.2; margin-bottom:24px; }
+    .intro-text h2 { font-family:'Hanken Grotesk', sans-serif; font-size:clamp(1.9rem,3.2vw,2.6rem); font-weight:400; line-height:1.2; margin-bottom:24px; }
     .intro-text h2 em { color:var(--accent-deep); font-weight:600; }
     .intro-text p { font-size:0.97rem; line-height:1.85; color:var(--ink-soft); margin-bottom:18px; }
     .intro-text p:last-child { margin-bottom:0; }
-    /* Artist photo — circular, matched to the homepage logo circle */
+    /* Artist photo — masked in the brand blob */
     .artist-figure { margin:0; display:flex; flex-direction:column; align-items:center; }
     .artist-photo {
-      width:min(320px,80vw); height:min(320px,80vw); max-width:100%;
-      border-radius:50%; object-fit:cover; object-position:center;
-      box-shadow:0 20px 60px rgba(28,28,30,0.08); display:block;
+      width:min(340px,82vw); height:min(260px,62vw); max-width:100%;
+      object-fit:cover; object-position:center;
+      -webkit-mask:var(--blob-mask) center/100% 100% no-repeat;
+              mask:var(--blob-mask) center/100% 100% no-repeat;
+      display:block;
     }
 
     /* Values */
@@ -80,7 +82,13 @@
     .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; max-width:800px; margin:0 auto; }
     @media(max-width:640px) { .values-grid { grid-template-columns:1fr; gap:24px; } }
     .value-item { display:flex; flex-direction:column; gap:14px; }
-    .value-icon { width:48px; height:48px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; font-size:1.3rem; box-shadow:var(--shadow); }
+    .value-icon {
+      width:58px; height:42px;
+      background:#ffffff;
+      display:flex; align-items:center; justify-content:center; font-size:1.2rem;
+      -webkit-mask:var(--blob-mask) center/100% 100% no-repeat;
+              mask:var(--blob-mask) center/100% 100% no-repeat;
+    }
     .value-title { font-size:0.97rem; font-weight:500; color:var(--ink); }
     .value-desc { font-size:0.87rem; color:var(--ink-soft); line-height:1.65; }
 
@@ -96,11 +104,12 @@
       color:rgba(28,28,30,0.4); margin-bottom:16px;
       display:flex; align-items:center; gap:12px;
     }
-    .process-design-label::after { content:''; flex:1; height:1px; background:rgba(28,28,30,0.09); }
+    .process-design-label::after { content:''; flex:1; height:1px; background:var(--rule); }
     .process-pair { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .process-card { border-radius:16px; overflow:hidden; background:var(--off-white); box-shadow:0 2px 12px rgba(28,28,30,0.06); }
+    .process-card { border-radius:16px; overflow:hidden; background:var(--off-white); box-shadow:0 2px 12px rgba(28,28,30,0.06); transition:transform .25s, box-shadow .25s; }
+    .process-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
     .process-img { aspect-ratio:3/4; overflow:hidden; position:relative; background:var(--off-white); }
-    .process-img img { width:100%; height:100%; object-fit:cover; display:block; }
+    .process-img img { position:absolute; inset:0; width:100%; height:100%; min-height:calc(100% + 1px); object-fit:cover; display:block; }
     .step-badge {
       position:absolute; top:12px; left:12px;
       font-size:0.62rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
@@ -110,7 +119,7 @@
     .step-badge.finished { background:var(--tint-pink); color:var(--accent-deep); }
 
     /* Contact teaser */
-    .contact-teaser { background:var(--off-white); padding:72px 24px; text-align:center; }
+    .contact-teaser { background:#fff; padding:72px 24px; text-align:center; }
     .contact-teaser .sec-title { max-width:440px; margin:0 auto 14px; }
     .contact-teaser p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:420px; margin:0 auto 32px; }
 
@@ -122,12 +131,12 @@
       .header-img-strip { margin-top:24px; border-radius:16px 16px 0 0; }
       .header-img-strip img { max-height:220px; }
 
-      /* Intro: tighter gap; circular photo matched to logo circle */
+      /* Intro: tighter gap; blob-masked photo */
       .intro-section { padding:48px 20px; }
       .intro-grid { gap:28px; }
       .intro-text h2 { margin-bottom:16px; }
       .intro-text p { margin-bottom:14px; }
-      .artist-photo { width:min(240px,64vw); height:min(240px,64vw); }
+      .artist-photo { width:min(260px,72vw); height:min(196px,54vw); }
 
       /* Values: compact horizontal items (icon left, text right) */
       .values-section { padding:48px 20px; }
@@ -139,7 +148,7 @@
         background:#fff; border-radius:14px; padding:16px 18px;
         box-shadow:0 2px 10px rgba(28,28,30,0.05);
       }
-      .value-icon { grid-row:1 / span 2; align-self:center; width:40px; height:40px; font-size:1.1rem; }
+      .value-icon { grid-row:1 / span 2; align-self:center; width:48px; height:34px; font-size:1.05rem; background:var(--cream); }
       .value-title { align-self:end; }
       .value-desc { align-self:start; }
 
@@ -208,7 +217,7 @@
     <p>A small independent design studio making colourful, hand-drawn work — art prints, activity designs and illustrations.</p>
   </div>
   <div class="header-img-strip reveal d1">
-    <img src="../images/all-designs.jpeg" alt="A selection of Daily T Studio designs" width="1200" height="520" loading="lazy"/>
+    <img src="../images/all-designs.jpeg" alt="A selection of Daily T Studio designs" width="1200" height="520" loading="lazy" decoding="async"/>
   </div>
 </div>
 
@@ -222,7 +231,7 @@
       <p>The style sits somewhere between Scandinavian restraint and joyful colour — never too serious, never too loud.</p>
     </div>
     <figure class="artist-figure reveal d1">
-      <img class="artist-photo" src="../images/babyartist.PNG" alt="Baby artist, circa 2000" width="1024" height="1024" loading="lazy">
+      <img class="artist-photo" src="../images/babyartist.PNG" alt="Baby artist, circa 2000" width="1024" height="1024" loading="lazy" decoding="async">
     </figure>
   </div>
 </section>
@@ -260,13 +269,13 @@
       <div class="process-pair">
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/process-ada-wip.jpg" alt="Little One — work in progress" width="900" height="1200" loading="lazy"/>
+            <img src="../images/process-ada-wip.jpg" alt="Little One — work in progress" width="900" height="1200" loading="lazy" decoding="async"/>
             <span class="step-badge">In progress</span>
           </div>
         </div>
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/ada.jpeg" alt="Little One — finished art print" width="900" height="1200" loading="lazy"/>
+            <img src="../images/ada.jpeg" alt="Little One — finished art print" width="900" height="1200" loading="lazy" decoding="async"/>
             <span class="step-badge finished">Finished</span>
           </div>
         </div>
@@ -279,13 +288,13 @@
       <div class="process-pair">
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/process-silken-wip.JPG" alt="The Stream — work in progress" width="900" height="1200" loading="lazy"/>
+            <img src="../images/process-silken-wip.JPG" alt="The Stream — work in progress" width="900" height="1200" loading="lazy" decoding="async"/>
             <span class="step-badge">In progress</span>
           </div>
         </div>
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/silken.jpeg" alt="The Stream — finished art print" width="900" height="1200" loading="lazy"/>
+            <img src="../images/silken.jpeg" alt="The Stream — finished art print" width="900" height="1200" loading="lazy" decoding="async"/>
             <span class="step-badge finished">Finished</span>
           </div>
         </div>
@@ -298,13 +307,13 @@
       <div class="process-pair">
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/process-loops-wip.jpg" alt="The Loop I and The Loop II — work in progress" width="900" height="1200" loading="lazy"/>
+            <img src="../images/process-loops-wip.jpg" alt="The Loop I and The Loop II — work in progress" width="900" height="1200" loading="lazy" decoding="async"/>
             <span class="step-badge">In progress</span>
           </div>
         </div>
         <div class="process-card">
           <div class="process-img">
-            <img src="../images/duo-duo.jpeg" alt="The Loop I and The Loop II — finished art prints" width="900" height="1200" loading="lazy"/>
+            <img src="../images/duo-duo.jpeg" alt="The Loop I and The Loop II — finished art prints" width="900" height="1200" loading="lazy" decoding="async"/>
             <span class="step-badge finished">Finished</span>
           </div>
         </div>
@@ -328,7 +337,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="../images/document-header.png" alt="Daily T Studio" width="156" height="52"/>
+      <div class="footer-wordmark"><span class="blob-dot" aria-hidden="true"></span>Daily <em>T</em> Studio</div>
       <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
     </div>
     <div class="footer-col">

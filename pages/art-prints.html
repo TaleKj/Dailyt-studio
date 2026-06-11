@@ -117,7 +117,7 @@
     <span>Art Prints</span>
   </div>
   <h1 class="blob-bg">Art <em>Prints</em></h1>
-  <p>Abstract and colourful wall prints — available in multiple sizes as print on demand via Etsy. The collection spans different styles — from organic and flowing to bold and graphic.</p>
+  <p>Abstract and colourful wall prints — available in multiple sizes as print on demand via Etsy. The collection spans different styles — from organic and flowing to bold and graphic. Tap a design to open its spread — gallery, story, sizes and shop link.</p>
 </div>
 
 <div class="filter-bar">
@@ -126,101 +126,136 @@
   <button class="filter-btn" data-filter="illustrated">Illustrated</button>
 </div>
 
-<div class="print-list">
+<div class="design-grid">
 
-  <!-- 1. SILKEN CURRENTS -->
-  <div class="print-row reveal" data-category="abstract">
-    <div class="carousel-wrap" data-carousel>
-      <div class="carousel-slides">
-        <div class="carousel-slide"><img src="../images/silken.jpeg" alt="The Stream — abstract pastel art print" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/silken-stue.jpeg" alt="The Stream in a living room" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/silken-kontor.jpeg" alt="The Stream in a home office" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/silken-soverom.jpeg" alt="The Stream in a bedroom" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/silken-spisestue.jpeg" alt="The Stream in a dining room" width="900" height="1200" loading="lazy"/></div>
-      </div>
-      <button class="c-btn c-prev" aria-label="Previous image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button class="c-btn c-next" aria-label="Next image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="c-dots">
-        <button class="cdot active" aria-label="Go to image 1"></button>
-        <button class="cdot" aria-label="Go to image 2"></button>
-        <button class="cdot" aria-label="Go to image 3"></button>
-        <button class="cdot" aria-label="Go to image 4"></button>
-        <button class="cdot" aria-label="Go to image 5"></button>
-      </div>
-    </div>
-    <div class="print-text">
-      <div class="tag-row">
-        <span class="tag-outline">Organic</span>
+  <!-- 1. THE STREAM -->
+  <details class="design reveal" data-category="abstract" id="the-stream">
+    <summary>
+      <div class="design-cover">
+        <img src="../images/silken.jpeg" alt="The Stream — abstract pastel art print" width="900" height="1200" loading="lazy" decoding="async"/>
         <span class="format-pill pill-physical">Physical print</span>
       </div>
-      <h2 class="print-title">The <em>Stream</em></h2>
-      <p class="print-desc">Soft, flowing forms in muted pastels — The Stream is inspired by water and rivers, capturing that sense of calm movement you find by the water's edge. Started as an acrylic painting on canvas, then redrawn digitally by hand using an Apple Pencil in Linearity Curve.</p>
-      <p class="print-process-link">See process photos on the <a href="about.html#process">About page</a>.</p>
-      <p class="print-meta">Available in multiple sizes · Print on demand via Etsy</p>
-      <a href="https://www.etsy.com/no-en/listing/4514756236/silken-currents-abstract-pastel-wall-art" target="_blank" rel="noopener" class="btn-etsy">Shop on Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="design-bar">
+        <span class="design-kick">Art Print · Organic</span>
+        <h2 class="design-name">The <em>Stream</em></h2>
+        <span class="design-toggle" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="7" y1="1" x2="7" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="1" y1="7" x2="13" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </div>
+    </summary>
+    <div class="design-detail">
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-slides">
+          <div class="carousel-slide"><img src="../images/silken.jpeg" alt="The Stream — abstract pastel art print" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/silken-stue.jpeg" alt="The Stream in a living room" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/silken-kontor.jpeg" alt="The Stream in a home office" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/silken-soverom.jpeg" alt="The Stream in a bedroom" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/silken-spisestue.jpeg" alt="The Stream in a dining room" width="900" height="1200" loading="lazy" decoding="async"/></div>
+        </div>
+        <button class="c-btn c-prev" aria-label="Previous image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="c-btn c-next" aria-label="Next image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="c-dots">
+          <button class="cdot active" aria-label="Go to image 1"></button>
+          <button class="cdot" aria-label="Go to image 2"></button>
+          <button class="cdot" aria-label="Go to image 3"></button>
+          <button class="cdot" aria-label="Go to image 4"></button>
+          <button class="cdot" aria-label="Go to image 5"></button>
+        </div>
+      </div>
+      <div class="design-info">
+        <div class="tag-row">
+          <span class="tag-outline">Organic</span>
+          <span class="format-pill pill-physical">Physical print</span>
+        </div>
+        <p class="print-desc">Soft, flowing forms in muted pastels — The Stream is inspired by water and rivers, capturing that sense of calm movement you find by the water's edge. Started as an acrylic painting on canvas, then redrawn digitally by hand using an Apple Pencil in Linearity Curve.</p>
+        <p class="print-process-link">See process photos on the <a href="about.html#process">About page</a>.</p>
+        <p class="print-meta">Available in multiple sizes · Print on demand via Etsy</p>
+        <a href="https://www.etsy.com/no-en/listing/4514756236/silken-currents-abstract-pastel-wall-art" target="_blank" rel="noopener" class="btn-etsy">Visit on Etsy <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
     </div>
-  </div>
+  </details>
 
-  <!-- 2. LOOP I -->
-  <div class="print-row flip reveal" data-category="abstract">
-    <div class="carousel-wrap" data-carousel>
-      <div class="carousel-slides">
-        <div class="carousel-slide"><img src="../images/loops.jpeg" alt="The Loop I — bold graphic art print" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/duo-duo.jpeg" alt="The Loop I and The Loop II shown together" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/duo-stue.jpeg" alt="The Loop I and The Loop II in a living room" width="900" height="1200" loading="lazy"/></div>
-      </div>
-      <button class="c-btn c-prev" aria-label="Previous image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button class="c-btn c-next" aria-label="Next image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="c-dots">
-        <button class="cdot active" aria-label="Go to image 1"></button>
-        <button class="cdot" aria-label="Go to image 2"></button>
-        <button class="cdot" aria-label="Go to image 3"></button>
-      </div>
-    </div>
-    <div class="print-text">
-      <div class="tag-row">
-        <span class="tag-outline">Graphic</span>
+  <!-- 2. THE LOOP I -->
+  <details class="design reveal d1" data-category="abstract" id="the-loop-i">
+    <summary>
+      <div class="design-cover">
+        <img src="../images/loops.jpeg" alt="The Loop I — bold graphic art print" width="900" height="1200" loading="lazy" decoding="async"/>
         <span class="format-pill pill-physical">Physical print</span>
       </div>
-      <h2 class="print-title">The Loop <em>I</em></h2>
-      <p class="print-desc">A bold, graphic form in warm tones — The Loop I makes a statement with its confident shape and playful energy. The idea started as an acrylic painting on thick paper, then redrawn digitally by hand using an Apple Pencil in Linearity Curve. Works beautifully on its own, and pairs perfectly with The Loop II.</p>
-      <p class="print-process-link">See process photos on the <a href="about.html#process">About page</a>.</p>
-      <p class="print-meta">Available in multiple sizes · Print on demand via Etsy</p>
-      <span class="btn-soon">Soon on Etsy</span>
+      <div class="design-bar">
+        <span class="design-kick">Art Print · Graphic</span>
+        <h2 class="design-name">The Loop <em>I</em></h2>
+        <span class="design-toggle" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="7" y1="1" x2="7" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="1" y1="7" x2="13" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </div>
+    </summary>
+    <div class="design-detail">
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-slides">
+          <div class="carousel-slide"><img src="../images/loops.jpeg" alt="The Loop I — bold graphic art print" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/duo-duo.jpeg" alt="The Loop I and The Loop II shown together" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/duo-stue.jpeg" alt="The Loop I and The Loop II in a living room" width="900" height="1200" loading="lazy" decoding="async"/></div>
+        </div>
+        <button class="c-btn c-prev" aria-label="Previous image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="c-btn c-next" aria-label="Next image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="c-dots">
+          <button class="cdot active" aria-label="Go to image 1"></button>
+          <button class="cdot" aria-label="Go to image 2"></button>
+          <button class="cdot" aria-label="Go to image 3"></button>
+        </div>
+      </div>
+      <div class="design-info">
+        <div class="tag-row">
+          <span class="tag-outline">Graphic</span>
+          <span class="format-pill pill-physical">Physical print</span>
+        </div>
+        <p class="print-desc">A bold, graphic form in warm tones — The Loop I makes a statement with its confident shape and playful energy. The idea started as an acrylic painting on thick paper, then redrawn digitally by hand using an Apple Pencil in Linearity Curve. Works beautifully on its own, and pairs perfectly with The Loop II.</p>
+        <p class="print-process-link">See process photos on the <a href="about.html#process">About page</a>.</p>
+        <p class="print-meta">Available in multiple sizes · Print on demand via Etsy</p>
+        <span class="btn-soon">Soon on Etsy</span>
+      </div>
     </div>
-  </div>
+  </details>
 
-  <!-- 3. LOOP II -->
-  <div class="print-row reveal" data-category="abstract">
-    <div class="carousel-wrap" data-carousel>
-      <div class="carousel-slides">
-        <div class="carousel-slide"><img src="../images/duo-loops.jpeg" alt="The Loop II — bold graphic art print" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/duo-duo.jpeg" alt="The Loop II shown with The Loop I" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/duo-kontor.jpeg" alt="The Loop II in a home office" width="900" height="1200" loading="lazy"/></div>
-        <div class="carousel-slide"><img src="../images/duo-stue.jpeg" alt="The Loop II in a living room" width="900" height="1200" loading="lazy"/></div>
-      </div>
-      <button class="c-btn c-prev" aria-label="Previous image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button class="c-btn c-next" aria-label="Next image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="c-dots">
-        <button class="cdot active" aria-label="Go to image 1"></button>
-        <button class="cdot" aria-label="Go to image 2"></button>
-        <button class="cdot" aria-label="Go to image 3"></button>
-        <button class="cdot" aria-label="Go to image 4"></button>
-      </div>
-    </div>
-    <div class="print-text">
-      <div class="tag-row">
-        <span class="tag-outline">Graphic</span>
+  <!-- 3. THE LOOP II -->
+  <details class="design reveal d2" data-category="abstract" id="the-loop-ii">
+    <summary>
+      <div class="design-cover">
+        <img src="../images/duo-loops.jpeg" alt="The Loop II — bold graphic art print" width="900" height="1200" loading="lazy" decoding="async"/>
         <span class="format-pill pill-physical">Physical print</span>
       </div>
-      <h2 class="print-title">The Loop <em>II</em></h2>
-      <p class="print-desc">The companion to The Loop I — The Loop II carries the same bold energy in a complementary colourway. Also started as an acrylic painting on thick paper before being redrawn digitally by hand with an Apple Pencil in Linearity Curve. Together they create a gallery-worthy pair — but each holds its own on the wall.</p>
-      <p class="print-process-link">See process photos on the <a href="about.html#process">About page</a>.</p>
-      <p class="print-meta">Available in multiple sizes · Print on demand via Etsy</p>
-      <span class="btn-soon">Soon on Etsy</span>
+      <div class="design-bar">
+        <span class="design-kick">Art Print · Graphic</span>
+        <h2 class="design-name">The Loop <em>II</em></h2>
+        <span class="design-toggle" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="7" y1="1" x2="7" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="1" y1="7" x2="13" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      </div>
+    </summary>
+    <div class="design-detail">
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-slides">
+          <div class="carousel-slide"><img src="../images/duo-loops.jpeg" alt="The Loop II — bold graphic art print" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/duo-duo.jpeg" alt="The Loop II shown with The Loop I" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/duo-kontor.jpeg" alt="The Loop II in a home office" width="900" height="1200" loading="lazy" decoding="async"/></div>
+          <div class="carousel-slide"><img src="../images/duo-stue.jpeg" alt="The Loop II in a living room" width="900" height="1200" loading="lazy" decoding="async"/></div>
+        </div>
+        <button class="c-btn c-prev" aria-label="Previous image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="10,2 4,8 10,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="c-btn c-next" aria-label="Next image"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="6,2 12,8 6,14" stroke="#1C1C1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="c-dots">
+          <button class="cdot active" aria-label="Go to image 1"></button>
+          <button class="cdot" aria-label="Go to image 2"></button>
+          <button class="cdot" aria-label="Go to image 3"></button>
+          <button class="cdot" aria-label="Go to image 4"></button>
+        </div>
+      </div>
+      <div class="design-info">
+        <div class="tag-row">
+          <span class="tag-outline">Graphic</span>
+          <span class="format-pill pill-physical">Physical print</span>
+        </div>
+        <p class="print-desc">The companion to The Loop I — The Loop II carries the same bold energy in a complementary colourway. Also started as an acrylic painting on thick paper before being redrawn digitally by hand with an Apple Pencil in Linearity Curve. Together they create a gallery-worthy pair — but each holds its own on the wall.</p>
+        <p class="print-process-link">See process photos on the <a href="about.html#process">About page</a>.</p>
+        <p class="print-meta">Available in multiple sizes · Print on demand via Etsy</p>
+        <span class="btn-soon">Soon on Etsy</span>
+      </div>
     </div>
-  </div>
-
+  </details>
 
 </div>
 
@@ -257,10 +292,17 @@
 
 </main>
 
+<!-- Sticky Etsy CTA (mobile) -->
+<div class="sticky-etsy" id="sticky-etsy" hidden>
+  <a href="https://www.etsy.com/shop/DailyTstudio" target="_blank" rel="noopener" class="btn-etsy">
+    Visit on Etsy <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0" aria-hidden="true"><line x1="1" y1="13" x2="13" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="5,1 13,1 13,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="../images/document-header.png" alt="Daily T Studio" width="156" height="52"/>
+      <div class="footer-wordmark"><span class="blob-dot" aria-hidden="true"></span>Daily <em>T</em> Studio</div>
       <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
     </div>
     <div class="footer-col">

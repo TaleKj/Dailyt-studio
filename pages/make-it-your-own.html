@@ -24,7 +24,7 @@
   <style>
     /* ── Archive banner ── */
     .archive-banner {
-      background:#FFF5AD; color:#5a4400;
+      background:var(--butter-soft); color:#5a4400;
       padding:14px 24px; text-align:center;
       font-size:0.92rem; line-height:1.6;
       border-bottom:1px solid rgba(90,68,0,0.18);
@@ -50,9 +50,10 @@
     }
     .archive-links a {
       font-size:0.88rem; font-weight:400;
-      padding:10px 20px; border-radius:50px;
+      padding:12px 20px; border-radius:50px;
       border:1.5px solid var(--rule);
       color:var(--ink); text-decoration:none;
+      min-height:44px; display:inline-flex; align-items:center;
       transition:background .2s, border-color .2s;
     }
     .archive-links a:hover { background:var(--off-white); border-color:var(--ink); }
