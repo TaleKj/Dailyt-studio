@@ -10,14 +10,14 @@
 
 
   <title>About Daily T Studio — Scandinavian Design Studio</title>
-  <meta name="description" content="Daily T Studio is an independent Scandinavian design studio creating wall art prints, kids prints, activity posters and digital templates. Available as print-on-demand via Gelato or instant digital download on Etsy."/>
+  <meta name="description" content="Daily T Studio is a one-person Scandinavian design studio. Hand-drawn art prints, kids prints, craft prints and digital templates — from soft pastels and organic shapes to whimsical illustrations."/>
   <meta name="keywords" content="scandinavian design studio, independent art studio, etsy art shop, print on demand artist, digital template creator"/>
   <link rel="canonical" href="https://dailytstudio.com/pages/about.html"/>
 
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://dailytstudio.com/pages/about.html"/>
   <meta property="og:title" content="About Daily T Studio — Scandinavian Design Studio"/>
-  <meta property="og:description" content="An independent Scandinavian design studio creating wall art prints, kids prints, activity posters and digital templates. Available as print-on-demand or instant digital download on Etsy."/>
+  <meta property="og:description" content="A one-person Scandinavian design studio making hand-drawn art prints, kids prints, craft prints and digital templates — available on Etsy."/>
   <meta property="og:image" content="https://dailytstudio.com/images/og-image.jpeg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -26,7 +26,7 @@
 
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="About Daily T Studio — Scandinavian Design Studio"/>
-  <meta name="twitter:description" content="An independent Scandinavian design studio creating wall art prints, kids prints, activity posters and digital templates. Available as print-on-demand or instant digital download on Etsy."/>
+  <meta name="twitter:description" content="A one-person Scandinavian design studio making hand-drawn art prints, kids prints, craft prints and digital templates — available on Etsy."/>
   <meta name="twitter:image" content="https://dailytstudio.com/images/og-image.jpeg"/>
 
   <script type="application/ld+json">
@@ -36,7 +36,7 @@
     "name": "Daily T Studio",
     "url": "https://dailytstudio.com",
     "jobTitle": "Independent Designer & Illustrator",
-    "description": "Independent Scandinavian design studio creating wall art prints, kids prints, activity posters and digital templates. Available as print-on-demand via Gelato or instant digital download on Etsy.",
+    "description": "A one-person Scandinavian design studio making hand-drawn art prints, kids prints, craft prints and digital templates, available on Etsy.",
     "sameAs": ["https://www.etsy.com/shop/DailyTstudio"]
   }
   </script>
@@ -52,16 +52,16 @@
   <style>
     /* ── Page-specific: about page hero, values, process, contact teaser ── */
 
-    .page-header { background:#fff; padding:124px 48px 0; }
-    @media(max-width:760px) { .page-header { padding:124px 24px 0; } }
+    .page-header { background:#fff; padding:108px 48px 0; }
+    @media(max-width:760px) { .page-header { padding:108px 24px 0; } }
     .header-text { max-width:640px; padding-bottom:48px; }
     /* The wordmark logo as the second line of the h1 */
-    .h1-logo { display:block; height:clamp(2.1rem,5vw,3.6rem); width:auto; margin-top:16px; }
-    .header-img-strip { width:100%; margin-top:48px; border-radius:20px 20px 0 0; overflow:hidden; box-shadow:0 -4px 32px rgba(28,28,30,0.08); }
+    .h1-logo { display:block; height:clamp(3.1rem,7.5vw,5.2rem); width:auto; margin-top:18px; }
+    .header-img-strip { width:100%; margin-top:36px; border-radius:20px 20px 0 0; overflow:hidden; box-shadow:0 -4px 32px rgba(28,28,30,0.08); }
     .header-img-strip img { width:100%; height:auto; display:block; max-height:520px; object-fit:cover; object-position:center 30%; }
 
     /* Intro */
-    .intro-section { padding:80px 24px; background:#ffffff; }
+    .intro-section { padding:60px 24px; background:#ffffff; }
     .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; max-width:1060px; margin:0 auto; }
     @media(max-width:760px) { .intro-grid { grid-template-columns:1fr; gap:40px; } }
     .intro-text h2 { font-family:'Hanken Grotesk', sans-serif; font-size:clamp(1.9rem,3.2vw,2.6rem); font-weight:400; line-height:1.2; margin-bottom:24px; }
@@ -79,13 +79,17 @@
     }
 
     /* Values */
-    .values-section { background:var(--off-white); padding:80px 24px; }
-    .values-section .sec-title { margin-bottom:48px; text-align:center; }
-    .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; max-width:800px; margin:0 auto; }
+    .values-section { background:var(--off-white); padding:60px 24px; }
+    .values-section .sec-title { margin-bottom:36px; text-align:center; }
+    .values-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:32px; max-width:680px; margin:0 auto; }
     @media(max-width:640px) { .values-grid { grid-template-columns:1fr; gap:24px; } }
-    .value-item { display:flex; flex-direction:column; gap:14px; }
+    .value-item {
+      display:grid; grid-template-columns:auto 1fr;
+      column-gap:14px; row-gap:12px; align-items:center;
+    }
+    .value-item .value-desc { grid-column:1 / -1; }
     .value-icon {
-      width:54px; height:56px;
+      width:44px; height:46px;
       background:#ffffff;
       display:flex; align-items:center; justify-content:center; font-size:1.2rem;
       -webkit-mask:var(--blob-mask-logo) center/100% 100% no-repeat;
@@ -95,7 +99,7 @@
     .value-desc { font-size:0.87rem; color:var(--ink-soft); line-height:1.65; }
 
     /* Process */
-    .process-section { padding:80px 24px; background:#ffffff; }
+    .process-section { padding:60px 24px; background:#ffffff; }
     .process-inner { max-width:1060px; margin:0 auto; }
     .process-section .sec-title { margin-bottom:12px; }
     .process-intro { font-size:0.97rem; line-height:1.8; color:var(--ink-soft); max-width:560px; margin-bottom:56px; }
@@ -128,34 +132,31 @@
     /* ── MOBILE OPTIMISATION ── */
     @media(max-width:760px) {
       /* Tighter header + smaller banner image */
-      .page-header { padding:92px 20px 0; }
+      .page-header { padding:84px 20px 0; }
       .header-text { padding-bottom:28px; }
       .header-img-strip { margin-top:24px; border-radius:16px 16px 0 0; }
       .header-img-strip img { max-height:220px; }
 
       /* Intro: tighter gap; blob-masked photo */
-      .intro-section { padding:48px 20px; }
+      .intro-section { padding:40px 20px; }
       .intro-grid { gap:28px; }
       .intro-text h2 { margin-bottom:16px; }
       .intro-text p { margin-bottom:14px; }
       .artist-photo { width:min(330px,82vw); height:auto; }
 
       /* Values: compact horizontal items (icon left, text right) */
-      .values-section { padding:48px 20px; }
+      .values-section { padding:40px 20px; }
       .values-section .sec-title { margin-bottom:28px; }
       .values-grid { gap:14px; }
       .value-item {
-        display:grid; grid-template-columns:auto 1fr;
-        column-gap:14px; row-gap:3px; align-items:center;
+        column-gap:12px; row-gap:8px;
         background:#fff; border-radius:14px; padding:16px 18px;
         box-shadow:0 2px 10px rgba(28,28,30,0.05);
       }
-      .value-icon { grid-row:1 / span 2; align-self:center; width:46px; height:48px; font-size:1.05rem; background:var(--cream); }
-      .value-title { align-self:end; }
-      .value-desc { align-self:start; }
+      .value-icon { width:40px; height:42px; font-size:1rem; background:var(--cream); }
 
       /* Process: keep before/after side by side, tighten spacing */
-      .process-section { padding:48px 20px; }
+      .process-section { padding:40px 20px; }
       .process-intro { margin-bottom:32px; }
       .process-design { margin-bottom:36px; }
       .process-design-label { margin-bottom:12px; }
@@ -216,7 +217,7 @@
       <span>About</span>
     </div>
     <h1>About<br/><img class="h1-logo" src="../images/document-header.png" alt="Daily T Studio" width="114" height="38"/></h1>
-    <p>A small independent design studio making colourful, hand-drawn work — art prints, activity designs and illustrations.</p>
+    <p>Daily T Studio is a one-person Scandinavian design studio. Art prints, kids prints, craft prints and digital templates — all hand-drawn, from soft pastels and organic shapes to whimsical illustrations, bringing colour and warmth to your walls and craft table.</p>
   </div>
   <div class="header-img-strip reveal d1">
     <img src="../images/all-designs.jpeg" alt="A selection of Daily T Studio designs" width="1200" height="520" loading="lazy" decoding="async"/>
@@ -228,7 +229,7 @@
     <div class="intro-text reveal">
       <span class="kicker">The studio</span>
       <h2>Everything is<br/><em>made by hand</em></h2>
-      <p>Daily T Studio is a small independent Norwegian design studio, run by someone who has always loved making things. Drawing, painting and crafting have been a constant — the aspiring artist in the photo is proof of that (circa 2000). Now the goal is to share that joy: to make designs that delight, and to inspire others to be creative.</p>
+      <p>I'm a Norwegian artist/designer running this design studio in my spare time, between work and small kids. I've always loved being creative and making things. Drawing, painting and crafting have been a constant — the aspiring artist in the photo from 2000 is proof of that. Now the goal is to share that joy: to make designs that delight, and to inspire others to be creative.</p>
       <p>Every illustration is drawn by hand — using an Apple Pencil in Linearity Curve on iPad, working in layers until it feels right. Some designs begin as acrylic paintings on canvas or paper before being redrawn digitally; others go straight from idea to screen.</p>
       <p>The style sits somewhere between Scandinavian restraint and joyful colour — never too serious, never too loud.</p>
     </div>
@@ -244,17 +245,12 @@
     <div class="value-item reveal">
       <div class="value-icon">✦</div>
       <div class="value-title">Made by hand</div>
-      <p class="value-desc">Every design starts with a pencil, a brush or a stylus — drawn from imagination, not assembled from stock.</p>
+      <p class="value-desc">Every design starts with a pencil, a brush or a stylus on canvas, paper or a tablet — drawn from imagination and coloured with intention. It's a process that takes time, in contrast to AI-generated art.</p>
     </div>
     <div class="value-item reveal d1">
-      <div class="value-icon">🎨</div>
-      <div class="value-title">Colour with intention</div>
-      <p class="value-desc">Colour is never an afterthought — it's chosen carefully to create atmosphere, warmth and a sense of calm joy.</p>
-    </div>
-    <div class="value-item reveal d2">
       <div class="value-icon">♻️</div>
-      <div class="value-title">Print on demand</div>
-      <p class="value-desc">Physical art prints are ordered via Etsy and printed on demand — no overstock, no waste. Some designs are also available as digital downloads to print yourself.</p>
+      <div class="value-title">Sustainability</div>
+      <p class="value-desc">We love our planet, and sustainability is important to us. Physical art prints are ordered via Etsy and printed on demand — no overstock, no waste. Digital templates are available as digital downloads to print yourself.</p>
     </div>
   </div>
 </section>
@@ -286,7 +282,7 @@
 
     <div class="process-design reveal">
       <div class="process-design-label">The Stream</div>
-      <p style="font-size:0.9rem;line-height:1.8;color:rgba(28,28,30,0.55);margin-bottom:20px;max-width:680px;">Inspired by water and rivers — the calm movement, the texture of light on the surface. Started as an acrylic painting on canvas, then redrawn digitally by hand using an Apple Pencil in Linearity Curve.</p>
+      <p style="font-size:0.9rem;line-height:1.8;color:rgba(28,28,30,0.55);margin-bottom:20px;max-width:680px;">Inspired by water and rivers — the calm, flowy movement. Started as an acrylic painting on canvas, then redrawn digitally by hand using an Apple Pencil in Linearity Curve.</p>
       <div class="process-pair">
         <div class="process-card">
           <div class="process-img">
@@ -340,7 +336,7 @@
   <div class="footer-top">
     <div class="footer-brand">
       <a href="../index.html" class="footer-logo"><img src="../images/logo-white.png" alt="Daily T Studio" loading="lazy" decoding="async"/></a>
-      <p>Colourful design for everyday life — art prints, digital templates and playful products for kids and adults.</p>
+      <p>From soft pastels and organic shapes to whimsical illustrations, bringing colour and warmth to your walls and craft table.</p>
     </div>
     <div class="footer-col">
       <h4>Shop</h4>

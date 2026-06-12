@@ -230,7 +230,7 @@ body {
 .sec-desc { font-size:0.97rem; line-height:1.8; color:var(--ink-soft); max-width:480px; }
 
 /* ── Layout helpers ── */
-.pad     { padding:80px 24px; }
+.pad     { padding:64px 24px; }
 .pad-sm  { padding:48px 24px; }
 .center  { text-align:center; }
 
@@ -384,12 +384,12 @@ body.menu-open { overflow:hidden; }
 
 footer {
   background:var(--cherry-deep); color:var(--cream);
-  padding:72px 24px calc(40px + env(safe-area-inset-bottom, 0px));
+  padding:48px 24px calc(36px + env(safe-area-inset-bottom, 0px));
 }
 .footer-top {
   display:grid; grid-template-columns:2fr 1fr 1fr;
-  gap:48px; margin-bottom:44px;
-  padding-bottom:44px;
+  gap:48px; margin-bottom:32px;
+  padding-bottom:32px;
   border-bottom:1px solid rgba(251,246,231,0.18);
   max-width:1160px; margin-left:auto; margin-right:auto;
 }
@@ -412,16 +412,16 @@ footer {
 
 /* --- General mobile spacing: tighten tall section padding on phones --- */
 @media(max-width:600px) {
-  .pad    { padding:54px 24px; }
-  .pad-sm { padding:36px 24px; }
-  .page-header { padding:96px 24px 40px; }
+  .pad    { padding:44px 24px; }
+  .pad-sm { padding:32px 24px; }
+  .page-header { padding:84px 24px 32px; }
 }
 
 /* ============================================================
    PAGE HEADER — used by all subpages
    ============================================================ */
 
-.page-header { padding:124px max(24px, calc((100vw - 1160px) / 2)) 56px; background:#fff; }
+.page-header { padding:108px max(24px, calc((100vw - 1160px) / 2)) 44px; background:#fff; }
 .page-header .blob-bg::before { left:-2%; top:50%; transform:translateY(-52%); }
 .page-header h1 {
   font-family:'Hanken Grotesk', sans-serif;
@@ -471,14 +471,14 @@ footer {
 
 .design-grid {
   max-width:1160px; margin:0 auto;
-  padding:48px 24px 96px;
+  padding:40px 24px 72px;
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
   gap:24px;
   align-items:start;
 }
 @media(max-width:600px) {
-  .design-grid { padding:32px 20px 64px; gap:16px; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); }
+  .design-grid { padding:28px 20px 52px; gap:16px; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); }
 }
 
 .design {
@@ -637,7 +637,7 @@ footer {
 
 .diy-strip {
   background:var(--butter-soft);
-  padding:56px max(24px, calc((100vw - 1160px) / 2));
+  padding:44px max(24px, calc((100vw - 1160px) / 2));
   margin:0 calc(50% - 50vw);
 }
 .diy-strip-inner {
@@ -646,7 +646,7 @@ footer {
   gap:56px; align-items:center;
 }
 @media(max-width:800px) {
-  .diy-strip { padding:38px max(24px, calc((100vw - 1160px) / 2)); }
+  .diy-strip { padding:32px max(24px, calc((100vw - 1160px) / 2)); }
   .diy-strip-inner { grid-template-columns:1fr; gap:24px; }
   .diy-strip-img img { max-height:340px; object-fit:cover; }
   .diy-strip-heading { font-size:1.35rem; }
@@ -700,16 +700,16 @@ footer {
 
 .how-section {
   background:var(--off-white);
-  padding:64px 24px; text-align:center;
+  padding:52px 24px; text-align:center;
 }
 .how-section.alt { background:#fff; border-top:none; }
-.how-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:48px; max-width:720px; margin-left:auto; margin-right:auto; }
+.how-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:32px; max-width:720px; margin-left:auto; margin-right:auto; }
 @media(max-width:600px) { .how-steps { grid-template-columns:1fr; gap:24px; } }
 .how-step { display:flex; flex-direction:column; align-items:center; gap:14px; }
 .how-num {
-  width:54px; height:56px;
+  width:42px; height:44px;
   background:var(--cherry); color:#fff;
-  font-family:'Fraunces', serif; font-weight:600; font-size:1.3rem;
+  font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
   display:flex; align-items:center; justify-content:center;
   -webkit-mask:var(--blob-mask-logo) center/100% 100% no-repeat;
           mask:var(--blob-mask-logo) center/100% 100% no-repeat;
@@ -721,7 +721,7 @@ footer {
    CTA SECTION — end-of-page Etsy call to action
    ============================================================ */
 
-.cta-section { background:#fff; text-align:center; padding:80px 24px; }
+.cta-section { background:#fff; text-align:center; padding:60px 24px; }
 .cta-section.alt { background:var(--off-white); }
 .cta-section .sec-title { max-width:480px; margin:0 auto 16px; }
 .cta-section .sec-title em { font-style:normal; color:var(--accent-deep); }
@@ -731,7 +731,7 @@ footer {
    ETSY CTA SECTION (index) — Cream, never the footer colour
    ============================================================ */
 
-.etsy-section { background:var(--cream); text-align:center; padding:100px 24px; }
+.etsy-section { background:var(--cream); text-align:center; padding:72px 24px; }
 .etsy-section .sec-title { max-width:520px; margin:0 auto 16px; }
 .etsy-section p { font-size:0.97rem; color:var(--ink-soft); line-height:1.8; max-width:380px; margin:0 auto 40px; }
 
@@ -769,7 +769,7 @@ footer {
    MOBILE SECTION SPACING — placed last so it wins the cascade.
    ============================================================ */
 @media(max-width:600px) {
-  .page-header  { padding:88px 20px 32px; }
+  .page-header  { padding:80px 20px 28px; }
   .how-section  { padding:44px 20px; }
   .how-steps    { margin-top:28px; }
   .cta-section  { padding:48px 20px; }
